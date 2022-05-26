@@ -1,6 +1,7 @@
 #! /Library/Frameworks/Python.framework/Versions/3.8/bin/python3
 #
 # Added a comment line to test GIT
+# Added a second comment line
 #
 # 2Degrees - HUAWEI - code release - Alpha 0.0.1f
 #
