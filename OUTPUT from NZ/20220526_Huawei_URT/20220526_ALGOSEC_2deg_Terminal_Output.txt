@@ -1,0 +1,633 @@
+
+> a
+[root@algosec ~]#
+[root@algosec ~]#
+[root@algosec ~]# /opt/python3.8/bin/python3.8 /usr/local/bin/huawei_routes_001d.py
+Executing Main Program Now. huawei_routes code. Version 0.0.1d
+Where are we running? (lab, 2degrees, 2d, poc, pockpr, pocham [lab]):pockpr
+Querying huawei at IP address 172.21.220.38 userid Transport-AlgoSec password Vx80BOgrOGki&c4IUn0#$JfqaxP
+TRYING -> result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+Connection Successful Info: The configuration takes effect on the current user terminal interface only.
+result Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 22       Routes : 23
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+        0.0.0.0/0   Static  60   0          RD   172.21.220.1    GigabitEthernet0/0/0
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+    172.17.12.0/24  Direct  0    0           D   172.17.12.29    GigabitEthernet2/0/0.20
+   172.17.12.29/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20
+   172.17.12.30/32  OSPF    10   5           D   172.21.111.6    Eth-Trunk0.10
+   172.17.12.31/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20
+   172.17.12.32/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20
+  172.17.12.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20
+   172.21.111.4/30  Direct  0    0           D   172.21.111.5    Eth-Trunk0.10
+   172.21.111.5/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10
+   172.21.111.7/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10
+   172.21.220.0/24  Direct  0    0           D   172.21.220.38   GigabitEthernet0/0/0
+  172.21.220.38/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0
+ 172.21.220.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0
+   172.21.222.3/32  Direct  0    0           D   127.0.0.1       LoopBack0
+   172.21.222.4/32  OSPF    10   5           D   172.21.111.6    Eth-Trunk0.10
+   172.23.111.4/30  OSPF    10   13          D   172.17.12.31    GigabitEthernet2/0/0.20
+                    OSPF    10   13          D   172.17.12.32    GigabitEthernet2/0/0.20
+   172.23.222.3/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20
+   172.23.222.4/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+
+
+Route Flags: R - relay, D - download to fib 43
+------------------------------------------------------------------------------ 78
+Routing Tables: Public 22
+         Destinations : 22       Routes : 23        51
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface 74
+        0.0.0.0/0   Static  60   0          RD   172.21.220.1    GigabitEthernet0/0/0 85
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0 76
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+    172.17.12.0/24  Direct  0    0           D   172.17.12.29    GigabitEthernet2/0/0.20 88
+   172.17.12.29/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.17.12.30/32  OSPF    10   5           D   172.21.111.6    Eth-Trunk0.10 78
+   172.17.12.31/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.17.12.32/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+  172.17.12.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.21.111.4/30  Direct  0    0           D   172.21.111.5    Eth-Trunk0.10 78
+   172.21.111.5/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.111.7/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.220.0/24  Direct  0    0           D   172.21.220.38   GigabitEthernet0/0/0 85
+  172.21.220.38/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+ 172.21.220.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+   172.21.222.3/32  Direct  0    0           D   127.0.0.1       LoopBack0 74
+   172.21.222.4/32  OSPF    10   5           D   172.21.111.6    Eth-Trunk0.10 78
+   172.23.111.4/30  OSPF    10   13          D   172.17.12.31    GigabitEthernet2/0/0.20 88
+                    OSPF    10   13          D   172.17.12.32    GigabitEthernet2/0/0.20 88
+   172.23.222.3/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.23.222.4/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+R  O  U  T  E            L  I  S  T
+        0.0.0.0/0   Static  60   0          RD   172.21.220.1    GigabitEthernet0/0/0 85
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0 76
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+    172.17.12.0/24  Direct  0    0           D   172.17.12.29    GigabitEthernet2/0/0.20 88
+   172.17.12.29/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.17.12.30/32  OSPF    10   5           D   172.21.111.6    Eth-Trunk0.10 78
+   172.17.12.31/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.17.12.32/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+  172.17.12.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.21.111.4/30  Direct  0    0           D   172.21.111.5    Eth-Trunk0.10 78
+   172.21.111.5/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.111.7/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.220.0/24  Direct  0    0           D   172.21.220.38   GigabitEthernet0/0/0 85
+  172.21.220.38/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+ 172.21.220.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+   172.21.222.3/32  Direct  0    0           D   127.0.0.1       LoopBack0 74
+   172.21.222.4/32  OSPF    10   5           D   172.21.111.6    Eth-Trunk0.10 78
+   172.23.111.4/30  OSPF    10   13          D   172.17.12.31    GigabitEthernet2/0/0.20 88
+                    OSPF    10   13          D   172.17.12.32    GigabitEthernet2/0/0.20 88
+   172.23.222.3/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.23.222.4/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+E N T E R E D     V R F     C O D E
+result  Total VPN-Instances configured      : 22
+ Total IPv4 VPN-Instances configured : 22
+ Total IPv6 VPN-Instances configured : 0
+
+  VPN-Instance Name               RD                    Address-family
+  2DEG_NttFwMonitor               38793:8121            IPv4
+  Connect                         38793:6621            IPv4
+  ENTERPRISE                      38793:6021            IPv4
+  Ericsson_CAS_VPN                38793:8721            IPv4
+  GRX                             38793:7821            IPv4
+  Ga                              38793:7521            IPv4
+  Gi                              38793:7221            IPv4
+  Gi-2                            38793:7121            IPv4
+  Gi-ASPIDER                      38793:6921            IPv4
+  Gi-Corp                         38793:7921            IPv4
+  Gi-DIRECT                       38793:7021            IPv4
+  Gi-NAT                          38793:7421            IPv4
+  Gi-NAT-2                        38793:7721            IPv4
+  Gn                              38793:7321            IPv4
+  IPiX                            38793:7621            IPv4
+  IPiX-PUBLIC                     38793:8621            IPv4
+  OOB                             38793:2221            IPv4
+  PP-vEPC_GaCDR                   38793:64211           IPv4
+  PUBLIC                          38793:4021            IPv4
+  SECURE                          38793:5021            IPv4
+  TP                              38793:8021            IPv4
+  vEPC_GaCDR                      38793:65211           IPv4
+VRF List ['  2DEG_NttFwMonitor               38793:8121            IPv4       ', '  Connect                         38793:6621            IPv4       ', '  ENTERPRISE                      38793:6021            IPv4       ', '  Ericsson_CAS_VPN                38793:8721            IPv4       ', '  GRX                             38793:7821            IPv4       ', '  Ga                              38793:7521            IPv4       ', '  Gi                              38793:7221            IPv4       ', '  Gi-2                            38793:7121            IPv4       ', '  Gi-ASPIDER                      38793:6921            IPv4       ', '  Gi-Corp                         38793:7921            IPv4       ', '  Gi-DIRECT                       38793:7021            IPv4       ', '  Gi-NAT                          38793:7421            IPv4       ', '  Gi-NAT-2                        38793:7721            IPv4       ', '  Gn                              38793:7321            IPv4       ', '  IPiX                            38793:7621            IPv4       ', '  IPiX-PUBLIC                     38793:8621            IPv4       ', '  OOB                             38793:2221            IPv4       ', '  PP-vEPC_GaCDR                   38793:64211           IPv4       ', '  PUBLIC                          38793:4021            IPv4       ', '  SECURE                          38793:5021            IPv4       ', '  TP                              38793:8021            IPv4       ', '  vEPC_GaCDR                      38793:65211           IPv4       ']
+Creating and Opening URT File named HUAWEI_URT_172_21_220_38.urt
+2022-05-26 09:28:56.140883
+# Generated by huawei_routes at 2022-05-26 09:28:56.140883
+
+In LINE 1 we have an IP with a slash! 0.0.0.0/0
+In LINE 2 we have an IP with a slash! 127.0.0.0/8
+In LINE 3 we have an IP with a slash! 127.0.0.1/32
+In LINE 4 we have an IP with a slash! 127.255.255.255/32
+In LINE 5 we have an IP with a slash! 172.17.12.0/24
+In LINE 6 we have an IP with a slash! 172.17.12.29/32
+In LINE 7 we have an IP with a slash! 172.17.12.30/32
+In LINE 8 we have an IP with a slash! 172.17.12.31/32
+In LINE 9 we have an IP with a slash! 172.17.12.32/32
+In LINE 10 we have an IP with a slash! 172.17.12.255/32
+In LINE 11 we have an IP with a slash! 172.21.111.4/30
+In LINE 12 we have an IP with a slash! 172.21.111.5/32
+In LINE 13 we have an IP with a slash! 172.21.111.7/32
+In LINE 14 we have an IP with a slash! 172.21.220.0/24
+In LINE 15 we have an IP with a slash! 172.21.220.38/32
+In LINE 16 we have an IP with a slash! 172.21.220.255/32
+In LINE 17 we have an IP with a slash! 172.21.222.3/32
+In LINE 18 we have an IP with a slash! 172.21.222.4/32
+In LINE 19 we have an IP with a slash! 172.23.111.4/30
+In LINE 21 we have an IP with a slash! 172.23.222.3/32
+In LINE 22 we have an IP with a slash! 172.23.222.4/32
+In LINE 23 we have an IP with a slash! 255.255.255.255/32
+VRF ------->   2DEG_NttFwMonitor               38793:8121            IPv4
+VRF ------->   Connect                         38793:6621            IPv4
+VRF ------->   ENTERPRISE                      38793:6021            IPv4
+VRF ------->   Ericsson_CAS_VPN                38793:8721            IPv4
+VRF ------->   GRX                             38793:7821            IPv4
+VRF ------->   Ga                              38793:7521            IPv4
+VRF ------->   Gi                              38793:7221            IPv4
+VRF ------->   Gi-2                            38793:7121            IPv4
+VRF ------->   Gi-ASPIDER                      38793:6921            IPv4
+VRF ------->   Gi-Corp                         38793:7921            IPv4
+VRF ------->   Gi-DIRECT                       38793:7021            IPv4
+VRF ------->   Gi-NAT                          38793:7421            IPv4
+VRF ------->   Gi-NAT-2                        38793:7721            IPv4
+VRF ------->   Gn                              38793:7321            IPv4
+VRF ------->   IPiX                            38793:7621            IPv4
+VRF ------->   IPiX-PUBLIC                     38793:8621            IPv4
+VRF ------->   OOB                             38793:2221            IPv4
+VRF ------->   PP-vEPC_GaCDR                   38793:64211           IPv4
+VRF ------->   PUBLIC                          38793:4021            IPv4
+VRF ------->   SECURE                          38793:5021            IPv4
+VRF ------->   TP                              38793:8021            IPv4
+VRF ------->   vEPC_GaCDR                      38793:65211           IPv4
+Closing URT File
+Querying huawei at IP address 172.21.220.39 userid Transport-AlgoSec password Vx80BOgrOGki&c4IUn0#$JfqaxP
+TRYING -> result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+Connection Successful Info: The configuration takes effect on the current user terminal interface only.
+result Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 22       Routes : 23
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+        0.0.0.0/0   Static  60   0          RD   172.21.220.1    GigabitEthernet0/0/0
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+    172.17.12.0/24  Direct  0    0           D   172.17.12.30    GigabitEthernet2/0/0.20
+   172.17.12.29/32  OSPF    10   5           D   172.21.111.5    Eth-Trunk0.10
+   172.17.12.30/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20
+   172.17.12.31/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20
+   172.17.12.32/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20
+  172.17.12.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20
+   172.21.111.4/30  Direct  0    0           D   172.21.111.6    Eth-Trunk0.10
+   172.21.111.6/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10
+   172.21.111.7/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10
+   172.21.220.0/24  Direct  0    0           D   172.21.220.39   GigabitEthernet0/0/0
+  172.21.220.39/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0
+ 172.21.220.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0
+   172.21.222.3/32  OSPF    10   5           D   172.21.111.5    Eth-Trunk0.10
+   172.21.222.4/32  Direct  0    0           D   127.0.0.1       LoopBack0
+   172.23.111.4/30  OSPF    10   13          D   172.17.12.31    GigabitEthernet2/0/0.20
+                    OSPF    10   13          D   172.17.12.32    GigabitEthernet2/0/0.20
+   172.23.222.3/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20
+   172.23.222.4/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+
+
+Route Flags: R - relay, D - download to fib 43
+------------------------------------------------------------------------------ 78
+Routing Tables: Public 22
+         Destinations : 22       Routes : 23        51
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface 74
+        0.0.0.0/0   Static  60   0          RD   172.21.220.1    GigabitEthernet0/0/0 85
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0 76
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+    172.17.12.0/24  Direct  0    0           D   172.17.12.30    GigabitEthernet2/0/0.20 88
+   172.17.12.29/32  OSPF    10   5           D   172.21.111.5    Eth-Trunk0.10 78
+   172.17.12.30/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.17.12.31/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.17.12.32/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+  172.17.12.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.21.111.4/30  Direct  0    0           D   172.21.111.6    Eth-Trunk0.10 78
+   172.21.111.6/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.111.7/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.220.0/24  Direct  0    0           D   172.21.220.39   GigabitEthernet0/0/0 85
+  172.21.220.39/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+ 172.21.220.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+   172.21.222.3/32  OSPF    10   5           D   172.21.111.5    Eth-Trunk0.10 78
+   172.21.222.4/32  Direct  0    0           D   127.0.0.1       LoopBack0 74
+   172.23.111.4/30  OSPF    10   13          D   172.17.12.31    GigabitEthernet2/0/0.20 88
+                    OSPF    10   13          D   172.17.12.32    GigabitEthernet2/0/0.20 88
+   172.23.222.3/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.23.222.4/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+R  O  U  T  E            L  I  S  T
+        0.0.0.0/0   Static  60   0          RD   172.21.220.1    GigabitEthernet0/0/0 85
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0 76
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+    172.17.12.0/24  Direct  0    0           D   172.17.12.30    GigabitEthernet2/0/0.20 88
+   172.17.12.29/32  OSPF    10   5           D   172.21.111.5    Eth-Trunk0.10 78
+   172.17.12.30/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.17.12.31/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.17.12.32/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+  172.17.12.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet2/0/0.20 88
+   172.21.111.4/30  Direct  0    0           D   172.21.111.6    Eth-Trunk0.10 78
+   172.21.111.6/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.111.7/32  Direct  0    0           D   127.0.0.1       Eth-Trunk0.10 78
+   172.21.220.0/24  Direct  0    0           D   172.21.220.39   GigabitEthernet0/0/0 85
+  172.21.220.39/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+ 172.21.220.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0 85
+   172.21.222.3/32  OSPF    10   5           D   172.21.111.5    Eth-Trunk0.10 78
+   172.21.222.4/32  Direct  0    0           D   127.0.0.1       LoopBack0 74
+   172.23.111.4/30  OSPF    10   13          D   172.17.12.31    GigabitEthernet2/0/0.20 88
+                    OSPF    10   13          D   172.17.12.32    GigabitEthernet2/0/0.20 88
+   172.23.222.3/32  OSPF    10   8           D   172.17.12.31    GigabitEthernet2/0/0.20 88
+   172.23.222.4/32  OSPF    10   8           D   172.17.12.32    GigabitEthernet2/0/0.20 88
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0 76
+E N T E R E D     V R F     C O D E
+result  Total VPN-Instances configured      : 22
+ Total IPv4 VPN-Instances configured : 22
+ Total IPv6 VPN-Instances configured : 0
+
+  VPN-Instance Name               RD                    Address-family
+  2DEG_NttFwMonitor               38793:8121            IPv4
+  Connect                         38793:6621            IPv4
+  ENTERPRISE                      38793:6021            IPv4
+  Ericsson_CAS_VPN                38793:8722            IPv4
+  GRX                             38793:7821            IPv4
+  Ga                              38793:7521            IPv4
+  Gi                              38793:7221            IPv4
+  Gi-2                            38793:7121            IPv4
+  Gi-ASPIDER                      38793:6921            IPv4
+  Gi-Corp                         38793:7921            IPv4
+  Gi-DIRECT                       38793:7021            IPv4
+  Gi-NAT                          38793:7421            IPv4
+  Gi-NAT-2                        38793:7721            IPv4
+  Gn                              38793:7321            IPv4
+  IPiX                            38793:7621            IPv4
+  IPiX-PUBLIC                     38793:8621            IPv4
+  OOB                             38793:2221            IPv4
+  PP-vEPC_GaCDR                   38793:64212           IPv4
+  PUBLIC                          38793:4021            IPv4
+  SECURE                          38793:5021            IPv4
+  TP                              38793:8021            IPv4
+  vEPC_GaCDR                      38793:65212           IPv4
+VRF List ['  2DEG_NttFwMonitor               38793:8121            IPv4       ', '  Connect                         38793:6621            IPv4       ', '  ENTERPRISE                      38793:6021            IPv4       ', '  Ericsson_CAS_VPN                38793:8722            IPv4       ', '  GRX                             38793:7821            IPv4       ', '  Ga                              38793:7521            IPv4       ', '  Gi                              38793:7221            IPv4       ', '  Gi-2                            38793:7121            IPv4       ', '  Gi-ASPIDER                      38793:6921            IPv4       ', '  Gi-Corp                         38793:7921            IPv4       ', '  Gi-DIRECT                       38793:7021            IPv4       ', '  Gi-NAT                          38793:7421            IPv4       ', '  Gi-NAT-2                        38793:7721            IPv4       ', '  Gn                              38793:7321            IPv4       ', '  IPiX                            38793:7621            IPv4       ', '  IPiX-PUBLIC                     38793:8621            IPv4       ', '  OOB                             38793:2221            IPv4       ', '  PP-vEPC_GaCDR                   38793:64212           IPv4       ', '  PUBLIC                          38793:4021            IPv4       ', '  SECURE                          38793:5021            IPv4       ', '  TP                              38793:8021            IPv4       ', '  vEPC_GaCDR                      38793:65212           IPv4       ']
+Creating and Opening URT File named HUAWEI_URT_172_21_220_39.urt
+2022-05-26 09:29:02.653209
+# Generated by huawei_routes at 2022-05-26 09:29:02.653209
+
+In LINE 1 we have an IP with a slash! 0.0.0.0/0
+In LINE 2 we have an IP with a slash! 127.0.0.0/8
+In LINE 3 we have an IP with a slash! 127.0.0.1/32
+In LINE 4 we have an IP with a slash! 127.255.255.255/32
+In LINE 5 we have an IP with a slash! 172.17.12.0/24
+In LINE 6 we have an IP with a slash! 172.17.12.29/32
+In LINE 7 we have an IP with a slash! 172.17.12.30/32
+In LINE 8 we have an IP with a slash! 172.17.12.31/32
+In LINE 9 we have an IP with a slash! 172.17.12.32/32
+In LINE 10 we have an IP with a slash! 172.17.12.255/32
+In LINE 11 we have an IP with a slash! 172.21.111.4/30
+In LINE 12 we have an IP with a slash! 172.21.111.6/32
+In LINE 13 we have an IP with a slash! 172.21.111.7/32
+In LINE 14 we have an IP with a slash! 172.21.220.0/24
+In LINE 15 we have an IP with a slash! 172.21.220.39/32
+In LINE 16 we have an IP with a slash! 172.21.220.255/32
+In LINE 17 we have an IP with a slash! 172.21.222.3/32
+In LINE 18 we have an IP with a slash! 172.21.222.4/32
+In LINE 19 we have an IP with a slash! 172.23.111.4/30
+In LINE 21 we have an IP with a slash! 172.23.222.3/32
+In LINE 22 we have an IP with a slash! 172.23.222.4/32
+In LINE 23 we have an IP with a slash! 255.255.255.255/32
+VRF ------->   2DEG_NttFwMonitor               38793:8121            IPv4
+VRF ------->   Connect                         38793:6621            IPv4
+VRF ------->   ENTERPRISE                      38793:6021            IPv4
+VRF ------->   Ericsson_CAS_VPN                38793:8722            IPv4
+VRF ------->   GRX                             38793:7821            IPv4
+VRF ------->   Ga                              38793:7521            IPv4
+VRF ------->   Gi                              38793:7221            IPv4
+VRF ------->   Gi-2                            38793:7121            IPv4
+VRF ------->   Gi-ASPIDER                      38793:6921            IPv4
+VRF ------->   Gi-Corp                         38793:7921            IPv4
+VRF ------->   Gi-DIRECT                       38793:7021            IPv4
+VRF ------->   Gi-NAT                          38793:7421            IPv4
+VRF ------->   Gi-NAT-2                        38793:7721            IPv4
+VRF ------->   Gn                              38793:7321            IPv4
+VRF ------->   IPiX                            38793:7621            IPv4
+VRF ------->   IPiX-PUBLIC                     38793:8621            IPv4
+VRF ------->   OOB                             38793:2221            IPv4
+VRF ------->   PP-vEPC_GaCDR                   38793:64212           IPv4
+VRF ------->   PUBLIC                          38793:4021            IPv4
+VRF ------->   SECURE                          38793:5021            IPv4
+VRF ------->   TP                              38793:8021            IPv4
+VRF ------->   vEPC_GaCDR                      38793:65212           IPv4
+Closing URT File
+Querying huawei at IP address 172.21.223.130 userid Transport-AlgoSec password Vx80BOgrOGki&c4IUn0#$JfqaxP
+TRYING -> result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+NetmikoTimeoutException
+ TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: huawei 172.21.223.130:22
+
+
+Connect = connectDevice(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: huawei 172.21.223.130:22
+
+
+routeList = getRoutes(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: huawei 172.21.223.130:22
+
+
+vrfList = getVRFs(deviceType, ipAddress, userId, pwd) - did not work
+Creating and Opening URT File named HUAWEI_URT_172_21_223_130.urt
+2022-05-26 09:29:32.682771
+# Generated by huawei_routes at 2022-05-26 09:29:32.682771
+
+In LINE 1 we have an IP with a slash! 0.0.0.0/0
+In LINE 2 we have an IP with a slash! 127.0.0.0/8
+In LINE 3 we have an IP with a slash! 127.0.0.1/32
+In LINE 4 we have an IP with a slash! 127.255.255.255/32
+In LINE 5 we have an IP with a slash! 172.17.12.0/24
+In LINE 6 we have an IP with a slash! 172.17.12.29/32
+In LINE 7 we have an IP with a slash! 172.17.12.30/32
+In LINE 8 we have an IP with a slash! 172.17.12.31/32
+In LINE 9 we have an IP with a slash! 172.17.12.32/32
+In LINE 10 we have an IP with a slash! 172.17.12.255/32
+In LINE 11 we have an IP with a slash! 172.21.111.4/30
+In LINE 12 we have an IP with a slash! 172.21.111.6/32
+In LINE 13 we have an IP with a slash! 172.21.111.7/32
+In LINE 14 we have an IP with a slash! 172.21.220.0/24
+In LINE 15 we have an IP with a slash! 172.21.220.39/32
+In LINE 16 we have an IP with a slash! 172.21.220.255/32
+In LINE 17 we have an IP with a slash! 172.21.222.3/32
+In LINE 18 we have an IP with a slash! 172.21.222.4/32
+In LINE 19 we have an IP with a slash! 172.23.111.4/30
+In LINE 21 we have an IP with a slash! 172.23.222.3/32
+In LINE 22 we have an IP with a slash! 172.23.222.4/32
+In LINE 23 we have an IP with a slash! 255.255.255.255/32
+VRF ------->   2DEG_NttFwMonitor               38793:8121            IPv4
+VRF ------->   Connect                         38793:6621            IPv4
+VRF ------->   ENTERPRISE                      38793:6021            IPv4
+VRF ------->   Ericsson_CAS_VPN                38793:8722            IPv4
+VRF ------->   GRX                             38793:7821            IPv4
+VRF ------->   Ga                              38793:7521            IPv4
+VRF ------->   Gi                              38793:7221            IPv4
+VRF ------->   Gi-2                            38793:7121            IPv4
+VRF ------->   Gi-ASPIDER                      38793:6921            IPv4
+VRF ------->   Gi-Corp                         38793:7921            IPv4
+VRF ------->   Gi-DIRECT                       38793:7021            IPv4
+VRF ------->   Gi-NAT                          38793:7421            IPv4
+VRF ------->   Gi-NAT-2                        38793:7721            IPv4
+VRF ------->   Gn                              38793:7321            IPv4
+VRF ------->   IPiX                            38793:7621            IPv4
+VRF ------->   IPiX-PUBLIC                     38793:8621            IPv4
+VRF ------->   OOB                             38793:2221            IPv4
+VRF ------->   PP-vEPC_GaCDR                   38793:64212           IPv4
+VRF ------->   PUBLIC                          38793:4021            IPv4
+VRF ------->   SECURE                          38793:5021            IPv4
+VRF ------->   TP                              38793:8021            IPv4
+VRF ------->   vEPC_GaCDR                      38793:65212           IPv4
+Closing URT File
+Querying huawei at IP address 172.21.223.131 userid Transport-AlgoSec password Vx80BOgrOGki&c4IUn0#$JfqaxP
+TRYING -> result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+NetmikoTimeoutException
+ TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: huawei 172.21.223.131:22
+
+
+Connect = connectDevice(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: huawei 172.21.223.131:22
+
+
+routeList = getRoutes(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: huawei 172.21.223.131:22
+
+
+vrfList = getVRFs(deviceType, ipAddress, userId, pwd) - did not work
+Creating and Opening URT File named HUAWEI_URT_172_21_223_131.urt
+2022-05-26 09:30:02.715033
+# Generated by huawei_routes at 2022-05-26 09:30:02.715033
+
+In LINE 1 we have an IP with a slash! 0.0.0.0/0
+In LINE 2 we have an IP with a slash! 127.0.0.0/8
+In LINE 3 we have an IP with a slash! 127.0.0.1/32
+In LINE 4 we have an IP with a slash! 127.255.255.255/32
+In LINE 5 we have an IP with a slash! 172.17.12.0/24
+In LINE 6 we have an IP with a slash! 172.17.12.29/32
+In LINE 7 we have an IP with a slash! 172.17.12.30/32
+In LINE 8 we have an IP with a slash! 172.17.12.31/32
+In LINE 9 we have an IP with a slash! 172.17.12.32/32
+In LINE 10 we have an IP with a slash! 172.17.12.255/32
+In LINE 11 we have an IP with a slash! 172.21.111.4/30
+In LINE 12 we have an IP with a slash! 172.21.111.6/32
+In LINE 13 we have an IP with a slash! 172.21.111.7/32
+In LINE 14 we have an IP with a slash! 172.21.220.0/24
+In LINE 15 we have an IP with a slash! 172.21.220.39/32
+In LINE 16 we have an IP with a slash! 172.21.220.255/32
+In LINE 17 we have an IP with a slash! 172.21.222.3/32
+In LINE 18 we have an IP with a slash! 172.21.222.4/32
+In LINE 19 we have an IP with a slash! 172.23.111.4/30
+In LINE 21 we have an IP with a slash! 172.23.222.3/32
+In LINE 22 we have an IP with a slash! 172.23.222.4/32
+In LINE 23 we have an IP with a slash! 255.255.255.255/32
+VRF ------->   2DEG_NttFwMonitor               38793:8121            IPv4
+VRF ------->   Connect                         38793:6621            IPv4
+VRF ------->   ENTERPRISE                      38793:6021            IPv4
+VRF ------->   Ericsson_CAS_VPN                38793:8722            IPv4
+VRF ------->   GRX                             38793:7821            IPv4
+VRF ------->   Ga                              38793:7521            IPv4
+VRF ------->   Gi                              38793:7221            IPv4
+VRF ------->   Gi-2                            38793:7121            IPv4
+VRF ------->   Gi-ASPIDER                      38793:6921            IPv4
+VRF ------->   Gi-Corp                         38793:7921            IPv4
+VRF ------->   Gi-DIRECT                       38793:7021            IPv4
+VRF ------->   Gi-NAT                          38793:7421            IPv4
+VRF ------->   Gi-NAT-2                        38793:7721            IPv4
+VRF ------->   Gn                              38793:7321            IPv4
+VRF ------->   IPiX                            38793:7621            IPv4
+VRF ------->   IPiX-PUBLIC                     38793:8621            IPv4
+VRF ------->   OOB                             38793:2221            IPv4
+VRF ------->   PP-vEPC_GaCDR                   38793:64212           IPv4
+VRF ------->   PUBLIC                          38793:4021            IPv4
+VRF ------->   SECURE                          38793:5021            IPv4
+VRF ------->   TP                              38793:8021            IPv4
+VRF ------->   vEPC_GaCDR                      38793:65212           IPv4
+Closing URT File
+Querying huawei at IP address edsw01kpr.nzc userid Transport-AlgoSec password Vx80BOgrOGki&c4IUn0#$JfqaxP
+TRYING -> result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+NetmikoTimeoutException
+ DNS failure--the hostname you provided was not resolvable in DNS: edsw01kpr.nzc:22
+Connect = connectDevice(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ DNS failure--the hostname you provided was not resolvable in DNS: edsw01kpr.nzc:22
+routeList = getRoutes(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ DNS failure--the hostname you provided was not resolvable in DNS: edsw01kpr.nzc:22
+vrfList = getVRFs(deviceType, ipAddress, userId, pwd) - did not work
+Creating and Opening URT File named HUAWEI_URT_edsw01kpr_nzc.urt
+2022-05-26 09:30:02.749709
+# Generated by huawei_routes at 2022-05-26 09:30:02.749709
+
+In LINE 1 we have an IP with a slash! 0.0.0.0/0
+In LINE 2 we have an IP with a slash! 127.0.0.0/8
+In LINE 3 we have an IP with a slash! 127.0.0.1/32
+In LINE 4 we have an IP with a slash! 127.255.255.255/32
+In LINE 5 we have an IP with a slash! 172.17.12.0/24
+In LINE 6 we have an IP with a slash! 172.17.12.29/32
+In LINE 7 we have an IP with a slash! 172.17.12.30/32
+In LINE 8 we have an IP with a slash! 172.17.12.31/32
+In LINE 9 we have an IP with a slash! 172.17.12.32/32
+In LINE 10 we have an IP with a slash! 172.17.12.255/32
+In LINE 11 we have an IP with a slash! 172.21.111.4/30
+In LINE 12 we have an IP with a slash! 172.21.111.6/32
+In LINE 13 we have an IP with a slash! 172.21.111.7/32
+In LINE 14 we have an IP with a slash! 172.21.220.0/24
+In LINE 15 we have an IP with a slash! 172.21.220.39/32
+In LINE 16 we have an IP with a slash! 172.21.220.255/32
+In LINE 17 we have an IP with a slash! 172.21.222.3/32
+In LINE 18 we have an IP with a slash! 172.21.222.4/32
+In LINE 19 we have an IP with a slash! 172.23.111.4/30
+In LINE 21 we have an IP with a slash! 172.23.222.3/32
+In LINE 22 we have an IP with a slash! 172.23.222.4/32
+In LINE 23 we have an IP with a slash! 255.255.255.255/32
+VRF ------->   2DEG_NttFwMonitor               38793:8121            IPv4
+VRF ------->   Connect                         38793:6621            IPv4
+VRF ------->   ENTERPRISE                      38793:6021            IPv4
+VRF ------->   Ericsson_CAS_VPN                38793:8722            IPv4
+VRF ------->   GRX                             38793:7821            IPv4
+VRF ------->   Ga                              38793:7521            IPv4
+VRF ------->   Gi                              38793:7221            IPv4
+VRF ------->   Gi-2                            38793:7121            IPv4
+VRF ------->   Gi-ASPIDER                      38793:6921            IPv4
+VRF ------->   Gi-Corp                         38793:7921            IPv4
+VRF ------->   Gi-DIRECT                       38793:7021            IPv4
+VRF ------->   Gi-NAT                          38793:7421            IPv4
+VRF ------->   Gi-NAT-2                        38793:7721            IPv4
+VRF ------->   Gn                              38793:7321            IPv4
+VRF ------->   IPiX                            38793:7621            IPv4
+VRF ------->   IPiX-PUBLIC                     38793:8621            IPv4
+VRF ------->   OOB                             38793:2221            IPv4
+VRF ------->   PP-vEPC_GaCDR                   38793:64212           IPv4
+VRF ------->   PUBLIC                          38793:4021            IPv4
+VRF ------->   SECURE                          38793:5021            IPv4
+VRF ------->   TP                              38793:8021            IPv4
+VRF ------->   vEPC_GaCDR                      38793:65212           IPv4
+Closing URT File
+Querying huawei at IP address edsw02kpr.nzc userid Transport-AlgoSec password Vx80BOgrOGki&c4IUn0#$JfqaxP
+TRYING -> result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+NetmikoTimeoutException
+ DNS failure--the hostname you provided was not resolvable in DNS: edsw02kpr.nzc:22
+Connect = connectDevice(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ DNS failure--the hostname you provided was not resolvable in DNS: edsw02kpr.nzc:22
+routeList = getRoutes(deviceType, ipAddress, userId, pwd) - did not work
+NetmikoTimeoutException
+ DNS failure--the hostname you provided was not resolvable in DNS: edsw02kpr.nzc:22
+vrfList = getVRFs(deviceType, ipAddress, userId, pwd) - did not work
+Creating and Opening URT File named HUAWEI_URT_edsw02kpr_nzc.urt
+2022-05-26 09:30:02.755752
+# Generated by huawei_routes at 2022-05-26 09:30:02.755752
+
+In LINE 1 we have an IP with a slash! 0.0.0.0/0
+In LINE 2 we have an IP with a slash! 127.0.0.0/8
+In LINE 3 we have an IP with a slash! 127.0.0.1/32
+In LINE 4 we have an IP with a slash! 127.255.255.255/32
+In LINE 5 we have an IP with a slash! 172.17.12.0/24
+In LINE 6 we have an IP with a slash! 172.17.12.29/32
+In LINE 7 we have an IP with a slash! 172.17.12.30/32
+In LINE 8 we have an IP with a slash! 172.17.12.31/32
+In LINE 9 we have an IP with a slash! 172.17.12.32/32
+In LINE 10 we have an IP with a slash! 172.17.12.255/32
+In LINE 11 we have an IP with a slash! 172.21.111.4/30
+In LINE 12 we have an IP with a slash! 172.21.111.6/32
+In LINE 13 we have an IP with a slash! 172.21.111.7/32
+In LINE 14 we have an IP with a slash! 172.21.220.0/24
+In LINE 15 we have an IP with a slash! 172.21.220.39/32
+In LINE 16 we have an IP with a slash! 172.21.220.255/32
+In LINE 17 we have an IP with a slash! 172.21.222.3/32
+In LINE 18 we have an IP with a slash! 172.21.222.4/32
+In LINE 19 we have an IP with a slash! 172.23.111.4/30
+In LINE 21 we have an IP with a slash! 172.23.222.3/32
+In LINE 22 we have an IP with a slash! 172.23.222.4/32
+In LINE 23 we have an IP with a slash! 255.255.255.255/32
+VRF ------->   2DEG_NttFwMonitor               38793:8121            IPv4
+VRF ------->   Connect                         38793:6621            IPv4
+VRF ------->   ENTERPRISE                      38793:6021            IPv4
+VRF ------->   Ericsson_CAS_VPN                38793:8722            IPv4
+VRF ------->   GRX                             38793:7821            IPv4
+VRF ------->   Ga                              38793:7521            IPv4
+VRF ------->   Gi                              38793:7221            IPv4
+VRF ------->   Gi-2                            38793:7121            IPv4
+VRF ------->   Gi-ASPIDER                      38793:6921            IPv4
+VRF ------->   Gi-Corp                         38793:7921            IPv4
+VRF ------->   Gi-DIRECT                       38793:7021            IPv4
+VRF ------->   Gi-NAT                          38793:7421            IPv4
+VRF ------->   Gi-NAT-2                        38793:7721            IPv4
+VRF ------->   Gn                              38793:7321            IPv4
+VRF ------->   IPiX                            38793:7621            IPv4
+VRF ------->   IPiX-PUBLIC                     38793:8621            IPv4
+VRF ------->   OOB                             38793:2221            IPv4
+VRF ------->   PP-vEPC_GaCDR                   38793:64212           IPv4
+VRF ------->   PUBLIC                          38793:4021            IPv4
+VRF ------->   SECURE                          38793:5021            IPv4
+VRF ------->   TP                              38793:8021            IPv4
+VRF ------->   vEPC_GaCDR                      38793:65212           IPv4
+Closing URT File
+Done.  Exiting.
+[root@algosec ~]#

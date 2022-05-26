@@ -1,0 +1,149 @@
+/* Orig rules Page CSS */
+
+.gen_rules_page {
+	font-family: arial,tahoma,helvetica,sans-serif;
+	font-size: 12px;	
+	margin: 8px;
+}
+
+.gen_rules_page table
+{
+	border-collapse:collapse;
+	color : #464646;
+}
+
+/* .gen_rules_page #tbl_Orig_Rules
+{
+	width: 1800px;
+} */
+
+.gen_rules_page table, .gen_rules_page tr {
+	border-top: 1px solid #FFF;
+    background: #f7f7f7;
+	font-size: 12px;
+}
+.gen_rules_page tr:hover {
+	background: #D6D6D8 !important;
+}
+
+.gen_rules_page th, .gen_rules_page td {
+	padding: 5px;
+}
+
+.gen_rules_page th {
+	text-align:left;
+	font-weight: normal;
+	font-size: 12px;
+	line-height : 16px;
+	background-color: #E1E1E1;
+	white-space: nowrap;
+	font-weight: bold;
+	position: relative;
+}
+
+.gen_rules_page th::after {
+	content: '\A0';
+	position: absolute;
+	right: 0px;
+	top: 6px;
+	line-height : 16px;
+	border-right: 1px solid #BCBCBC;
+	color: #BCBCBC;
+}
+
+.gen_even_row {
+	background: #efefef;
+}
+
+.gen_rules_page td a:visited {
+    color: #0068FF;
+    text-decoration: none;
+}
+.gen_rules_page td a:link {
+    color: #0068FF;
+    text-decoration: none;
+}
+.gen_rules_page td a:hover {
+    font-weight: bold;
+}
+
+.rule_checkbox_col {
+	padding : 5px !important;
+}
+
+.gen_rules_page th.rule_checkbox_col, th.rule_doc {
+	width: 24px;
+}
+
+.gen_rules_page td.rule_doc a {
+	cursor: pointer;
+}
+
+.rule_action_permit,.rule_enable{
+	color : #21A121;
+}
+
+.rule_action_deny,.rule_disabled{
+	color : #A80000;
+}
+
+/* Rows CSS */
+
+.odd .ckp_icons, .even .ckp_icons {
+	float: left;
+	margin-right: 5px;
+}
+
+td.sw_center {
+	text-align: center;
+}
+
+td.sw_wrap {
+	white-space: normal;
+}
+
+td.desc_width {
+	width: 100px;
+}
+
+td.src_dst_width {
+	width: 50px;
+}
+
+tr.sw_group_by td {
+	font-size: 13px;
+	font-weight:bolder;	
+	width: 50px;
+	height: 34px;
+	padding-left: 40px;
+}
+
+td.icon_sw_rule { 	
+	padding-left: 10px;	
+}
+
+.ff_rm,
+.ff_md,
+.ff_sr {
+	cursor: pointer; 
+	vertical-align: middle; 
+	display: none;
+}
+.FFsearch {
+	align: center;
+	white-space: nowrap;
+	text-align:center;
+	vertical-align:center;
+	padding-left:0px;
+}
+.highlight{
+	hsl(55, 100%, 50%);
+	padding: 0px 2px;
+	border-radius: 5px;
+	display: inline-block;
+	background-color: #FFDB58;
+}
+.striked
+{
+	text-decoration: line-through;
+}

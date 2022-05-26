@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- $Revision: 1.0 $ -->
+
+<!--
+DEVICE - main tag for device
+id    - id of device brand (the name of directory of the file have to be equal to device id , don't change it )
+name  - name of brand, optional
+title - title of brand, appear on data collection page of gui, optional
+-->
+<DEVICE id="huawei" name="Huawei - NGFW" title="huawei">
+
+   <!--
+   FORM_FIELD - additional field for parameters for data collection (in addition to host,user and password)
+                used in webgui (also for creation node in firewall_data.xml) , optional
+   id    - id of the field, used as tag in firewall_data.xml, may include only characters : a-z , _ , -
+   title - lable for the field in gui 
+   type  - type of input field of form : text or password , optional
+   -->
+	<FORM_FIELD id="syslog" title="Syslog" type="fieldset"/>   	
+
+   <!--
+   DATA_COLLECTION - commands for data collection on the device
+   prompt      - basic prompt of device
+   more_prompt - optional
+   -->
+	<DATA_COLLECTION prompt="^(\x1b\[42D\s*\x1b\[42D)?(HRP_M|HRP_S)?&lt;.+&gt;$" more_prompt="^\s*-+\s*[Mm]ore\s*-+\s*$">
+		<COMMANDS_SEQUENCE>
+
+			 <!--
+			 CMD - command for data collection
+			 id        - id and order number
+			 command   - command, may include parameters from firewall_data.xml - %<attribute name>% 
+			 condition - name of attribute, enter the command only if this attribute is not empty,
+						 FW_VIRT - run command only if device have virtual systems , optional
+						 InitialCollection - will be true only when collecting VDOMS initially (or editing device) but not on data collection.
+			 save_output  - yes/no, if result of command have to be added to output configuration file
+			 use_listener - yes/no, if Expect can send output to listener file
+			 extra_timeout - number, multiplier of default timeout for long commands
+			 prompt    - new value of basic prompt : next commands will wait for this prompt until another next command 
+						   change it, prompt may include parameters from firewall_data.xml - %<attribute name>%, optional
+			 exclude- yes/no, for monitoring: if equal yes, exclude the output from configuration comparison
+			 skip_on_def - yes/no, skip command during device definition from WebGUI
+			 separate_line_count - count output lines separately - if number of lines falls below a certain amount, a diff will be triggered by monitor
+			 -->
+
+		<CMD id="1" command="screen-length 0 temporary" save_output="no" />
+		<CMD id="2" command="display version" save_output="yes" />
+		<CMD id="3" command="display current-configuration" save_output="yes" />
+		<CMD id="4" command="display ip routing-table" condition="!VIRT_name" save_output="yes"/>
+		<CMD id="5" command="undo screen-length temporary" save_output="no" />
+		
+         <!--
+         CMD_VIRT - command for data collection for virtual system, FA enter it each virtual systems on device
+         parameters are the same as in COMMAND
+         %VIRT_name% in command - name of current virtual system
+         -->
+         <CMD_VIRT id="1" command="display ip routing-table vpn-instance %VIRT_name%" condition="VIRT_name" save_output="yes"/>
+
+
+      </COMMANDS_SEQUENCE>
+
+      <!-- Command to finish connection -->
+      <EXIT_COMMAND command="quit"/>
+      <EXIT_VIRT_COMMAND command="return"/>
+
+   </DATA_COLLECTION>
+
+   <!-- Number of context lines to show in change output in alerting mail , optional , default - 3 -->
+   <DIFF context_lines="5"/>
+
+   <!-- 
+   Exclude the following lines when check if configuration has changed, optional
+   regex        - string to match line that have to be excluded
+   lines_after  - exclude this number of lines after line that matched by "regex"
+   lines_before - exclude this number of lines before line that matched by "regex"
+   inline       - if set to "yes": exclude only the part of the line that matches the regexp, 
+		  and not the whole line or any lines before/after. If an inline exclusion is
+		  not wanted use inline="no" or do not specify inline at all.
+   -->
+
+   <EXCLUDE regex="(.+) uptime is \d+ week, \d+ day, \d+ hours, \d+ minutes$"/>
+   <EXCLUDE regex="^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}"/>
+
+   <!-- Properties -->
+   <VENDOR_PROPERTIES>
+	   <PROPERTY name="brand_suffix" value="huawei"/>
+	   <PROPERTY name="is_direct" value="yes"/>
+	   <PROPERTY name="gateway_NAT_rules" value="yes"/>
+	   <PROPERTY name="configuration_decoding" value="euc-cn"/>
+   </VENDOR_PROPERTIES>
+
+   <!-- 
+   Features that are supported for the device 
+   Names of features :
+   	topology - parse routing table, create topology image, enable query by routing
+        rules    - parse rules of device and convert them to html
+        queries  - analyse traffic that can pass over the device
+   -->
+   <!-- Features that are supported for the device -->
+
+   <FEATURES>
+		<FEATURE name="full"/>
+		<FEATURE name="configuration_fix" script="GenericFix" invocation="metro"/>
+		<FEATURE name="topology" override_customized="yes" script="gen2urt"/>
+		<FEATURE name="rules" script="gen_rules"/>
+		<FEATURE name="parser" script="python $FIRMATO_DIR/bin/main.pyc" invocation="json_producer"/>
+		<FEATURE name="queries" script="/parse/createExpandedRules" invocation="metro"/>
+		<FEATURE name="monitor_change_by"/>
+		<FEATURE name="time_clause_parsing"/>
+		<FEATURE name="log_analysis"/>
+		<FEATURE name="optimize_policy"/>
+		<FEATURE name="objects_support"/>
+		<FEATURE name="baseline_analysis"/>
+		<FEATURE name="audit_logs"/>
+   </FEATURES>
+
+	<!-- Rule columns that will be presented in query results according to the order here -->
+	<QUERY_FIELDS>
+		<FIELD name="ruleId" enable="yes" display_name="rule" link_to_def="yes"/>
+		<FIELD name="from" enable="yes" display_name="from"/>
+		<FIELD name="to" enable="yes" display_name="to"/>
+		<FIELD name="source" enable="yes" display_name="source"/>
+		<FIELD name="destination" enable="yes" display_name="destination"/>
+		<FIELD name="service" enable="yes" display_name="services"/>
+		<FIELD name="action" enable="yes" display_name="action"/>
+		<FIELD name="comment" enable="yes" display_name="comment"/>
+		<FIELD name="log" enable="no" display_name="log"/>
+		<FIELD name="documentation" enable="yes" display_name="documentation"/>
+	</QUERY_FIELDS>
+
+	<!-- policy searching list -->
+	<POLICY_TAB_FIELDS>
+	  <FIELD action="modify" db_name="FROM" display_name="Source Zone"/>
+      <FIELD action="modify" db_name="TO" display_name="Destination Zone"/>
+      <FIELD action="modify" db_name="SOURCE" display_name="Source Address"/>
+      <FIELD action="modify" db_name="DESTINATION" display_name="Destination Address"/>
+      <FIELD action="modify" db_name="COMMENT" display_name="Description"/>
+      <FIELD action="exclude" db_name="RULE_ID" display_name=""/>
+      <FIELD action="exclude" db_name="RULENUM" display_name=""/>
+   </POLICY_TAB_FIELDS>
+
+	    <!-- Brand Tips -->
+	    <TIPS>
+	      <TIP name="syslog_configuration">
+	      <![CDATA[ 
+	<b>How to configure Huawei Firewall to send logs to syslog:</b>
+	1. Login to the firewall.
+	2, Choose System > Log Configuration > Log Configuration.
+	3. Configure the syslog sending function.
+	4. Click "+" and repeat the preceding steps to add AFA as log host.
+	5. Click Apply
+	      ]]>
+	      </TIP>
+    </TIPS>
+</DEVICE>
+
+<!--  General Notes
+There are default parametrs  %<attribute name>%  : "password", "user_name", "host_name"
+
+For install new device brand :\
+ - create configuration file
+ - put small and big images for the brand to directory of configuration file with names 
+   icon_<brand_id>.gif and icon_<brand_id>_big.gif
+ - run fa/bin/fa_install_plugin <configuration file path>
+-->

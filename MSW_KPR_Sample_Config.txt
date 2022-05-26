@@ -1,0 +1,4942 @@
+login as: aroral
+
+UNAUTHORISED ACCESS TO THIS SYSTEM IS PROHIBITED
+This system is classified as a RESTRICTED system for authorised users only.
+Unauthorised access is strictly prohibited. By using this system, you agree
+to comply with all 2degrees security policies.
+All activities performed on this system are logged and monitored. Violations
+of policies may result in disciplinary action and may be reported to law
+enforcement agencies.
+
+SSH server: User Authentication
+Using keyboard-interactive authentication.
+Password:
+
+Info: The max number of VTY users is 10, and the number
+      of current VTY users on line is 2.
+      The current login time is 2022-04-29 13:26:01+12:00.
+<MSW03KPR>
+<MSW03KPR>
+<MSW03KPR>displ
+<MSW03KPR>display curren
+<MSW03KPR>display current-configuration
+!Software Version V200R010C00SPC600
+#
+sysname MSW03KPR
+#
+info-center channel 6 name loghost1
+info-center source default channel 6 log level notification
+info-center loghost 172.21.200.198 channel 6
+#
+vlan batch 10 20 189 to 190 192 200 to 203 205 to 221 223 to 233 235 to 238 240 to 242 250 to 251
+vlan batch 253 to 255 260 to 261 273 278 300 to 303 370 391 421 507 615
+vlan batch 620 625 to 627 763 903 905 907 to 909 980 990 1100 1249
+vlan batch 1300 to 1302 1304 1330 to 1333 1400 2074 to 2079 2226 2248 to 2249 2526 3043 3053 to 3054
+vlan batch 3226 3246 to 3247 3251 3531 to 3532 4000 to 4019 4024 to 4027 4041 to 4045 4050 to 4058 4060 to 4061 4064
+vlan batch 4067 to 4068 4071 to 4079
+#
+loopback-detect auto disable
+#
+stp instance 0 root primary
+#
+undo authentication unified-mode
+#
+domain 2degrees admin
+#
+transceiver phony-alarm-disable
+#
+access-user arp-detect default ip-address 0.0.0.0
+#
+lldp enable
+#
+undo http server enable
+undo http secure-server enable
+#
+undo management-port isolate enable
+undo management-plane isolate enable
+#
+clock timezone NZST add 12:00:00
+#
+clock daylight-saving-time NZDT repeating 02:00 last Sun Sep 03:00 first Sun Apr 01:00 2000 2099
+#
+ecmp local-preference disable
+#
+set max-ecmp-path 32
+#
+observe-port 1 interface XGigabitEthernet11/0/4
+#
+undo portal url-encode enable
+#
+eth-trunk load-balance hash-mode advanced slot 11
+#
+set flow-change-ratio input-broadcast-detect disable
+#
+mac-address update arp
+#
+diffserv domain default
+#
+ip vpn-instance 2DEG_SiteEnvironmentals
+ ipv4-family
+  route-distinguisher 38793:445
+  apply-label per-route
+  vpn-target 38793:445 export-extcommunity
+  vpn-target 38793:445 import-extcommunity
+#
+ip vpn-instance AAT-OM-CN
+ ipv4-family
+  route-distinguisher 38793:9111
+  vpn-target 38793:910 export-extcommunity
+  vpn-target 38793:910 import-extcommunity
+#
+ip vpn-instance ACS_AKL_Ansible
+ ipv4-family
+  route-distinguisher 38793:12731
+  vpn-target 38793:12730 export-extcommunity
+  vpn-target 38793:12730 import-extcommunity
+#
+ip vpn-instance Appliance_mgmt_hub
+ ipv4-family
+  route-distinguisher 38793:955312
+  vpn-target 38793:955310 export-extcommunity
+  vpn-target 38793:955310 38793:955311 import-extcommunity
+#
+ip vpn-instance Appliance_mgmt_spoke-T-PKI
+ ipv4-family
+  route-distinguisher 38793:955322
+  vpn-target 38793:955311 export-extcommunity
+  vpn-target 38793:955310 import-extcommunity
+#
+ip vpn-instance BACKUP_MGMT
+ ipv4-family
+  route-distinguisher 38793:2621
+  apply-label per-route
+  vpn-target 38793:2600 export-extcommunity
+  vpn-target 38793:2600 import-extcommunity
+#
+ip vpn-instance CSS-OOB-MGMT
+ ipv4-family
+  route-distinguisher 38793:45211
+  apply-label per-route
+  vpn-target 38793:4500 export-extcommunity
+  vpn-target 38793:4500 import-extcommunity
+#
+ip vpn-instance Cloud-Mgmt
+ ipv4-family
+  route-distinguisher 38793:41211
+  apply-label per-route
+  vpn-target 38793:4100 export-extcommunity
+  vpn-target 38793:4100 import-extcommunity
+#
+ip vpn-instance DISCOVERY
+ ipv4-family
+  route-distinguisher 38793:38211
+  apply-label per-route
+  vpn-target 38793:3800 export-extcommunity
+  vpn-target 38793:3800 import-extcommunity
+#
+ip vpn-instance DRA-MGMT
+ ipv4-family
+  route-distinguisher 38793:42211
+  apply-label per-route
+  vpn-target 38793:4200 export-extcommunity
+  vpn-target 38793:4200 import-extcommunity
+#
+ip vpn-instance Data-Warehouse
+ ipv4-family
+  route-distinguisher 38793:2321
+  apply-label per-route
+  vpn-target 38793:2300 export-extcommunity
+  vpn-target 38793:2300 import-extcommunity
+#
+ip vpn-instance EBM
+ ipv4-family
+  route-distinguisher 38793:7011
+  vpn-target 38793:700 export-extcommunity
+  vpn-target 38793:700 import-extcommunity
+#
+ip vpn-instance ENM-Mgmt
+ ipv4-family
+  route-distinguisher 38793:5511
+  vpn-target 38793:550 export-extcommunity
+  vpn-target 38793:550 import-extcommunity
+#
+ip vpn-instance ENM-VIO
+ ipv4-family
+  route-distinguisher 38793:5611
+  vpn-target 38793:560 export-extcommunity
+  vpn-target 38793:560 import-extcommunity
+#
+ip vpn-instance Ericsson_CAS
+ ipv4-family
+  route-distinguisher 38793:8411
+  vpn-target 38793:8400 export-extcommunity
+  vpn-target 38793:8400 import-extcommunity
+#
+ip vpn-instance FMS-Mgmt
+ ipv4-family
+  route-distinguisher 38793:36211
+  apply-label per-route
+  vpn-target 38793:3600 export-extcommunity
+  vpn-target 38793:3600 import-extcommunity
+#
+ip vpn-instance IMN-MGMT
+ ipv4-family
+  route-distinguisher 38793:43211
+  apply-label per-route
+  vpn-target 38793:4300 export-extcommunity
+  vpn-target 38793:4300 import-extcommunity
+#
+ip vpn-instance IMS-MGMT
+ ipv4-family
+  route-distinguisher 38793:2121
+  apply-label per-route
+  vpn-target 38793:2100 export-extcommunity
+  vpn-target 38793:2100 import-extcommunity
+#
+ip vpn-instance IPRAN-MGMT
+ ipv4-family
+  route-distinguisher 38793:2421
+  apply-label per-route
+  vpn-target 38793:2400 export-extcommunity
+  vpn-target 38793:2400 import-extcommunity
+#
+ip vpn-instance LI-IMS-MGMT
+ ipv4-family
+  route-distinguisher 38793:58211
+  apply-label per-route
+  vpn-target 38793:5800 export-extcommunity
+  vpn-target 38793:5800 import-extcommunity
+#
+ip vpn-instance LI-IMS-OOB
+ ipv4-family
+  route-distinguisher 38793:56211
+  apply-label per-route
+  vpn-target 38793:5600 export-extcommunity
+  vpn-target 38793:5600 import-extcommunity
+#
+ip vpn-instance LI-Mgmt
+ ipv4-family
+  route-distinguisher 38793:35211
+  apply-label per-route
+  vpn-target 38793:3500 export-extcommunity
+  vpn-target 38793:3500 import-extcommunity
+#
+ip vpn-instance MGMT-BUILD
+ ipv4-family
+  route-distinguisher 38793:53211
+  apply-label per-route
+  vpn-target 38793:5300 export-extcommunity
+  vpn-target 38793:5300 import-extcommunity
+#
+ip vpn-instance MSX-Mgmt
+ ipv4-family
+  route-distinguisher 38793:44211
+  apply-label per-route
+  vpn-target 38793:4400 export-extcommunity
+  vpn-target 38793:4400 import-extcommunity
+#
+ip vpn-instance Mgmt-Backup
+ ipv4-family
+  route-distinguisher 38793:40211
+  apply-label per-route
+  vpn-target 38793:4000 export-extcommunity
+  vpn-target 38793:4000 import-extcommunity
+#
+ip vpn-instance Mobile_FMGR_MGMT_KPR
+ ipv4-family
+  route-distinguisher 38793:12541
+  vpn-target 38793:12540 export-extcommunity
+  vpn-target 38793:12540 import-extcommunity
+#
+ip vpn-instance NFVI_CTRL_OAM
+ ipv4-family
+  route-distinguisher 38793:4067211
+  apply-label per-route
+  vpn-target 38793:4067 export-extcommunity
+  vpn-target 38793:4067 import-extcommunity
+#
+ip vpn-instance NFVI_CTRL_OAM_TEST
+ ipv4-family
+  route-distinguisher 38793:4071211
+  apply-label per-route
+  vpn-target 38793:4071 export-extcommunity
+  vpn-target 38793:4071 import-extcommunity
+#
+ip vpn-instance NFVI_DATA_OAM
+ ipv4-family
+  route-distinguisher 38793:4068211
+  apply-label per-route
+  vpn-target 38793:4068 export-extcommunity
+  vpn-target 38793:4068 import-extcommunity
+#
+ip vpn-instance NFVI_DATA_OAM_TEST
+ ipv4-family
+  route-distinguisher 38793:4072211
+  apply-label per-route
+  vpn-target 38793:4072 export-extcommunity
+  vpn-target 38793:4072 import-extcommunity
+#
+ip vpn-instance NeLS-Ext
+ ipv4-family
+  route-distinguisher 38793:5811
+  vpn-target 38793:580 export-extcommunity
+  vpn-target 38793:580 import-extcommunity
+#
+ip vpn-instance NeLS-Mgmt
+ ipv4-family
+  route-distinguisher 38793:5711
+  vpn-target 38793:570 export-extcommunity
+  vpn-target 38793:570 import-extcommunity
+#
+ip vpn-instance Netscout
+ ipv4-family
+  route-distinguisher 38793:2921
+  apply-label per-route
+  vpn-target 38793:2900 export-extcommunity
+  vpn-target 38793:2900 import-extcommunity
+#
+ip vpn-instance OOB-CORE
+ ipv4-family
+  route-distinguisher 38793:20211
+  apply-label per-route
+  vpn-target 38793:2000 export-extcommunity
+  vpn-target 38793:2000 import-extcommunity
+#
+ip vpn-instance OOB-EDGE
+ ipv4-family
+  route-distinguisher 38793:19211
+  apply-label per-route
+  vpn-target 38793:1900 export-extcommunity
+  vpn-target 38793:1900 import-extcommunity
+#
+ip vpn-instance OOB_FAZ
+ ipv4-family
+  route-distinguisher 38793:2223
+  apply-label per-route
+  vpn-target 38793:2200 export-extcommunity
+  vpn-target 38793:2200 import-extcommunity
+#
+ip vpn-instance OOB_MGMT
+ ipv4-family
+  route-distinguisher 38793:2721
+  export route-policy OOB_MGMT_OUT_RP
+  apply-label per-route
+  vpn-target 38793:2700 export-extcommunity
+  vpn-target 38793:2700 import-extcommunity
+#
+ip vpn-instance OSS
+ ipv4-family
+  route-distinguisher 38793:2521
+  apply-label per-route
+  vpn-target 38793:2500 export-extcommunity
+  vpn-target 38793:2500 import-extcommunity
+#
+ip vpn-instance PCRF-Mgmt
+ ipv4-family
+  route-distinguisher 38793:5411
+  vpn-target 38793:540 export-extcommunity
+  vpn-target 38793:540 import-extcommunity
+#
+ip vpn-instance PKI
+ ipv4-family
+  route-distinguisher 38793:3021
+  apply-label per-route
+  vpn-target 38793:3000 export-extcommunity
+  vpn-target 38793:3000 import-extcommunity
+#
+ip vpn-instance PP-EBM
+ ipv4-family
+  route-distinguisher 38793:2611
+  vpn-target 38793:260 export-extcommunity
+  vpn-target 38793:260 import-extcommunity
+#
+ip vpn-instance PP-LI-IMS-MGMT
+ ipv4-family
+  route-distinguisher 38793:59211
+  apply-label per-route
+  vpn-target 38793:5900 export-extcommunity
+  vpn-target 38793:5900 import-extcommunity
+#
+ip vpn-instance PP-LI-IMS-OOB
+ ipv4-family
+  route-distinguisher 38793:57211
+  apply-label per-route
+  vpn-target 38793:5700 export-extcommunity
+  vpn-target 38793:5700 import-extcommunity
+#
+ip vpn-instance PP-PCRF-Mgmt
+ ipv4-family
+  route-distinguisher 38793:6411
+  vpn-target 38793:640 export-extcommunity
+  vpn-target 38793:640 import-extcommunity
+#
+ip vpn-instance PP-V-OOB-CORE
+ ipv4-family
+  route-distinguisher 38793:303221
+  apply-label per-route
+  vpn-target 38793:303200 export-extcommunity
+  vpn-target 38793:303200 import-extcommunity
+#
+ip vpn-instance PP-V-OOB-SECURE
+ ipv4-family
+  route-distinguisher 38793:7311
+  vpn-target 38793:730 export-extcommunity
+  vpn-target 38793:730 import-extcommunity
+#
+ip vpn-instance PP-vEPC-MGMT
+ ipv4-family
+  route-distinguisher 38793:6001211
+  apply-label per-route
+  vpn-target 38793:6001 export-extcommunity
+  vpn-target 38793:6001 import-extcommunity
+#
+ip vpn-instance SEC-MGMT
+ ipv4-family
+  route-distinguisher 38793:50211
+  vpn-target 38793:5000 38793:5100 export-extcommunity
+  vpn-target 38793:5000 38793:5100 import-extcommunity
+#
+ip vpn-instance SEC-OOB
+ ipv4-family
+  route-distinguisher 38793:51211
+  vpn-target 38793:5100 38793:5000 export-extcommunity
+  vpn-target 38793:5100 38793:5000 import-extcommunity
+#
+ip vpn-instance SEC-OOB-2
+ ipv4-family
+  route-distinguisher 38793:54211
+  vpn-target 38793:5400 export-extcommunity
+  vpn-target 38793:5400 import-extcommunity
+#
+ip vpn-instance SEC-VMware-Mgmt
+ ipv4-family
+  route-distinguisher 38793:49211
+  vpn-target 38793:4900 export-extcommunity
+  vpn-target 38793:4900 import-extcommunity
+#
+ip vpn-instance SFTP_BKP
+ ipv4-family
+  route-distinguisher 38793:7411
+  vpn-target 38793:740 export-extcommunity
+  vpn-target 38793:740 import-extcommunity
+#
+ip vpn-instance SPLUNK
+ ipv4-family
+  route-distinguisher 38793:37211
+  apply-label per-route
+  vpn-target 38793:3700 export-extcommunity
+  vpn-target 38793:3700 import-extcommunity
+#
+ip vpn-instance Sandvine
+ ipv4-family
+  route-distinguisher 38793:52211
+  apply-label per-route
+  vpn-target 38793:5200 export-extcommunity
+  vpn-target 38793:5200 import-extcommunity
+#
+ip vpn-instance TS-AAT-OM-CN
+ ipv4-family
+  route-distinguisher 38793:7911
+  vpn-target 38793:790 export-extcommunity
+  vpn-target 38793:790 import-extcommunity
+#
+ip vpn-instance TS-ENM-Mgmt
+ ipv4-family
+  route-distinguisher 38793:7511
+  vpn-target 38793:750 export-extcommunity
+  vpn-target 38793:750 import-extcommunity
+#
+ip vpn-instance TS-ENM-VIO
+ ipv4-family
+  route-distinguisher 38793:7611
+  vpn-target 38793:760 export-extcommunity
+  vpn-target 38793:760 import-extcommunity
+#
+ip vpn-instance TS-NeLS-Ext
+ ipv4-family
+  route-distinguisher 38793:7811
+  vpn-target 38793:780 export-extcommunity
+  vpn-target 38793:780 import-extcommunity
+#
+ip vpn-instance TS-NeLS-Mgmt
+ ipv4-family
+  route-distinguisher 38793:7711
+  vpn-target 38793:770 export-extcommunity
+  vpn-target 38793:770 import-extcommunity
+#
+ip vpn-instance TSR_MGMT
+ ipv4-family
+  route-distinguisher 38793:2821
+  export route-policy TSR_MGMT_OUT_RP
+  apply-label per-route
+  vpn-target 38793:2800 export-extcommunity
+  vpn-target 38793:2800 import-extcommunity
+#
+ip vpn-instance V-OOB-CORE
+ ipv4-family
+  route-distinguisher 38793:32211
+  apply-label per-route
+  vpn-target 38793:3200 export-extcommunity
+  vpn-target 38793:3200 import-extcommunity
+#
+ip vpn-instance V-OOB-CORP
+ ipv4-family
+  route-distinguisher 38793:48211
+  vpn-target 38793:4800 export-extcommunity
+  vpn-target 38793:4800 import-extcommunity
+#
+ip vpn-instance V-OOB-EDGE
+ ipv4-family
+  route-distinguisher 38793:31211
+  apply-label per-route
+  vpn-target 38793:3100 export-extcommunity
+  vpn-target 38793:3100 import-extcommunity
+#
+ip vpn-instance V-OOB-MGMT
+ ipv4-family
+  route-distinguisher 38793:39211
+  apply-label per-route
+  vpn-target 38793:3900 export-extcommunity
+  vpn-target 38793:3900 import-extcommunity
+#
+ip vpn-instance V-OOB-PUBLIC
+ ipv4-family
+  route-distinguisher 38793:33211
+  apply-label per-route
+  vpn-target 38793:3300 export-extcommunity
+  vpn-target 38793:3300 import-extcommunity
+#
+ip vpn-instance V-OOB-PUBLIC-2
+ ipv4-family
+  route-distinguisher 38793:46211
+  apply-label per-route
+  vpn-target 38793:4600 export-extcommunity
+  vpn-target 38793:4600 import-extcommunity
+#
+ip vpn-instance V-OOB-SECURE
+ ipv4-family
+  route-distinguisher 38793:47211
+  apply-label per-route
+  vpn-target 38793:4700 export-extcommunity
+  vpn-target 38793:4700 import-extcommunity
+#
+ip vpn-instance VMware-Mgmt
+ ipv4-family
+  route-distinguisher 38793:34211
+  apply-label per-route
+  vpn-target 38793:3400 export-extcommunity
+  vpn-target 38793:3400 import-extcommunity
+#
+ip vpn-instance vEPC-MGMT
+ ipv4-family
+  route-distinguisher 38793:600211
+  apply-label per-route
+  vpn-target 38793:6000 export-extcommunity
+  vpn-target 38793:6000 import-extcommunity
+#
+ip vpn-instance vSphere-Rep
+ ipv4-family
+  route-distinguisher 38793:53511
+  apply-label per-route
+  vpn-target 38793:5500 export-extcommunity
+  vpn-target 38793:5500 import-extcommunity
+#
+radius-server template default
+ radius-server shared-key cipher
+radius-server template 2degrees
+ radius-server shared-key cipher
+ radius-server authentication 172.21.200.30 1812 weight 80
+ radius-server accounting 172.21.200.30 1813 weight 80
+ radius-server retransmit 5 timeout 3
+#
+bfd
+#
+mpls lsr-id 172.21.222.9
+mpls
+#
+mpls l2vpn
+#
+mpls ldp
+#
+#
+rsa peer-public-key 172.21.222.9
+ public-key-code begin
+  308188
+    028180
+      E330DE6D D83EBB01 D09D66D2 2D94A86C A190EAB5 D4C2F4F6 3F18B80C 683D10BD
+      11EFD97A 832FF3EF 2FDA22D8 9B5EDEDD E9D044E3 CAB9C6B8 A0FE56B8 F8074897
+      75F0D906 860F4001 1FBC5214 D4702E11 1015F4A5 D3D6277D F6C74B23 F35AD40D
+      35DE302F 70A3758E 5F96C6AA 90D5FBEA 0D37A97D 4229A7EA 18F7CD80 B335A06F
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 172.21.220.253
+ public-key-code begin
+  30820109
+    02820100
+      A4598E4B 77A28211 C07906A6 22DFD818 0219AAEE DF3A71B0 35526CF5 7A6EE427
+      2736363E 90BEBD90 53C3EF97 E1A24F1C 2AC7422F 88ACED30 8C1E07B7 7C1FF525
+      86C5FA5B BD33991F E86171DA C5F8E890 FDD423EF 1D198017 FFA91DE3 6DB32367
+      8BBF5405 A1724CA3 D8878C74 A6042335 76539C7A DC7DFA72 A04174BF 4A4635DE
+      6355F877 30C0F8A2 CF40226B C2FBCB8D B1AC6FDE C68C77B6 129CA68A 380E93D3
+      849511B6 825123C9 441E314C 4B94B4F3 2242CD09 FDCE79AF B0B7E047 09FEF389
+      977CFA4D B745F2F3 79F7DEA8 E386A877 5A92E96C C74F26A2 A26FF9FD DAE3CEBB
+      5F46DAA4 8D85A1FB ACE31C5A 0B903E36 94A8C224 91255394 BFDB953D CC685445
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 172.21.220.12
+ public-key-code begin
+  308188
+    028180
+      F579977F 3F8E1A12 9F8E9AA0 2AF57F6C 04DED132 62901626 B3D7E97D 730CC59C
+      9AC139FE 554362A0 FEE3616E 4D082B25 E4086A18 6F127506 5090923F BD3BE257
+      7CE97592 3514B681 2D47943E DFF44964 3ED5AC55 26F70B6A C46B19BC 73DAAEE3
+      57B29A7F 7EEB3506 B4E6D53D 8C27C920 CCE7FD22 833881D6 64188506 D3CF1D1B
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 172.21.221.22
+ public-key-code begin
+  30820109
+    02820100
+      DC3B4934 1FE429BB 08EBD3B6 74653702 C7A6E7E7 BC8A61AA C5C9C0EB 6A3F18B8
+      AB7E2759 2C1A35DB B7039CAC 5CDDDF94 3F502FB6 4FA3A1EF 58371C63 0FD6FCD7
+      65092E57 676B267D 555DA0A0 3B11777D 468B7F0D 79EB0755 3EB98EBA F04C0B3C
+      87F002FA 27F27ED9 DBE28AEE 4E37EE70 AA53DBF8 8AB713B3 E4B1BD49 F7EA963B
+      121B0E86 CCEA6889 E3BDC667 4F5219A9 6F8DD9AE 58841899 55317995 6EA83E86
+      8B780380 91705A05 39A1CA64 14823ED8 A8544988 63EE8EBF 9FCB5AC6 99DBA482
+      FF8A507E 86D9FFD7 0EE16C34 A576D821 66897BCE 07E956F5 50E70C5B 8A1D18DC
+      7AEE27D5 7A00788D 8CC092D2 65B5BEEF FDC2ACEF F74E3C0E 2F691971 58C9B875
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 172.21.210.21
+ public-key-code begin
+  308188
+    028180
+      BC5B80AB 9932488E 05D0C3C8 CC63DE23 88F3B7E3 115F0BA4 519A9682 3CDC76ED
+      642BE665 2F8DD5BC 551484DA 233A8556 7BCD9A24 EFBA839A F878F55C 7FD3046A
+      3242FEFB B9602284 02125CEC 5CEB8D44 2608ACCD 91CB6A43 0B0655DC 282233B4
+      AF3D27EE C1042424 B8BA73BD FB64DE5D 0BD07E10 CF6AA999 D4B0BADB CE9A9E8D
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 172.21.210.22
+ public-key-code begin
+  308188
+    028180
+      A2B78678 1190101F 5E78D5C7 BB8E68FB C6AF9014 78612BD8 87E32FFD ACD25466
+      D71F4D20 136F4523 BB295031 8BF97F40 993305C2 61895C95 6D0967C4 2A6940DB
+      63E847F4 E5025EED 13AEA422 6AFDE421 A862E3BC E638482B 6B0FAF51 635CF53D
+      EF476072 01CEA67F E5B94401 47F84487 2152A8DF AA1DBC69 163AD033 649C2981
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 172.23.210.21
+ public-key-code begin
+  308188
+    028180
+      BA1F07B0 751FFD77 F731CDF4 FAA717F0 3E58386E 40C29F33 72D5F8C2 EA69EE28
+      CA2BA834 DDFC8326 CAF5FFA9 32701C6C 96A50AE5 6D816659 71971757 D93605F3
+      F5350198 F7EE12A2 68E2CFFD 04E41E5B 4E242F61 708309E9 3F47B7AD 36D461AE
+      84AFB68C 811CC348 879AB008 8D0555E1 C4BB027D BA0B907D 037C9037 19CF8E75
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+rsa peer-public-key 172.23.210.22
+ public-key-code begin
+  30820109
+    02820100
+      DC4381F7 A1DAD2DD 1FBD1C54 82171071 0A4A881D 7D9D5A8C C11C6AA3 BB1A3FEE
+      3B6AD5C9 A49C32A1 55833879 F87A8D4E 3B2B11E5 DF97D441 762C9E3D C649C9F8
+      8FDDBC04 B5F8E8D9 54089B35 8D78E3BE 5B680F1F F17B38E3 C022C387 E66DD019
+      B87BF2AA 867768C7 31A09F98 C395DD99 62FA6EEE 806DC3F1 6AF95364 77AECCCE
+      89CBA926 4DAF92F9 E76D5375 903FC955 190AC8B6 C1B7536B 3F308599 519973F3
+      D480257E 104C6F1F 06389F35 E1FF3178 1026B037 B4E6212E 21EF07A9 560397FE
+      B9272B5E 8B2154AE BA48D8DD 5ECCDAD0 469FA58D AB473B0D B32B1072 7F71A000
+      471FFC5F A8FB48A1 FEC81EB5 81F5C4D2 9D39F301 65E12A3B 368C1EB7 A07D008F
+    0203
+      010001
+ public-key-code end
+peer-public-key end
+#
+dsa peer-public-key 172.23.255.11 encoding-type der
+ public-key-code begin
+  30820322
+    02820100
+      DEDEBA5C 8244DCB8 E696917C EFEBC0B3 E6FB60BE 8B9E36D3 E4EB9CD6 EB7FD210
+      219AC0F4 1AD47BF1 EACD435D 39AFA8FA CB6A7819 305EE147 E428912E 60452B37
+      CA17D611 C2EE4C46 B4BC7726 54C26856 A99ECFA5 D800367B 31A90522 F139496F
+      4182DBFD AAB59973 9AB02185 856A881F 9197368B 92DBF684 9D1C746B A27E12F9
+      8A28E4B6 D0587D65 5979A750 5413E91E FC961C3F 79209625 CFA8D7D4 69FA35A3
+      9E37B614 047D535D CD63AF30 58B3A25B 79C714B6 326B7DB6 067EBF15 3CC1A720
+      B0E1A7E3 9C13FEB3 BA26E6B0 52DC5BFF EE7C5C52 148FE6C2 40738FBB 8F05D416
+      B2B5DD72 E3629BB5 9244BF9F A29C4FCD 4EA0EE50 1FC6695D 03D68D51 9324E493
+    0214
+      C6C484E1 F0076B8A FCAD302B 98B50A3A 542ABEBB
+    02820100
+      3AC11746 EE959CBD 30F669C5 7E290BC4 7CB5BBFD 96AE9215 7A29C723 72FE8A02
+      EBED3B76 BE810B42 21AD8D32 F7723F83 59F46B66 FF7805CC 3F86D5D6 5BD424BD
+      70677EFF 1ACF9B3C CE02CD40 46560DA4 2036205C 6EFAB148 66E6A106 0DF6258B
+      EE31CFE7 4B6C59B4 6FE59A9F BE64F982 EC36A669 FF597FB7 9A56E32E C15A0659
+      3D17C407 29F587C7 74959017 62B08070 24564B2E E79C6E1D 86793548 76CC662A
+      1D3DE1D1 2C79E102 C0B10E5C 9C4428B3 AEB93278 26D4CDE5 189A93EA 531E0FF8
+      2199EF35 DF038976 4538434F F39924F0 5BF17AC8 8E340991 B5EA0A62 A915EE63
+      F660C092 360C5D2D 796AF230 DB7461F7 C15B6DBA 65C9EFAB 247DB13D 4942E2FF
+    02820100
+      CDA16ECE 27C68B2F 767BAE3F 70DF51F8 91771B95 16BC457D 94884641 40025CE6
+      3D9BD1A7 565B6305 34CE8DE4 CBD94DB5 28B79F34 05D3D61E B86C4E4F C618E048
+      0D003783 F2A49F76 EB38BD6B 417F6103 28C82261 87574E76 594A5C5B B962E217
+      0BE63F53 335418D4 2EAB04BB 3518DC55 3F203C04 488CB552 F6DC69DE A40758E4
+      222AD3C7 6AAAB7AC C6014175 285AD330 FC9A6E4E AFC71C07 0CDE8547 16607E0D
+      785CDC5E DFA46E8F 82936123 60206DBF 8382245B D779398C 6CB7DB23 13A08F9B
+      5A4DDEE8 E3697253 BCF94E70 F01AD53B 0BD5039A F6D10230 C0E250F7 4D70BFE7
+      46D0C9B1 BF1DEAD5 1AC6B599 C43DCED5 0F853E20 8DA572F4 50B7D660 064AD82E
+ public-key-code end
+peer-public-key end
+#
+dsa peer-public-key 172.23.221.40 encoding-type der
+ public-key-code begin
+  30820322
+    02820100
+      DEDEBA5C 8244DCB8 E696917C EFEBC0B3 E6FB60BE 8B9E36D3 E4EB9CD6 EB7FD210
+      219AC0F4 1AD47BF1 EACD435D 39AFA8FA CB6A7819 305EE147 E428912E 60452B37
+      CA17D611 C2EE4C46 B4BC7726 54C26856 A99ECFA5 D800367B 31A90522 F139496F
+      4182DBFD AAB59973 9AB02185 856A881F 9197368B 92DBF684 9D1C746B A27E12F9
+      8A28E4B6 D0587D65 5979A750 5413E91E FC961C3F 79209625 CFA8D7D4 69FA35A3
+      9E37B614 047D535D CD63AF30 58B3A25B 79C714B6 326B7DB6 067EBF15 3CC1A720
+      B0E1A7E3 9C13FEB3 BA26E6B0 52DC5BFF EE7C5C52 148FE6C2 40738FBB 8F05D416
+      B2B5DD72 E3629BB5 9244BF9F A29C4FCD 4EA0EE50 1FC6695D 03D68D51 9324E493
+    0214
+      C6C484E1 F0076B8A FCAD302B 98B50A3A 542ABEBB
+    02820100
+      3AC11746 EE959CBD 30F669C5 7E290BC4 7CB5BBFD 96AE9215 7A29C723 72FE8A02
+      EBED3B76 BE810B42 21AD8D32 F7723F83 59F46B66 FF7805CC 3F86D5D6 5BD424BD
+      70677EFF 1ACF9B3C CE02CD40 46560DA4 2036205C 6EFAB148 66E6A106 0DF6258B
+      EE31CFE7 4B6C59B4 6FE59A9F BE64F982 EC36A669 FF597FB7 9A56E32E C15A0659
+      3D17C407 29F587C7 74959017 62B08070 24564B2E E79C6E1D 86793548 76CC662A
+      1D3DE1D1 2C79E102 C0B10E5C 9C4428B3 AEB93278 26D4CDE5 189A93EA 531E0FF8
+      2199EF35 DF038976 4538434F F39924F0 5BF17AC8 8E340991 B5EA0A62 A915EE63
+      F660C092 360C5D2D 796AF230 DB7461F7 C15B6DBA 65C9EFAB 247DB13D 4942E2FF
+    02820100
+      504E277D 82DD0353 49272D91 D6EEF985 0B52F435 27515782 0BAA5B51 7B26ED06
+      1C621C3A 176699A4 A5557BF4 B93F7EA8 0491492F 53911235 9EAD6312 5AA7D367
+      E5BEC646 C2D152AC CDF2B0EC ECD37125 9C3D06E0 8C55B6B9 5F0E4BBA 5CF5D1BF
+      6174488E 1CD4724A 85F0F81B ACC44428 A496D314 51F26646 469A526E 703822EE
+      F5D09328 2F247D20 CF8DC594 ABE032DE F0BBE0E5 94BE9C67 C21FACFC 97F20B3C
+      2AC7489D 92FD8A5E B9A94740 6FAE4021 99FBF648 D0FBF480 433FBC27 9C91C150
+      A6D22BF9 77D60EA1 B954DA74 03974886 E2AC173F 971AF276 5D922734 6C58530F
+      524AD411 517B8FFE CB2F05DE 3281564F BDB30443 AF3E274B 7BB5911B 8B3CD3EF
+ public-key-code end
+peer-public-key end
+#
+dsa peer-public-key 172.21.220.214 encoding-type der
+ public-key-code begin
+  30820322
+    02820100
+      DEDEBA5C 8244DCB8 E696917C EFEBC0B3 E6FB60BE 8B9E36D3 E4EB9CD6 EB7FD210
+      219AC0F4 1AD47BF1 EACD435D 39AFA8FA CB6A7819 305EE147 E428912E 60452B37
+      CA17D611 C2EE4C46 B4BC7726 54C26856 A99ECFA5 D800367B 31A90522 F139496F
+      4182DBFD AAB59973 9AB02185 856A881F 9197368B 92DBF684 9D1C746B A27E12F9
+      8A28E4B6 D0587D65 5979A750 5413E91E FC961C3F 79209625 CFA8D7D4 69FA35A3
+      9E37B614 047D535D CD63AF30 58B3A25B 79C714B6 326B7DB6 067EBF15 3CC1A720
+      B0E1A7E3 9C13FEB3 BA26E6B0 52DC5BFF EE7C5C52 148FE6C2 40738FBB 8F05D416
+      B2B5DD72 E3629BB5 9244BF9F A29C4FCD 4EA0EE50 1FC6695D 03D68D51 9324E493
+    0214
+      C6C484E1 F0076B8A FCAD302B 98B50A3A 542ABEBB
+    02820100
+      3AC11746 EE959CBD 30F669C5 7E290BC4 7CB5BBFD 96AE9215 7A29C723 72FE8A02
+      EBED3B76 BE810B42 21AD8D32 F7723F83 59F46B66 FF7805CC 3F86D5D6 5BD424BD
+      70677EFF 1ACF9B3C CE02CD40 46560DA4 2036205C 6EFAB148 66E6A106 0DF6258B
+      EE31CFE7 4B6C59B4 6FE59A9F BE64F982 EC36A669 FF597FB7 9A56E32E C15A0659
+      3D17C407 29F587C7 74959017 62B08070 24564B2E E79C6E1D 86793548 76CC662A
+      1D3DE1D1 2C79E102 C0B10E5C 9C4428B3 AEB93278 26D4CDE5 189A93EA 531E0FF8
+      2199EF35 DF038976 4538434F F39924F0 5BF17AC8 8E340991 B5EA0A62 A915EE63
+      F660C092 360C5D2D 796AF230 DB7461F7 C15B6DBA 65C9EFAB 247DB13D 4942E2FF
+    02820100
+      976F8BD2 8E531691 9668A013 BD658D3C B07B6ABC 71EBAD96 F2749C7E 9FA497BE
+      5153DC15 E513824D A74E980A 65AFE782 701385FA F613C30B 1F7C335A 005B4E78
+      6C18F9B1 898C5C89 64010AD6 A18DDCFF 1E2C3D79 5BC787E9 59A28B83 9F27F544
+      65B1E402 DBECB2C0 14220FD0 36934DAA BB169DD8 AFFC06D7 32A29890 5E05568E
+      E9C3B287 278BD59A 734A35D3 0043C21B FD7FDA90 7A4711C5 BE93D00B 86E7155B
+      7449CAB5 6139EA2D D369F18B A6C4CD98 91423050 70FE8EE3 FE5ACB08 FB3DAF97
+      F894FE48 D677415F B8E2F325 25E04C58 F306F2FA 4540975B 82151842 97A782B0
+      A4FF602C 9E9298DA 2BF4AFA2 21AAA627 9F2E937F FABD9565 F7B72550 2B0DA456
+ public-key-code end
+peer-public-key end
+#
+dsa peer-public-key 172.21.221.40 encoding-type der
+ public-key-code begin
+  3082019F
+    028180
+      8067A677 A3A9D912 B4B4999A 4F72F15A 04F0E439 D5E8755B 35079374 8CD32901
+      EE7CE876 E1DFFB48 3F383A8E 49AF4425 5A3FCBBF 213E72BC 5E9B2EFA 58A780B0
+      0E42BBEA D7FE39B8 903A143E 1E8C8F3B E6E88732 2C7D70F3 5BA73490 8BA26AAB
+      BB7802F7 99DE9EAF DAA0989C 462D92B5 ED03FAB8 FB673CBB 5B7FB5C6 34A6C067
+    0214
+      CB880A91 95B034D9 7116B01C 09A8D1EE 138DCB7B
+    028180
+      27AFD6CE B2443596 D3BE6AFB F051D6D0 02841506 3D63EDE0 26912532 2990CE46
+      E8A2934B D24E4010 A787CC86 E27FD570 7511F648 49CB72A6 BBD3DEF9 CB29D2DC
+      49D1F8FF 45CBDB53 57656E19 5D0FA9CF 3E42CA59 4CB5460F 7B352395 A23CE48F
+      FACF1312 394327BE 0BFCA65E 22A3EE7C 2C495F3E 361DE8E0 2886BEF4 86952DFF
+    028180
+      359404EE AC97BE6C CBAEB328 3DD4B369 033C8A12 80AFA0DD 8283B81F 20271760
+      0993A740 15D55AEB 5E326C8F 7B77098F FD02D868 F7A6B146 7E976F79 7E4817F9
+      91F27A6C 8041E12E F5CC5304 A7C615CD B01CC06F B44B3644 410669BC B9CC5D2A
+      E5A3989B 47A72511 71008A94 99776D3C 96CA8470 B47DEC55 12A0A269 FA2A434E
+ public-key-code end
+peer-public-key end
+ecc peer-public-key 172.21.221.168 encoding-type der
+ public-key-code begin
+    04C5A2B1 0586CB24 75562D54 3B72860E CEF885F4 FED4E721 90014AE4 76FB32E6
+    DBAC37A8 CF850459 F8814305 708E2E35 444E8799 1D8E05FA A158AD9B 373E1E71
+    88
+ public-key-code end
+peer-public-key end
+#
+ecc peer-public-key 172.21.253.124 encoding-type der
+ public-key-code begin
+    04BA1399 3AEB4DC2 EF1BF332 3C9DD0A5 1E1ADBA3 0784CB4E 79F2E04A 6FED57D6
+    31EFEE98 B69BFEE9 15220BDD 1C62953D 7DB4FD09 808D9B61 83BC93E6 933D7409
+    0C
+ public-key-code end
+peer-public-key end
+#
+ecc peer-public-key 172.21.253.122 encoding-type der
+ public-key-code begin
+    04D093D4 0FBD39A4 4CB88AE6 D4B705C0 830075A6 CA33A76A 5EA4CE70 1323005D
+    686EAE68 936A9F30 7D97E2C9 F3B3D6D9 DDDC7905 AF55D921 193179E9 C1DED872
+    DC
+ public-key-code end
+peer-public-key end
+#
+ecc peer-public-key 172.23.253.122 encoding-type der
+ public-key-code begin
+    0455B46D CF86061B D024FEAF 3CD62FD3 D5EA7D2B 0A2187A7 F146DFFF D3C5F6B3
+    3E28C3D6 315C7FEE 993ABA2C 2BDEA1BC A88F5B74 064A2E87 A86EBF00 29E3D0DB
+    CD
+ public-key-code end
+peer-public-key end
+#
+acl number 2000
+ rule 5 permit source 172.21.255.0 0.0.0.255
+ rule 10 permit source 172.23.255.0 0.0.0.255
+ rule 25 permit source 172.21.200.0 0.0.0.255
+ rule 30 permit source 172.23.200.0 0.0.0.255
+ rule 31 permit source 172.21.192.51 0
+ rule 35 deny
+acl number 2010
+ rule 10 permit source 172.21.200.0 0.0.0.255
+ rule 20 permit source 10.0.0.0 0.255.255.255
+#
+acl number 3001
+ rule 5 deny ip destination 172.21.200.30 0
+ rule 10 deny ip destination 172.23.200.30 0
+acl name SSH 3998
+ rule 10 permit tcp source 10.192.0.0 0.63.255.255 destination-port eq 22
+ rule 20 permit tcp source 172.21.200.122 0 destination-port eq 22
+acl name ICMP 3999
+ rule 10 permit icmp
+#
+traffic classifier ICMP operator or precedence 20
+ if-match acl ICMP
+traffic classifier RADIUS_SERVER operator or precedence 25
+ if-match acl 3001
+traffic classifier SSH operator or precedence 15
+ if-match acl SSH
+traffic classifier VLAN10_ICMP operator or precedence 10
+ if-match acl ICMP
+traffic classifier VLAN215 operator or precedence 5
+ if-match vlan-id 215
+ if-match acl 2010
+#
+traffic behavior DENY
+ deny
+traffic behavior P0
+ remark 8021p 0
+traffic behavior P1
+ remark 8021p 1
+traffic behavior P2
+ remark 8021p 2
+traffic behavior P3
+ permit
+ remark 8021p 3
+ statistic enable
+#
+traffic policy ICMP_REMARK match-order auto
+ classifier ICMP behavior P2
+traffic policy NO_RADIUS match-order auto
+ classifier RADIUS_SERVER behavior DENY
+traffic policy TRT_REMARK match-order auto
+ classifier VLAN10_ICMP behavior P3
+ classifier SSH behavior P3
+#
+drop-profile default
+#
+vlan 20
+ description for MSW-MSW P2P
+vlan 216
+ description vSphere Replication
+vlan 224
+ description OOB_MGMT
+vlan 225
+ description OOB mgmt
+vlan 236
+ description DRA Management (internal)
+vlan 242
+ description MSX-Mgmt
+vlan 255
+ description IMN Management internal
+vlan 260
+ description OSS_Service
+vlan 261
+ description OSS_Southbound
+vlan 273
+ description ACS_AKL_Ansible_servers VLAN
+vlan 278
+ description ACS_AKL_Ansible_uplink VLAN
+vlan 370
+ description SAPC-EBM
+vlan 391
+ description AAT-Core
+vlan 421
+ description vSPA-OAM
+vlan 507
+ description SAPC-OAM
+vlan 626
+ description PreProd-SAPC-EBM
+vlan 763
+ description PreProd-SAPC-OAM
+vlan 990
+ description vSphere-vMotion
+vlan 1249
+ description SFTP-Backup
+vlan 1300
+ description ENM-provider
+vlan 1301
+ description ENM-VIO_MGT
+vlan 1302
+ description ENM-VIO_API
+vlan 1304
+ description ENM-PM_Service
+vlan 1330
+ description vNeLS-OM_SP1
+vlan 1331
+ description vNeLS-OM_SP2
+vlan 1332
+ description vNeLS-OM_SP3
+vlan 1333
+ description vNeLS-EXP_SP1
+vlan 1400
+ description NELS Internal
+vlan 2226
+ description Fixed Voice CFS HA Management
+vlan 2248
+ description for LI-IMS-OOB E///
+vlan 2249
+ description for LI-IMS-MGMT E///
+vlan 2526
+ description CSS-OOB-MGMT 2526
+vlan 3043
+ description for PP-vEPC-MGMT-FW
+vlan 3053
+ description Ericsson_CAS_EricssonSRX-MSW
+vlan 3054
+ description Ericsson_CAS_MSW-MGMT FW
+vlan 3226
+ description PP-V-OOB-CORE
+vlan 3246
+ description Mobile_FMGR_MGMT_Server
+vlan 3247
+ description Mobile_FMGR_MGMT_Firewall
+vlan 3251
+ description Test-AAT-OOB Core
+vlan 3531
+ description Appliance_mgmt_hub
+vlan 3532
+ description Appliance_mgmt_spoke-T-PKI
+vlan 4017
+ description DRA Management (external)
+vlan 4018
+ description IMN Management external
+vlan 4041
+ description for LI-IMS-OOB E///
+vlan 4042
+ description for PP-LI-IMS-OOB E///
+vlan 4043
+ description for vEPC-MGMT-FW
+vlan 4044
+ description for LI-IMS-MGMT-FW E///
+vlan 4045
+ description for PP-LI-IMS-MGMT-FW E///
+vlan 4050
+ description CSS-OOB-MGMT 4050
+vlan 4054
+ description PCRF-Mgmt-FW
+vlan 4055
+ description ENM-Mgmt-FW
+vlan 4056
+ description ENM-VIO-FW
+vlan 4057
+ description NeLS-Mgmt-FW
+vlan 4058
+ description NeLS-Ext-FW
+vlan 4060
+ description Netscout vlan
+vlan 4064
+ description PreProd-PCRF-Mgmt-FW
+vlan 4073
+ description Test-AAT-V-OOB-SECURE-FW
+vlan 4074
+ description SFTP-Backup-FW
+vlan 4075
+ description Test-ENM-Mgmt-FW
+vlan 4076
+ description Test-ENM-VIO-FW
+vlan 4077
+ description Test-NeLS-Mgmt-FW
+vlan 4078
+ description Test-NeLS-Ext-FW
+vlan 4079
+ description Test-AAT-AAT-OM-CN-FW
+#
+aaa
+ authentication-scheme default
+ authentication-scheme radius
+  authentication-mode radius
+ authentication-scheme 2degrees
+  authentication-mode radius local
+ authorization-scheme default
+ accounting-scheme default
+ accounting-scheme 2degrees
+  accounting-mode radius
+  accounting start-fail online
+ domain default
+  authentication-scheme default
+  state block
+ domain default_admin
+  authentication-scheme default
+  state block
+ domain 2degrees
+  authentication-scheme 2degrees
+  accounting-scheme 2degrees
+  radius-server 2degrees
+ undo local-user admin
+ local-user 2dadmin password irreversible-cipher 
+ local-user 2dadmin privilege level 15
+ local-user 2dadmin service-type ssh
+#
+ntp-service server disable
+ntp-service ipv6 server disable
+ntp-service unicast-server 172.21.200.102 preference
+ntp-service unicast-server 172.23.200.102
+#
+interface Vlanif10
+ description MGMT-Backbone to TRT01KPR
+ ip address 172.19.10.1 255.255.255.0
+ ospf cost 10
+ ospf network-type p2mp
+ ospf ldp-sync
+ mpls
+ mpls ldp
+#
+interface Vlanif20
+ description for MSW-MSW P2P
+ ip address 172.21.111.9 255.255.255.252
+ ospf network-type p2p
+ ospf ldp-sync
+ mpls
+ mpls ldp
+#
+interface Vlanif189
+ description P2P BGP to AWS Cloud-Mgmt
+ ip binding vpn-instance Cloud-Mgmt
+ ip address 198.19.4.4 255.255.255.254
+ statistic enable both
+#
+interface Vlanif190
+ description Fixed Voice SBC OOB
+ ip binding vpn-instance OOB_FAZ
+ ip address 198.18.4.28 255.255.255.254
+ statistic enable both
+#
+interface Vlanif201
+ description VMware-Mgmt-MAZ
+ ip binding vpn-instance VMware-Mgmt
+ ip address 172.21.201.11 255.255.255.0
+ vrrp vrid 201 virtual-ip 172.21.201.1
+#
+interface Vlanif202
+ description SEC-VMware-Mgmt
+ ip binding vpn-instance SEC-VMware-Mgmt
+ ip address 172.21.202.11 255.255.255.0
+ vrrp vrid 102 virtual-ip 172.21.202.1
+#
+interface Vlanif206
+ description Li-Mgmt
+ ip binding vpn-instance LI-Mgmt
+ ip address 172.21.206.11 255.255.255.0
+ vrrp vrid 206 virtual-ip 172.21.206.1
+#
+interface Vlanif208
+ description OSS
+ ip binding vpn-instance OSS
+ ip address 172.21.208.11 255.255.255.0
+ vrrp vrid 208 virtual-ip 172.21.208.1
+#
+interface Vlanif210
+ description TSR
+ ip binding vpn-instance TSR_MGMT
+ ip address 172.21.210.11 255.255.255.0
+ vrrp vrid 210 virtual-ip 172.21.210.1
+#
+interface Vlanif211
+ description Netscout
+ ip binding vpn-instance Netscout
+ ip address 172.21.211.11 255.255.255.0
+ vrrp vrid 211 virtual-ip 172.21.211.1
+#
+interface Vlanif212
+ description Data-Warehouse
+ ip binding vpn-instance Data-Warehouse
+ ip address 172.21.212.11 255.255.255.0
+ vrrp vrid 212 virtual-ip 172.21.212.1
+ vrrp vrid 212 preempt-mode timer delay 3300
+#
+interface Vlanif213
+ description Sandvine
+ ip binding vpn-instance Sandvine
+ ip address 172.21.213.11 255.255.255.0
+ vrrp vrid 213 virtual-ip 172.21.213.1
+#
+interface Vlanif214
+ description IMS-MGMT
+ ip binding vpn-instance IMS-MGMT
+ ip address 172.21.214.11 255.255.255.0
+ vrrp vrid 214 virtual-ip 172.21.214.1
+#
+interface Vlanif215
+ description IPRAN-MGMT
+ ip binding vpn-instance IPRAN-MGMT
+ ip address 172.21.215.11 255.255.255.0
+ vrrp vrid 215 virtual-ip 172.21.215.1
+#
+interface Vlanif216
+ description vSphere Replication
+ ip binding vpn-instance vSphere-Rep
+ ip address 172.21.216.11 255.255.255.0
+ vrrp vrid 216 virtual-ip 172.21.216.1
+#
+interface Vlanif217
+ description FMS-Mgmt
+ ip binding vpn-instance FMS-Mgmt
+ ip address 172.21.217.11 255.255.255.0
+ vrrp vrid 217 virtual-ip 172.21.217.1
+#
+interface Vlanif218
+ description SPLUNK
+ ip binding vpn-instance SPLUNK
+ ip address 172.21.218.11 255.255.255.0
+ vrrp vrid 218 virtual-ip 172.21.218.1
+#
+interface Vlanif219
+ description SEC-MGMT
+ ip binding vpn-instance SEC-MGMT
+ ip address 172.21.219.11 255.255.255.0
+ vrrp vrid 219 virtual-ip 172.21.219.1
+#
+interface Vlanif220
+ ip binding vpn-instance OOB_MGMT
+ ip address 172.21.220.11 255.255.255.0
+ vrrp vrid 220 virtual-ip 172.21.220.1
+#
+interface Vlanif221
+ ip binding vpn-instance OOB_MGMT
+ ip address 172.21.221.11 255.255.255.0
+ vrrp vrid 221 virtual-ip 172.21.221.1
+#
+interface Vlanif223
+ ip binding vpn-instance OOB_MGMT
+ ip address 172.21.223.11 255.255.255.0
+ vrrp vrid 223 virtual-ip 172.21.223.1
+#
+interface Vlanif224
+ ip binding vpn-instance OOB_MGMT
+ ip address 172.21.224.11 255.255.255.0
+ vrrp vrid 224 virtual-ip 172.21.224.1
+#
+interface Vlanif225
+ ip binding vpn-instance OOB_MGMT
+ ip address 172.21.225.11 255.255.255.0
+ vrrp vrid 225 virtual-ip 172.21.225.1
+#
+interface Vlanif226
+ description V-OOB-CORE
+ ip binding vpn-instance V-OOB-CORE
+ ip address 172.21.226.11 255.255.255.0
+ vrrp vrid 226 virtual-ip 172.21.226.1
+#
+interface Vlanif227
+ description V-OOB-EDGE
+ ip binding vpn-instance V-OOB-EDGE
+ ip address 172.21.227.11 255.255.255.0
+ vrrp vrid 227 virtual-ip 172.21.227.1
+#
+interface Vlanif228
+ description OOB_FAZ (Fixed Access Zone)
+ ip binding vpn-instance OOB_FAZ
+ ip address 172.21.228.11 255.255.255.0
+ vrrp vrid 228 virtual-ip 172.21.228.1
+#
+interface Vlanif229
+ ip binding vpn-instance V-OOB-PUBLIC
+ ip address 172.21.229.11 255.255.255.0
+ vrrp vrid 229 virtual-ip 172.21.229.1
+#
+interface Vlanif230
+ description OOB-CORE
+ ip binding vpn-instance OOB-CORE
+ ip address 172.21.230.11 255.255.255.0
+ vrrp vrid 230 virtual-ip 172.21.230.1
+#
+interface Vlanif231
+ description OOB-EDGE
+ ip binding vpn-instance OOB-EDGE
+ ip address 172.21.231.11 255.255.255.0
+ vrrp vrid 231 virtual-ip 172.21.231.1
+#
+interface Vlanif232
+ description V-OOB-MGMT
+ ip binding vpn-instance V-OOB-MGMT
+ ip address 172.21.232.11 255.255.255.0
+ vrrp vrid 232 virtual-ip 172.21.232.1
+#
+interface Vlanif233
+ description V-OOB-CORP
+ ip binding vpn-instance V-OOB-CORP
+ ip address 172.21.233.11 255.255.255.0
+ vrrp vrid 233 virtual-ip 172.21.233.1
+#
+interface Vlanif235
+ description DISCOVERY
+ ip binding vpn-instance DISCOVERY
+ ip address 172.21.235.11 255.255.255.0
+ vrrp vrid 235 virtual-ip 172.21.235.1
+#
+interface Vlanif236
+ description DRA Management (internal)
+ ip binding vpn-instance DRA-MGMT
+ ip address 172.21.236.11 255.255.255.0
+ vrrp vrid 236 virtual-ip 172.21.236.1
+#
+interface Vlanif237
+ description Mgmt-Backup
+ ip binding vpn-instance Mgmt-Backup
+ ip address 172.21.237.11 255.255.255.0
+ vrrp vrid 237 virtual-ip 172.21.237.1
+#
+interface Vlanif238
+ description MGMT-BUILD
+ ip binding vpn-instance MGMT-BUILD
+ ip address 172.21.238.11 255.255.255.0
+ vrrp vrid 238 virtual-ip 172.21.238.1
+#
+interface Vlanif240
+ description Cloud-Mgmt
+ ip binding vpn-instance Cloud-Mgmt
+ ip address 172.21.240.11 255.255.255.0
+ vrrp vrid 240 virtual-ip 172.21.240.1
+#
+interface Vlanif241
+ description MSX-Mgmt (internal)
+ ip binding vpn-instance MSX-Mgmt
+ ip address 172.21.241.11 255.255.255.0
+ vrrp vrid 241 virtual-ip 172.21.241.1
+#
+interface Vlanif242
+ description MSX-Mgmt (internal)
+ ip binding vpn-instance MSX-Mgmt
+ ip address 172.21.242.11 255.255.255.0
+ vrrp vrid 242 virtual-ip 172.21.242.1
+#
+interface Vlanif250
+ description V-OOB-PUBLIC-2
+ ip binding vpn-instance V-OOB-PUBLIC-2
+ ip address 172.21.250.11 255.255.255.0
+ vrrp vrid 250 virtual-ip 172.21.250.1
+#
+interface Vlanif251
+ description V-OOB-SECURE
+ ip binding vpn-instance V-OOB-SECURE
+ ip address 172.21.251.11 255.255.255.0
+ vrrp vrid 251 virtual-ip 172.21.251.1
+#
+interface Vlanif253
+ description SEC-OOB
+ ip binding vpn-instance SEC-OOB
+ ip address 172.21.253.11 255.255.255.0
+ vrrp vrid 253 virtual-ip 172.21.253.1
+#
+interface Vlanif254
+ description SEC-OOB-2 (iLo)
+ ip binding vpn-instance SEC-OOB-2
+ ip address 172.21.254.11 255.255.255.0
+ vrrp vrid 254 virtual-ip 172.21.254.1
+#
+interface Vlanif255
+ description IMN Management (internal)
+ ip binding vpn-instance IMN-MGMT
+ ip address 172.21.255.11 255.255.255.0
+ vrrp vrid 255 virtual-ip 172.21.255.1
+#
+interface Vlanif273
+ description ACS_AKL_Ansible_servers
+ ip binding vpn-instance ACS_AKL_Ansible
+ ip address 172.21.249.50 255.255.255.248
+ vrrp vrid 1 virtual-ip 172.21.249.49
+ vrrp vrid 1 preempt-mode timer delay 3300
+#
+interface Vlanif278
+ description ACS_AKL_Ansible_uplink
+ ip binding vpn-instance ACS_AKL_Ansible
+ ip address 172.21.246.130 255.255.255.248
+ vrrp vrid 1 virtual-ip 172.21.246.129
+ vrrp vrid 1 preempt-mode timer delay 3300
+#
+interface Vlanif370
+ description SAPC-EBM
+ ip binding vpn-instance EBM
+ ip address 172.21.239.226 255.255.255.224
+ vrrp vrid 70 virtual-ip 172.21.239.225
+#
+interface Vlanif391
+ description AAT-Core
+ ip binding vpn-instance AAT-OM-CN
+ ip address 172.21.244.98 255.255.255.240
+ vrrp vrid 191 virtual-ip 172.21.244.97
+#
+interface Vlanif421
+ description vSPA-OAM
+ ip binding vpn-instance PCRF-Mgmt
+ ip address 172.21.244.82 255.255.255.240
+ vrrp vrid 21 virtual-ip 172.21.244.81
+#
+interface Vlanif507
+ description SAPC-OAM
+ ip binding vpn-instance PCRF-Mgmt
+ ip address 172.21.239.2 255.255.255.224
+ vrrp vrid 7 virtual-ip 172.21.239.1
+#
+interface Vlanif626
+ description PreProd-SAPC-EBM
+ ip binding vpn-instance PP-EBM
+ ip address 172.31.239.226 255.255.255.224
+ vrrp vrid 66 virtual-ip 172.31.239.225
+#
+interface Vlanif763
+ description PreProd-SAPC-OAM
+ ip binding vpn-instance PP-PCRF-Mgmt
+ ip address 172.31.239.2 255.255.255.224
+ vrrp vrid 63 virtual-ip 172.31.239.1
+#
+interface Vlanif903
+ ip binding vpn-instance Netscout
+ ip address 172.21.193.21 255.255.255.0
+ vrrp vrid 103 virtual-ip 172.21.193.2
+#
+interface Vlanif905
+ ip binding vpn-instance TSR_MGMT
+ ip address 172.21.195.21 255.255.255.0
+ vrrp vrid 105 virtual-ip 172.21.195.2
+#
+interface Vlanif907
+ ip binding vpn-instance OOB_MGMT
+ ip address 172.21.197.21 255.255.255.0
+ vrrp vrid 107 virtual-ip 172.21.197.2
+#
+interface Vlanif908
+ description PKI
+ ip binding vpn-instance PKI
+ ip address 172.21.198.21 255.255.255.0
+ vrrp vrid 108 virtual-ip 172.21.198.2
+#
+interface Vlanif909
+ description OOB_FAZ (Fixed Access Zone)
+ ip binding vpn-instance OOB_FAZ
+ ip address 172.21.199.21 255.255.255.0
+ vrrp vrid 109 virtual-ip 172.21.199.2
+#
+interface Vlanif1249
+ description SFTP-Backup
+ ip binding vpn-instance SFTP_BKP
+ ip address 172.21.249.2 255.255.255.248
+ vrrp vrid 249 virtual-ip 172.21.249.1
+ vrrp vrid 249 preempt-mode timer delay 3300
+#
+interface Vlanif1300
+ description ENM-provider
+ ip binding vpn-instance ENM-Mgmt
+ ip address 172.21.239.130 255.255.255.192
+ vrrp vrid 130 virtual-ip 172.21.239.129
+#
+interface Vlanif1301
+ description ENM-VIO_MGT
+ ip binding vpn-instance ENM-VIO
+ ip address 172.21.239.34 255.255.255.224
+ vrrp vrid 131 virtual-ip 172.21.239.33
+#
+interface Vlanif1302
+ description ENM-VIO_API
+ ip binding vpn-instance ENM-VIO
+ ip address 172.21.239.114 255.255.255.240
+ vrrp vrid 132 virtual-ip 172.21.239.113
+#
+interface Vlanif1304
+ description ENM-PM_Service
+ ip binding vpn-instance ENM-Mgmt
+ ip address 172.21.239.194 255.255.255.240
+ vrrp vrid 134 virtual-ip 172.21.239.193
+#
+interface Vlanif1330
+ description vNeLS-OM_SP1
+ ip binding vpn-instance NeLS-Mgmt
+ ip address 172.21.244.2 255.255.255.240
+ vrrp vrid 30 virtual-ip 172.21.244.1
+#
+interface Vlanif1331
+ description vNeLS-OM_SP2
+ ip binding vpn-instance NeLS-Mgmt
+ ip address 172.21.244.18 255.255.255.240
+ vrrp vrid 31 virtual-ip 172.21.244.17
+#
+interface Vlanif1332
+ description vNeLS-OM_SP3
+ ip binding vpn-instance NeLS-Mgmt
+ ip address 172.21.244.34 255.255.255.240
+ vrrp vrid 32 virtual-ip 172.21.244.33
+#
+interface Vlanif1333
+ description vNeLS-EXP_SP1
+ ip binding vpn-instance NeLS-Ext
+ ip address 172.21.244.50 255.255.255.240
+ vrrp vrid 33 virtual-ip 172.21.244.49
+#
+interface Vlanif2074
+ description PKI Certification LAN
+ ip binding vpn-instance PKI
+ ip address 172.21.207.61 255.255.255.240
+ vrrp vrid 74 virtual-ip 172.21.207.60
+#
+interface Vlanif2075
+ description PKI LDAP LAN
+ ip binding vpn-instance PKI
+ ip address 172.21.207.77 255.255.255.240
+ vrrp vrid 75 virtual-ip 172.21.207.76
+#
+interface Vlanif2076
+ description PKI MZ LAN
+ ip binding vpn-instance PKI
+ ip address 172.21.207.83 255.255.255.240
+ vrrp vrid 76 virtual-ip 172.21.207.81
+#
+interface Vlanif2077
+ description PKI Registration LAN
+ ip binding vpn-instance PKI
+ ip address 172.21.207.99 255.255.255.240
+ vrrp vrid 77 virtual-ip 172.21.207.97
+#
+interface Vlanif2078
+ description PKI End-Entity LAN
+ ip binding vpn-instance PKI
+ ip address 172.21.207.125 255.255.255.240
+ vrrp vrid 78 virtual-ip 172.21.207.124
+#
+interface Vlanif2079
+ description PKI DMZ LAN
+ ip binding vpn-instance PKI
+ ip address 172.21.207.131 255.255.255.240
+ vrrp vrid 79 virtual-ip 172.21.207.129
+#
+interface Vlanif2226
+ description Fixed Voice CFS HA Management
+ shutdown
+#
+interface Vlanif2248
+ description LI-IMS-OOB E///
+ ip binding vpn-instance LI-IMS-OOB
+ ip address 172.21.248.130 255.255.255.248
+ vrrp vrid 48 virtual-ip 172.21.248.129
+ vrrp vrid 48 preempt-mode timer delay 3300
+#
+interface Vlanif2249
+ description LI-IMS-MGMT E///
+ ip binding vpn-instance LI-IMS-MGMT
+ ip address 172.21.248.210 255.255.255.240
+ vrrp vrid 149 virtual-ip 172.21.248.209
+ vrrp vrid 149 preempt-mode timer delay 3300
+#
+interface Vlanif2526
+ description CSS-OOB-MGMT 2526
+ ip binding vpn-instance CSS-OOB-MGMT
+ ip address 172.25.226.11 255.255.255.0
+ vrrp vrid 25 virtual-ip 172.25.226.1
+ vrrp vrid 25 priority 90
+#
+interface Vlanif3043
+ description PP-vEPC-MGMT-FW
+ ip binding vpn-instance PP-vEPC-MGMT
+ ip address 172.31.241.106 255.255.255.248
+ vrrp vrid 105 virtual-ip 172.31.241.105
+ vrrp vrid 105 preempt-mode timer delay 3300
+#
+interface Vlanif3053
+ description Ericsson_CAS_EricssonSRX-MSW
+ ip binding vpn-instance Ericsson_CAS
+ ip address 172.21.249.10 255.255.255.248
+#
+interface Vlanif3054
+ description Ericsson_CAS_MSW-MGMT FW
+ ip binding vpn-instance Ericsson_CAS
+ ip address 172.21.246.106 255.255.255.248
+ vrrp vrid 244 virtual-ip 172.21.246.105
+ vrrp vrid 244 preempt-mode timer delay 3300
+#
+interface Vlanif3226
+ description PP-V-OOB-CORE
+ ip binding vpn-instance PP-V-OOB-CORE
+ ip address 172.31.226.11 255.255.255.0
+ vrrp vrid 126 virtual-ip 172.31.226.1
+ vrrp vrid 126 preempt-mode timer delay 3300
+#
+interface Vlanif3246
+ description Mobile_FMGR_MGMT_Server
+ ip binding vpn-instance Mobile_FMGR_MGMT_KPR
+ ip address 172.21.246.138 255.255.255.248
+ vrrp vrid 1 virtual-ip 172.21.246.137
+ vrrp vrid 1 preempt-mode timer delay 3300
+#
+interface Vlanif3247
+ description Mobile_FMGR_MGMT_Firewall
+ ip binding vpn-instance Mobile_FMGR_MGMT_KPR
+ ip address 172.21.246.146 255.255.255.248
+ vrrp vrid 1 virtual-ip 172.21.246.145
+ vrrp vrid 1 preempt-mode timer delay 3300
+#
+interface Vlanif3251
+ description Test-AAT-OOB Core
+ ip binding vpn-instance PP-V-OOB-SECURE
+ ip address 172.31.251.2 255.255.255.0
+ vrrp vrid 151 virtual-ip 172.31.251.1
+#
+interface Vlanif3531
+ description Appliance_mgmt_hub_uplink
+ ip binding vpn-instance Appliance_mgmt_hub
+ ip address 172.21.232.4 255.255.255.248
+ vrrp vrid 1 virtual-ip 172.21.232.6
+ vrrp vrid 1 preempt-mode timer delay 3300
+#
+interface Vlanif3532
+ description Appliance_mgmt_spoke-T-PKI_servers
+ ip binding vpn-instance Appliance_mgmt_spoke-T-PKI
+ ip address 172.21.232.10 255.255.255.248
+ vrrp vrid 1 virtual-ip 172.21.232.9
+ vrrp vrid 1 preempt-mode timer delay 3300
+#
+interface Vlanif4000
+ description Data-Warehouse
+ ip binding vpn-instance Data-Warehouse
+ ip address 172.21.194.4 255.255.255.248
+ vrrp vrid 107 virtual-ip 172.21.194.6
+#
+interface Vlanif4001
+ description IMS-MGMT
+ ip binding vpn-instance IMS-MGMT
+ ip address 172.21.194.12 255.255.255.248
+ vrrp vrid 41 virtual-ip 172.21.194.14
+#
+interface Vlanif4002
+ description V-OOB-CORE
+ ip binding vpn-instance V-OOB-CORE
+ ip address 172.21.194.20 255.255.255.248
+ vrrp vrid 42 virtual-ip 172.21.194.22
+#
+interface Vlanif4003
+ description V-OOB-EDGE
+ ip binding vpn-instance V-OOB-EDGE
+ ip address 172.21.194.28 255.255.255.248
+ vrrp vrid 43 virtual-ip 172.21.194.30
+#
+interface Vlanif4004
+ description V-OOB-PUBLIC
+ ip binding vpn-instance V-OOB-PUBLIC
+ ip address 172.21.194.36 255.255.255.248
+ vrrp vrid 44 virtual-ip 172.21.194.38
+#
+interface Vlanif4005
+ description SEC-VMware-Mgmt-FW
+ ip binding vpn-instance SEC-VMware-Mgmt
+ ip address 172.21.194.44 255.255.255.248
+ vrrp vrid 45 virtual-ip 172.21.194.46
+#
+interface Vlanif4006
+ description OOB-CORE
+ ip binding vpn-instance OOB-CORE
+ ip address 172.21.194.52 255.255.255.248
+ vrrp vrid 46 virtual-ip 172.21.194.54
+#
+interface Vlanif4007
+ description OOB-EDGE
+ ip binding vpn-instance OOB-EDGE
+ ip address 172.21.194.60 255.255.255.248
+ vrrp vrid 47 virtual-ip 172.21.194.62
+#
+interface Vlanif4008
+ description VMware-Mgmt-FW
+ ip binding vpn-instance VMware-Mgmt
+ ip address 172.21.194.68 255.255.255.248
+ vrrp vrid 202 virtual-ip 172.21.194.70
+#
+interface Vlanif4009
+ description Mgmt-Backup-FW
+ ip binding vpn-instance Mgmt-Backup
+ ip address 172.21.194.76 255.255.255.248
+ vrrp vrid 9 virtual-ip 172.21.194.78
+#
+interface Vlanif4010
+ description Li-Mgmt-FW
+ ip binding vpn-instance LI-Mgmt
+ ip address 172.21.194.84 255.255.255.248
+ vrrp vrid 40 virtual-ip 172.21.194.86
+#
+interface Vlanif4011
+ description Cloud-Mgmt-FW
+ ip binding vpn-instance Cloud-Mgmt
+ ip address 172.21.194.92 255.255.255.248
+ vrrp vrid 11 virtual-ip 172.21.194.94
+#
+interface Vlanif4012
+ description FMS-Mgmt-FW
+ ip binding vpn-instance FMS-Mgmt
+ ip address 172.21.194.97 255.255.255.248
+ vrrp vrid 12 virtual-ip 172.21.194.100
+#
+interface Vlanif4013
+ description SPLUNK-FW
+ ip binding vpn-instance SPLUNK
+ ip address 172.21.194.108 255.255.255.248
+ vrrp vrid 13 virtual-ip 172.21.194.110
+#
+interface Vlanif4014
+ description OSS-FW
+ ip binding vpn-instance OSS
+ ip address 172.21.194.116 255.255.255.248
+ vrrp vrid 14 virtual-ip 172.21.194.118
+#
+interface Vlanif4015
+ description DISCOVERY-FW
+ ip binding vpn-instance DISCOVERY
+ ip address 172.21.194.124 255.255.255.248
+ vrrp vrid 15 virtual-ip 172.21.194.126
+#
+interface Vlanif4016
+ description V-OOB-MGMT-FW
+ ip binding vpn-instance V-OOB-MGMT
+ ip address 172.21.194.132 255.255.255.248
+ vrrp vrid 16 virtual-ip 172.21.194.134
+#
+interface Vlanif4017
+ description DRA Management (external)
+ ip binding vpn-instance DRA-MGMT
+ ip address 172.21.194.140 255.255.255.248
+ vrrp vrid 17 virtual-ip 172.21.194.142
+#
+interface Vlanif4018
+ description IMN Management (external)
+ ip binding vpn-instance IMN-MGMT
+ ip address 172.21.194.148 255.255.255.248
+ vrrp vrid 18 virtual-ip 172.21.194.150
+#
+interface Vlanif4019
+ description MSX-Mgmt-FW (external)
+ ip binding vpn-instance MSX-Mgmt
+ ip address 172.21.194.156 255.255.255.248
+ vrrp vrid 49 virtual-ip 172.21.194.158
+#
+interface Vlanif4024
+ description SEC-MGMT-FW
+ ip binding vpn-instance SEC-MGMT
+ ip address 172.21.194.196 255.255.255.248
+ vrrp vrid 24 virtual-ip 172.21.194.198
+#
+interface Vlanif4025
+ description SEC-OOB-2-FW
+ ip binding vpn-instance SEC-OOB-2
+ ip address 172.21.194.204 255.255.255.248
+ vrrp vrid 5 virtual-ip 172.21.194.206
+#
+interface Vlanif4026
+ description Sandvine
+ ip binding vpn-instance Sandvine
+ ip address 172.21.194.212 255.255.255.248
+ vrrp vrid 26 virtual-ip 172.21.194.214
+#
+interface Vlanif4027
+ description MGMT-BUILD-FW
+ ip binding vpn-instance MGMT-BUILD
+ ip address 172.21.194.220 255.255.255.248
+ vrrp vrid 54 virtual-ip 172.21.194.222
+#
+interface Vlanif4041
+ description LI-IMS-OOB-FW
+ ip binding vpn-instance LI-IMS-OOB
+ ip address 172.21.246.74 255.255.255.248
+ vrrp vrid 141 virtual-ip 172.21.246.73
+ vrrp vrid 141 preempt-mode timer delay 3300
+#
+interface Vlanif4042
+ description PP-LI-IMS-OOB-FW
+ ip binding vpn-instance PP-LI-IMS-OOB
+ ip address 172.31.241.82 255.255.255.248
+ vrrp vrid 142 virtual-ip 172.31.241.81
+ vrrp vrid 142 preempt-mode timer delay 3300
+#
+interface Vlanif4043
+ description vEPC-MGMT-FW
+ ip binding vpn-instance vEPC-MGMT
+ ip address 172.21.246.90 255.255.255.248
+ vrrp vrid 89 virtual-ip 172.21.246.89
+ vrrp vrid 89 preempt-mode timer delay 3300
+#
+interface Vlanif4044
+ description LI-IMS-MGMT-FW
+ ip binding vpn-instance LI-IMS-MGMT
+ ip address 172.21.246.98 255.255.255.248
+ vrrp vrid 143 virtual-ip 172.21.246.97
+ vrrp vrid 143 preempt-mode timer delay 3300
+#
+interface Vlanif4045
+ description PP-LI-IMS-MGMT-FW
+ ip binding vpn-instance PP-LI-IMS-MGMT
+ ip address 172.31.241.90 255.255.255.248
+ vrrp vrid 143 virtual-ip 172.31.241.89
+ vrrp vrid 143 preempt-mode timer delay 3300
+#
+interface Vlanif4050
+ description CSS-OOB-MGMT 4050
+ ip binding vpn-instance CSS-OOB-MGMT
+ ip address 172.21.194.164 255.255.255.248
+ vrrp vrid 50 virtual-ip 172.21.194.166
+#
+interface Vlanif4051
+ description V-OOB-PUBLIC-2-FW
+ ip binding vpn-instance V-OOB-PUBLIC-2
+ ip address 172.21.194.172 255.255.255.248
+ vrrp vrid 51 virtual-ip 172.21.194.174
+#
+interface Vlanif4052
+ description V-OOB-SECURE-FW
+ ip binding vpn-instance V-OOB-SECURE
+ ip address 172.21.194.180 255.255.255.248
+ vrrp vrid 52 virtual-ip 172.21.194.182
+#
+interface Vlanif4053
+ description V-OOB-CORP-FW
+ ip binding vpn-instance V-OOB-CORP
+ ip address 172.21.194.188 255.255.255.248
+ vrrp vrid 53 virtual-ip 172.21.194.190
+#
+interface Vlanif4054
+ description PCRF-Mgmt-FW
+ ip binding vpn-instance PCRF-Mgmt
+ ip address 172.21.246.2 255.255.255.248
+ vrrp vrid 154 virtual-ip 172.21.246.1
+#
+interface Vlanif4055
+ description ENM-Mgmt-FW
+ ip binding vpn-instance ENM-Mgmt
+ ip address 172.21.246.10 255.255.255.248
+ vrrp vrid 155 virtual-ip 172.21.246.9
+#
+interface Vlanif4056
+ description ENM-VIO-FW
+ ip binding vpn-instance ENM-VIO
+ ip address 172.21.246.18 255.255.255.248
+ vrrp vrid 156 virtual-ip 172.21.246.17
+#
+interface Vlanif4057
+ description NeLS-Mgmt-FW
+ ip binding vpn-instance NeLS-Mgmt
+ ip address 172.21.246.26 255.255.255.248
+ vrrp vrid 157 virtual-ip 172.21.246.25
+#
+interface Vlanif4058
+ description NeLS-Ext-FW
+ ip binding vpn-instance NeLS-Ext
+ ip address 172.21.246.34 255.255.255.248
+ vrrp vrid 158 virtual-ip 172.21.246.33
+#
+interface Vlanif4061
+ description KPR_DC_FW
+ ip binding vpn-instance 2DEG_SiteEnvironmentals
+ ip address 172.21.246.122 255.255.255.248
+ vrrp vrid 61 virtual-ip 172.21.246.121
+#
+interface Vlanif4064
+ description PreProd-PCRF-Mgmt-FW
+ ip binding vpn-instance PP-PCRF-Mgmt
+ ip address 172.31.241.42 255.255.255.248
+ vrrp vrid 64 virtual-ip 172.31.241.41
+#
+interface Vlanif4067
+ description NFVI_CTRL_OAM-FW
+ ip binding vpn-instance NFVI_CTRL_OAM
+ ip address 172.21.246.50 255.255.255.248
+ vrrp vrid 167 virtual-ip 172.21.246.49
+#
+interface Vlanif4068
+ description NFVI_DATA_OAM-FW
+ ip binding vpn-instance NFVI_DATA_OAM
+ ip address 172.21.246.58 255.255.255.248
+ vrrp vrid 168 virtual-ip 172.21.246.57
+#
+interface Vlanif4071
+ description NFVI_CTRL_OAM_TEST-FW
+ ip binding vpn-instance NFVI_CTRL_OAM_TEST
+ ip address 172.31.241.58 255.255.255.248
+ vrrp vrid 171 virtual-ip 172.31.241.57
+#
+interface Vlanif4072
+ description NFVI_DATA_OAM_TEST-FW
+ ip binding vpn-instance NFVI_DATA_OAM_TEST
+ ip address 172.31.241.66 255.255.255.248
+ vrrp vrid 172 virtual-ip 172.31.241.65
+#
+interface Vlanif4073
+ description Test-AAT-V-OOB-SECURE-FW
+ ip binding vpn-instance PP-V-OOB-SECURE
+ ip address 172.31.241.74 255.255.255.248
+ vrrp vrid 173 virtual-ip 172.31.241.73
+#
+interface Vlanif4074
+ description SFTP-Backup-FW
+ ip binding vpn-instance SFTP_BKP
+ ip address 172.21.246.66 255.255.255.248
+ vrrp vrid 174 virtual-ip 172.21.246.65
+ vrrp vrid 174 preempt-mode timer delay 3300
+#
+interface Vlanif4075
+ description Test-ENM-Mgmt-FW
+ ip binding vpn-instance TS-ENM-Mgmt
+ ip address 172.31.241.10 255.255.255.248
+ vrrp vrid 175 virtual-ip 172.31.241.9
+#
+interface Vlanif4076
+ description Test-ENM-VIO-FW
+ ip binding vpn-instance TS-ENM-VIO
+ ip address 172.31.241.18 255.255.255.248
+ vrrp vrid 176 virtual-ip 172.31.241.17
+#
+interface Vlanif4077
+ description Test-NeLS-Mgmt-FW
+ ip binding vpn-instance TS-NeLS-Mgmt
+ ip address 172.31.241.26 255.255.255.248
+ vrrp vrid 177 virtual-ip 172.31.241.25
+#
+interface Vlanif4078
+ description Test-NeLS-Ext-FW
+ ip binding vpn-instance TS-NeLS-Ext
+ ip address 172.31.241.34 255.255.255.248
+ vrrp vrid 178 virtual-ip 172.31.241.33
+#
+interface Vlanif4079
+ description Test-AAT-AAT-OM-CN-FW
+ ip binding vpn-instance TS-AAT-OM-CN
+ ip address 172.31.241.50 255.255.255.248
+ vrrp vrid 179 virtual-ip 172.31.241.49
+#
+interface Eth-Trunk1
+ description Trunk_to_MSW04KPR
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 20 192 200 to 203 205 to 221 223 to 233 235 to 238 240 to 242 250 to 251 253 to 255 260 to 261
+ port trunk allow-pass vlan 273 278 300 to 303 370 391 421 507 615 620 625 to 627
+ port trunk allow-pass vlan 763 903 905 907 to 909 990 1249 1300 to 1302 1304 1330 to 1333 1400
+ port trunk allow-pass vlan 2074 to 2079 2248 to 2249 2526 3043 3054 3226 3246 to 3247 3251 3531 to 3532 4000 to 4019
+ port trunk allow-pass vlan 4024 to 4027 4041 to 4045 4050 to 4058 4061 4064 4067 to 4068 4071 to 4079
+ smart-link flush receive control-vlan 201 password simple 
+#
+interface Eth-Trunk9
+ description LAG link to IBM Netezza N100
+ port link-type access
+ port default vlan 212
+ mode lacp
+#
+interface Eth-Trunk10
+ description LAG link to MDSW01KPR
+ shutdown
+ port link-type access
+ port default vlan 212
+ mode lacp
+#
+interface Ethernet0/0/0
+ description OOB MSW03KPR 12/0/46
+ ip address 172.21.223.130 255.255.255.0
+#
+interface GigabitEthernet1/0/0
+ description STSW03aKPR - P1:47
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200 to 201 223 229 251
+#
+interface GigabitEthernet1/0/1
+ description STSW03aKPR C MGMT A
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/2
+ description SBE01KPR CMM 1 C MGMT (bottom module)
+ shutdown
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet1/0/3
+ description Sandvine Deep Insights (PRE-PROD)
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 192
+#
+interface GigabitEthernet1/0/4
+ description To NXSC01KPR Port 1 (H6)
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet1/0/5
+ description Trunk port to MSW04KPR Gi1/0/5
+ eth-trunk 1
+#
+interface GigabitEthernet1/0/6
+ description FW04AKPR OOB
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet1/0/7
+ description MGW03KPR OOB port1
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/8
+ description GTM01aKPR
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/9
+ description DNSEVHM01KPR
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet1/0/10
+ description DNSIVM01KPR
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet1/0/11
+ description RESERVED PRE Bluecat
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet1/0/12
+ description PRE DNSLABEVHM02KPR
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet1/0/13
+ description DNSLABEVHM01KPR
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet1/0/14
+ description DNSLABRTF01KPR
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/15
+ description DNSRTF01KPR
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/16
+ description V9K01KPR_SVC_Node1_P1
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/17
+ description V9K01KPR_v900_Node1
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/18
+ description Netscout MIF05KPR
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet1/0/19
+ description Netscout MIF05KPR RMM
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/20
+ description BBMC01KPR
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/21
+ description SNZCLAKL231 OOB
+ shutdown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/22
+ description SNZCLAKL243 OOB
+ shutdown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/23
+ description BigData CE5810 G0/0/0 BDSWMGMT01KPR
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 225
+ smart-link flush receive control-vlan 225 password simple 
+#
+interface GigabitEthernet1/0/24
+ description BigData CE6851 BDSWDATA01KPR
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/25
+ description BigData CE5810 BDSWMGMT01KPR
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/26
+ description UPS60AKPR Battery Monitor
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet1/0/27
+ description Commvault Hyperscale Man
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/28
+ description SECGW01KPR Gi0/0/0 Picocell IPSEC Gateway OOB
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/29
+ description PAUTH0KPR PowerDNS Authoritative
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet1/0/30
+ description PREC0KPR PowerDNS Recursive
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet1/0/31
+ description RNC01KPR OOB1
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet1/0/32
+ description RNC01KPR OOB2
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet1/0/33
+ description PowerDNS PAUTH0KPR iLOM Port
+ shutdown
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet1/0/34
+ description PowerDNS PREC0KPR iLOM Port
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet1/0/35
+ description TNZCLAKL028 - iLO (J09) James
+ shutdown
+#
+interface GigabitEthernet1/0/36
+ description Trunk to BE10SW01KPR-X8 Rack K4
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 to 201 212 223
+#
+interface GigabitEthernet1/0/37
+ description Trunk to BE11SW01KPR-X8 Rack K4
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 to 201 212 223
+#
+interface GigabitEthernet1/0/38
+ description Trunk to BE12SW01KPR-X8 Rack K5
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 to 201 212 223
+#
+interface GigabitEthernet1/0/39
+ description Trunk to BE13SW01KPR-X8 Rack K5
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 to 201 212 223
+#
+interface GigabitEthernet1/0/40
+ description Trunk to BE14SW01KPR-X8 Rack K5
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192
+#
+interface GigabitEthernet1/0/41
+ description ETORSW01aKPR . Port 47
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 201
+#
+interface GigabitEthernet1/0/42
+ description PNZCLAKL151 - iLO (J09) James
+ shutdown
+#
+interface GigabitEthernet1/0/43
+ description ORAESXAKL001 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet1/0/44
+ description PNZCLAKL151 - iLO  PRE
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet1/0/45
+ description NAF7K01KPR, ControllerA eth1 - Rack J05
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/46
+ description NAF7K01KPR, ControllerB eth1 - Rack J05
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet1/0/47
+ description LAG link to IBM Netezza Skimmer N100, NIC1, Rack A3
+ eth-trunk 9
+#
+interface GigabitEthernet2/0/0
+ description netappnod01akl e0M
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet2/0/1
+ description NX01KPR NOT USED
+ shutdown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet2/0/2
+ description reserved for pdist0kpr-iLO Jon H.
+ shutdown
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet2/0/3
+ description ORAESXAKL002 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/4
+ description AKL1-P-07 iLOM
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet2/0/5
+ description AKL1-P-08 iLOM -PRE
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet2/0/6
+ description IT F5 ALB01AKPR (1.6) (SLB01aKPR)
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 208 218 255
+#
+interface GigabitEthernet2/0/7
+ description ELSW01KPR OOB
+ port link-type access
+ port default vlan 226
+#
+interface GigabitEthernet2/0/8
+ description ENTESXAKL001 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/9
+ description reserved for TSR03KPR
+ shutdown
+#
+interface GigabitEthernet2/0/10
+ description MLS01KPR OOB
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet2/0/11
+ description MANESXKPR001 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/12
+ description MANESXKPR003 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/13
+ description ELSW01KPR 10GE 1/0/3
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 201 216 223 233
+ smart-link flush receive control-vlan 201
+#
+interface GigabitEthernet2/0/14
+ description SGSN02KPR 0/10/0 - MME EVU - Decommissioned -PRE
+ shutdown
+ undo enable snmp trap updown
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 220 223
+#
+interface GigabitEthernet2/0/15
+ description MANESXKPR005 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/16
+ description MANESXKPR007 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/17
+ description SANSW01KPR OOB
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet2/0/18
+ description ENTESXAKL003 OOB -PRE
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/19
+ description SQLESXAKL001 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet2/0/20
+ description PWR02KPR
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet2/0/21
+ description Trunk port to MSW04KPR Gi2/0/21
+ eth-trunk 1
+#
+interface GigabitEthernet2/0/22
+ description Trunk port to MSW04KPR Gi2/0/22
+ eth-trunk 1
+#
+interface GigabitEthernet2/0/23
+ description Darktrace appliance OOB, Rack J04
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet3/0/0
+ description BIP&NM SEROVMAKL001 N1-5 ILO -PRE
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet3/0/1
+ description BIP&NM SEROVMAKL002 N2-5 ILO -PRE
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet3/0/2
+ description BIP&NM SEROVMAKL003 N3-5 ILO -PRE
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet3/0/3
+ description reserved SERESXAKL001 OOB -pre
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet3/0/4
+ description reserved SERESXAKL003 OOB -pre
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet3/0/5
+ description FWIPX01AKPR - OOB Reserved
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/6
+ description reserved SERESXAKL005 OOB -pre
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet3/0/7
+ description SLS03KPR OOB
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/8
+ description AKL1-P-09 Port Net Mgt Rack H02
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet3/0/9
+ description AKL1-T-10 Port Net Mgt Rack H05
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet3/0/10
+ description SV_PRE01KPR AUX - Sandvine VLAN
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 213
+#
+interface GigabitEthernet3/0/11
+ description SV_PRE01KPR Admin - SSH, SNMP, SNMP, sysLOG
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 250
+#
+interface GigabitEthernet3/0/12
+ description FW06aKPR - iLOM
+ port link-type access
+ port default vlan 254
+#
+interface GigabitEthernet3/0/13
+ description FW07aKPR - iLOM
+ port link-type access
+ port default vlan 254
+#
+interface GigabitEthernet3/0/14
+ description FW08aKPR - iLOM
+ port link-type access
+ port default vlan 254
+#
+interface GigabitEthernet3/0/15
+ description FW09aKPR - iLOM
+ port link-type access
+ port default vlan 254
+#
+interface GigabitEthernet3/0/16
+ description TFWSW01aKPR - Test switch(MGMT)
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 253
+#
+interface GigabitEthernet3/0/17
+ description FWSLS01AKPR OOB MGMT
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 253
+#
+interface GigabitEthernet3/0/18
+ description FWMLS01AKPR OOB MGMT
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 253
+#
+interface GigabitEthernet3/0/19
+ description KPR_NAS01 Net1 -Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/20
+ description KPR_NAS02 Net1 - Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/21
+ description KPR_ISNG01 Net1 - Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/22
+ description KPR_ISNG02 Net1 - Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/23
+ description KPR_ISNG03 Net1 - Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/24
+ description KPR_ISNG04 Net1 - Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/25
+ description KPR_ISNG05 Net1 - Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/26
+ description KPR_ISNG06 Net1 - Reserved
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet3/0/27
+ description ILO_CORESXAKL021_ILO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/28
+ description ILO_CORESXAKL023_ILO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/29
+ description ILO_CORESXAKL025_ILO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/30
+ description ILO_CORESXAKL027_ILO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/31
+ description ILO_MANESXAKL129_ILO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/32
+ description ENM Small System_ENMBMAKL101_iLO - PRE - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/33
+ description ENM Small System_ENMBMAKL103_iLO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/34
+ description NETAN/BIS_NETBMAKL105_iLO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/35
+ description MANESXAKL131 Transport PKI ILO - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/36
+ description Netezza node2 MGMT
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet3/0/37
+ description Netezza node1 MGMT
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet3/0/38
+ description netappnod02akl e0M
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet3/0/39
+ description NASLS01AKL em
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet3/0/40
+ description FIXESXAKL001 iLo -PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/41
+ description U2020 MANESXAKL134 iLO
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/42
+ description U2020 MANESXAKL136 iLO
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/43
+ description U2020 MANESXAKL138 iLO
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/44
+ description LI-IMS-MGMT E/// Primary eth7 - MGMT -PRE
+ port link-type access
+ port default vlan 2249
+#
+interface GigabitEthernet3/0/45
+ description ***Reserved*** CORESXAKL036 iLO -PRE
+ shutdown
+#
+interface GigabitEthernet3/0/46
+ description FIXESXAKL003 iLo
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet3/0/47
+ description RNC04KPR MS-3-GE -PRE
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet4/0/0
+ description FW02AKPR Checkpoint LAN4
+ shutdown
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 to 201 203 205 to 206 209 214 to 215 217 226 to 231 235 903
+ port trunk allow-pass vlan 905 907 to 909 2076 to 2077 2079 4000 to 4004 4006 to 4008 4010 4012 to 4016 4051 to 4052
+ port-mirroring to observe-port 1 inbound
+ port-mirroring to observe-port 1 outbound
+#
+interface GigabitEthernet4/0/1
+ description TRT01KPR Gi1/0/3
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 10 215
+ trust upstream default
+ trust dscp
+ port-mirroring to observe-port 1 inbound
+ port-mirroring to observe-port 1 outbound
+#
+interface GigabitEthernet4/0/2
+ description RESERVED FOR PREC0KPR
+ shutdown
+#
+interface GigabitEthernet4/0/3
+ description IN tester
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet4/0/4
+ description IGWBCDR1KPR
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/5
+ description SCP REPORT SERVER INRPT
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/6
+ description OAM SERVER WEBSMAP
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/7
+ description M2000 Secondary 1
+ shutdown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/8
+ description M2000 Primary 1
+ shutdown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/9
+ description MNMS01KPR
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/10
+ description N2000
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/11
+ description T2000
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/12
+ description M2000 Secondary 2
+ shutdown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/13
+ description M2000 Primary 2
+ shutdown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/14
+ description Nastar-1
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/15
+ description GTM01AKPR 1.4 -PRE
+ port link-type trunk
+ port trunk allow-pass vlan 208
+#
+interface GigabitEthernet4/0/16
+ description CME
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/17
+ description Oscilloquartz clock NTP
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/18
+ description Qualys Scanner
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/19
+ description Accanto Protocol Analyser
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/20
+ description M2000 ATAE
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/21
+ description fwmgr02kpr
+ shutdown
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet4/0/22
+ shutdown
+#
+interface GigabitEthernet4/0/23
+ description PRE ESXi Test Server I5
+ shutdown
+ port hybrid pvid vlan 200
+ port hybrid tagged vlan 210 215 220 to 221
+ port hybrid untagged vlan 200
+#
+interface GigabitEthernet4/0/24
+ description BACKUP server for VSMSC and IN
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200 205
+#
+interface GigabitEthernet4/0/25
+ description BE05SW04KPR Port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200 to 201 223
+#
+interface GigabitEthernet4/0/26
+ description BE02SW01KPR Port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200
+#
+interface GigabitEthernet4/0/27
+ description BE02SW02KPR Port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200
+#
+interface GigabitEthernet4/0/28
+ description BE06SW01KPR Port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200
+#
+interface GigabitEthernet4/0/29
+ description BE06SW02KPR Port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200
+#
+interface GigabitEthernet4/0/30
+ description Trunk to BE01SW03KPR port 24
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200 to 201
+#
+interface GigabitEthernet4/0/31
+ description BE01SW01KPR Port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200 to 201
+#
+interface GigabitEthernet4/0/32
+ description BE01SW02KPR Port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200 to 201
+#
+interface GigabitEthernet4/0/33
+ description BE06SW03KPR port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200
+#
+interface GigabitEthernet4/0/34
+ description BE06SW04KPR port 20
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 200 205 223
+#
+interface GigabitEthernet4/0/35
+ description NAF7K02KPR, ControllerA eth1 - Rack J08
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet4/0/36
+ description NAF7K02KPR, ControllerB eth1 - Rack J08
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet4/0/37
+ description ESNAF7K01KPR, MGMT - Rack J05
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet4/0/38
+ description WebProxy OOB
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet4/0/39
+ description CORESXAKL036 iLO -PRE
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet4/0/40
+ description ORAESXAKL003 OOB
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet4/0/41
+ description Netscout NGOne01KPR - OO
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet4/0/42
+ description Netscout NSI02KPR - OOB
+ port link-type access
+ port default vlan 211
+ port-mirroring to observe-port 1 inbound
+ port-mirroring to observe-port 1 outbound
+#
+interface GigabitEthernet4/0/43
+ description Netscout MIF06KPR - OOB
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet4/0/44
+ description Commvault Hyperscale Management Primary Node2
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet4/0/45
+ description SSNZCLAKL001 OOB
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet4/0/46
+ description Trunk port to MSW04KPR Gi4/0/46
+ eth-trunk 1
+#
+interface GigabitEthernet4/0/47
+ description Trunk port to MSW04KPR Gi4/0/47
+ eth-trunk 1
+#
+interface GigabitEthernet6/0/0
+ description RNC03KPR OMU 0/10/0
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet6/0/1
+ description TSR01KPR
+ port link-type access
+ port default vlan 210
+#
+interface GigabitEthernet6/0/2
+ description Splunk MSPK01KPR OOB
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/3
+ shutdown
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/4
+ shutdown
+ undo enable snmp trap updown
+ port link-type access
+#
+interface GigabitEthernet6/0/5
+ description SV MANESXAKL201 iLO, DS1
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet6/0/6
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/7
+ description Netscout Mirrored port
+ shutdown
+ undo enable snmp trap updown
+#
+interface GigabitEthernet6/0/8
+ shutdown
+#
+interface GigabitEthernet6/0/9
+ description DNS02KPR iLO
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet6/0/10
+ description ASW04KPR - Master
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/11
+ description PKI OAM HW
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet6/0/12
+ description IGWB OM virtual OM IP
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/13
+ description FWLB03KPR Management
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet6/0/14
+ description MGW01KPR BAM slot7
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/15
+ description STP01KPR BAM
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/16
+ shutdown
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 215 220
+#
+interface GigabitEthernet6/0/17
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/18
+ description Netezza node3 MGMT
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/19
+ description Mgmt1 EDSW01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/20
+ description ASW05KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/21
+ shutdown
+#
+interface GigabitEthernet6/0/22
+ description EWS Server
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/23
+ description FW02AKPR OOB Checkpoint FW - to be replace
+ shutdown
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet6/0/24
+ description ATAE Chasis IPD
+ port link-type access
+ port default vlan 220
+ broadcast-suppression 1
+#
+interface GigabitEthernet6/0/25
+ description Smartkey
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/26
+ description CRAC01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/27
+ description CRAC2KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/28
+ description CRAC03KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/29
+ description XPTU - STP01 emergency BAM
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/30
+ shutdown
+#
+interface GigabitEthernet6/0/31
+ description RNC03KPR OMU 0/12/1
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet6/0/32
+ shutdown
+ undo enable snmp trap updown
+#
+interface GigabitEthernet6/0/33
+ shutdown
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/34
+ description EDSW02KPR - OOB
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/35
+ description BE14OA02KPR - iLO
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet6/0/36
+ shutdown
+#
+interface GigabitEthernet6/0/37
+ description ASW03KPR - Master
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/38
+ description BE14OA02KPR - iLO
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet6/0/39
+ description PKI OAM HW
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet6/0/40
+ description MGW01KPR BAM
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/41
+ shutdown
+#
+interface GigabitEthernet6/0/42
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/43
+ shutdown
+#
+interface GigabitEthernet6/0/44
+ description Reserved for Mariel ALB01AKPR Viprion TMM
+ shutdown
+#
+interface GigabitEthernet6/0/45
+ description ASW06KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet6/0/46
+ description SSNZCLAKL019
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet6/0/47
+ description Trunk port to MSW04KPR Gi6/0/47
+ eth-trunk 1
+#
+interface GigabitEthernet7/0/0
+ description BIP&NM SEROVMAKL001 N1-7 OOB stby -PRE
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet7/0/1
+ description BIP&NM SEROVMAKL002 N2-7 OOB stby -PRE
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet7/0/2
+ description BIP&NM SEROVMAKL003 N3-7 OOB stby -PRE
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet7/0/3
+ description LI-IMS E/// EMC-OOB DELLEMC 380 SP-A MGT -PRE
+ port link-type access
+ port default vlan 2248
+#
+interface GigabitEthernet7/0/4
+ description SV MANESXAKL203 iLO, DS3
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet7/0/5
+ description Reserverd for Fortigate IPsec GW
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet7/0/6
+ description ILO CORESXAKL038
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/7
+ description ILO CORESXAKL039
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/8
+ description ILO CORESXAKL040
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/9
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/10
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/11
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/12
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/13
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/14
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/15
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/16
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/17
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/18
+ description Ericsson CAS-C SRX Port 0/2 - PRE
+ port link-type access
+ port default vlan 3053
+#
+interface GigabitEthernet7/0/19
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/20
+ description ILO CORESXAKL029
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/21
+ description ILO CORESXAKL031
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/22
+ description ILO CORESXAKL033
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/23
+ description ILO CORESXAKL035
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/24
+ description ***FREE***
+#
+interface GigabitEthernet7/0/25
+ undo negotiation auto
+ description SLS05KPR - C0 (em0) - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/26
+ description ILO bssovmakl001 OOB Act - PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/27
+ description ILO bssovmakl003 OOB Act -PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/28
+ description ILO CORESXAKL044
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/29
+ description ILO CORESXHAM046
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet7/0/30
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/31
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/32
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/33
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/34
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/35
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/36
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/37
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/38
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/39
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/40
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/41
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/42
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/43
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/44
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/45
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/46
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet7/0/47
+ description ***FREE***
+ shutdown
+#
+interface GigabitEthernet8/0/0
+ description MSC01KPR BAM
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/1
+ description FW02BKPR OOB Checkpoint FW
+ shutdown
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet8/0/2
+ description Trunk port to MSW04KPR Gi8/0/2
+ eth-trunk 1
+#
+interface GigabitEthernet8/0/3
+ description SSNZCLAKL020
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet8/0/4
+ description BE01SW04KPR port 24
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 223
+#
+interface GigabitEthernet8/0/5
+ description BE02SW04KPR port 24
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 223
+#
+interface GigabitEthernet8/0/6
+ description MPM02KPR
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet8/0/7
+ description ATAE Chasis Backup for G6/0/24 - Please do NOT unshut
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/8
+ description BE01MG01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/9
+ description BE01MG02KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/10
+ description IVR04
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/11
+ description BE02MG01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/12
+ description BE02MG02KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/13
+ description BE03MG01KPR
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/14
+ description BE03MG02KPR
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/15
+ description MLS11
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/16
+ description OSN3500
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/17
+ description PKI OAM backend, Certification, LDAP
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 223 2074 to 2075
+#
+interface GigabitEthernet8/0/18
+ description PKI OAM Frontend, Registration, End-Entity
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 223 2077 to 2078
+#
+interface GigabitEthernet8/0/19
+ description BE04MG01KPR
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/20
+ description BE04MG02KPR
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/21
+ description SNZCLAKL042
+ shutdown
+ port link-type access
+ port default vlan 205
+#
+interface GigabitEthernet8/0/22
+ description no description
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/23
+ description vsmsc MSA controller B
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/24
+ description BE05MG01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/25
+ description BE05MG02KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/26
+ description CCTV switch - Rack J4
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/27
+ description IVR4
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet8/0/28
+ description VAS ATAE1 slot8 port0
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet8/0/29
+ description SMSC Disk Array 2
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet8/0/30
+ description ATAE board SMSC ASAU
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet8/0/31
+ description PS1
+ shutdown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet8/0/32
+ description RNC01KPR - SAU Eth1
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/33
+ description Netezza Host1 OOB-Rack A3
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/34
+ description SNZCLAKL084 Backup
+ shutdown
+ port link-type access
+ port default vlan 205
+#
+interface GigabitEthernet8/0/35
+ description SNZCLAKL084 iLo
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/36
+ description SNZCLAKL085 Backup
+ shutdown
+ port link-type access
+ port default vlan 205
+#
+interface GigabitEthernet8/0/35
+ description SNZCLAKL084 iLo
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/36
+ description SNZCLAKL085 Backup
+ shutdown
+ port link-type access
+ port default vlan 205
+#
+
+<MSW03KPR>
+<MSW03KPR>
+<MSW03KPR>display current-configuration | beg GigabitEthernet8/0/36
+interface GigabitEthernet8/0/36
+ description SNZCLAKL085 Backup
+ shutdown
+ port link-type access
+ port default vlan 205
+#
+interface GigabitEthernet8/0/37
+ description SNZCLAKL085 iLo
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/38
+ shutdown
+#
+interface GigabitEthernet8/0/39
+ shutdown
+#
+interface GigabitEthernet8/0/40
+ description mls11
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet8/0/41
+ description ALB01AKPR Viprion
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet8/0/42
+ description WP01KPR port M1
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/43
+ description WP02KPR port M1
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/44
+ shutdown
+ port link-type access
+#
+interface GigabitEthernet8/0/45
+ shutdown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet8/0/46
+ description NZCL-P-UAS02
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet8/0/47
+ description NZCL-P-UBE01
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet10/0/0
+ description 2d-p-slc06 O&M
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet10/0/1
+ description ChargingMAX test
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/2
+ description ChargingMAX test
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/3
+ description F5 FWLB02KPR to Splunk
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet10/0/4
+ description Border Roaming
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/5
+ description UPS80AKPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/6
+ description UPS80BKPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/7
+ description UPS20AKPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/8
+ description UPS20BKPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/9
+ description PWR01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/10
+ undo negotiation auto
+ speed 10
+ description OLD GEN01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/11
+ description SMNZCLAKL001
+ shutdown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/12
+ description SMNZCLAKL002
+ shutdown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/13
+ description PKI OAM HW
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet10/0/14
+ description PKI LDAP, Certification, MZ LAN
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 2074 to 2076
+#
+interface GigabitEthernet10/0/15
+ description TL01KPR
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/16
+ description PKI End-Entity, DMZ LAN
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 2078 to 2079
+#
+interface GigabitEthernet10/0/17
+ shutdown
+#
+interface GigabitEthernet10/0/18
+ shutdown
+#
+interface GigabitEthernet10/0/19
+ description Netezza Host2 OOB-Rack A3
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/20
+ description RNC01KPR - SAU Eth0
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/21
+ description STP1 BAM - Emergency
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/22
+ description VVM01KPR (5)
+ shutdown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet10/0/23
+ shutdown
+#
+interface GigabitEthernet10/0/24
+ description BE06MG01KPR
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/25
+ description BE06MG02KPR
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/26
+ description VAS ATAE2 slot8 port0
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/27
+ shutdown
+#
+interface GigabitEthernet10/0/28
+ description VVM01KPR (6)
+ shutdown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet10/0/29
+ shutdown
+#
+interface GigabitEthernet10/0/30
+ description Netscout Infinistream - CS
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet10/0/31
+ description Netscout Netflow Switch
+ port link-type access
+ port default vlan 211
+#
+interface GigabitEthernet10/0/32
+ description OOB MPM02KPR - Netscout
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/33
+ description NZCL-P-UAS02 Backup
+ port link-type access
+ port default vlan 205
+#
+interface GigabitEthernet10/0/34
+ description 2d-p-slc06 BACKUP
+ port link-type access
+ port default vlan 205
+#
+interface GigabitEthernet10/0/35
+ description NZCL-P-UBE01 Backup
+ port link-type access
+ port default vlan 205
+#
+interface GigabitEthernet10/0/36
+ description SNZCLAKL151-IVR Node1 iLO - Rack J9
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/37
+ description SNZCLAKL152-IVR Node2 iLO - Rack J9
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/38
+ description ###TEMPORARY TO IBM NAS, PingHan 25jun2014 ###
+ shutdown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/39
+ description SNZCLAKL154-IVR Node4 iLO - Rack J9
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/40
+ description SNZCLAKL153-IVR Node3 iLO - Rack J9
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/41
+ description SSNZCLAKL021, SAN Core switch Rack J5
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/42
+ description SSNZCLAKL022, SAN Core switch Rack J5
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/43
+ shutdown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/44
+ shutdown
+ port link-type access
+ port default vlan 221
+#
+interface GigabitEthernet10/0/45
+ description ASW04KPR - Standby
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet10/0/46
+ shutdown
+#
+interface GigabitEthernet10/0/47
+ description LAG link to IBM Netezza Skimmer N100, NIC2, Rack A3
+ eth-trunk 9
+#
+interface GigabitEthernet12/0/0
+ description EMSW01KPR - Gi0/0/24
+ port link-type trunk
+ port trunk pvid vlan 980
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 205 221 223
+#
+interface GigabitEthernet12/0/1
+ description description Temporary laptop access
+ shutdown
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet12/0/2
+ description To SMP01KPR (H6)
+ shutdown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet12/0/3
+ shutdown
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet12/0/4
+ description To CMS01KPR (H7)
+ shutdown
+ port link-type access
+ port default vlan 200
+#
+interface GigabitEthernet12/0/5
+ description To HM01KPR (H7)
+ shutdown
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet12/0/6
+ description To HCS01KPR (H7)
+ shutdown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet12/0/7
+ shutdown
+#
+interface GigabitEthernet12/0/8
+ shutdown
+ port link-type access
+#
+interface GigabitEthernet12/0/9
+ description Simon Disk Array Nimble AF3000 Controller 1 OOB
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet12/0/10
+ description CTSW01KPR
+ shutdown
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet12/0/11
+ shutdown
+#
+interface GigabitEthernet12/0/12
+ description CSS01KPR
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet12/0/13
+ description OST01aKPR
+ port link-type access
+ port default vlan 224
+#
+interface GigabitEthernet12/0/14
+ description CBE01aKPR
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/15
+ description DRT02KPR OOB
+ port link-type access
+ port default vlan 220
+#
+interface GigabitEthernet12/0/16
+ shutdown
+#
+interface GigabitEthernet12/0/17
+ shutdown
+#
+interface GigabitEthernet12/0/18
+ shutdown
+ port link-type access
+#
+interface GigabitEthernet12/0/19
+ description PDIST1KPR PowerDNS Distributor
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet12/0/20
+ description PRE DNS01KPR iLO
+ shutdown
+ port link-type access
+ port default vlan 225
+#
+interface GigabitEthernet12/0/21
+ description Simon HPE SN3000B FC Switch 1 OOB
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet12/0/22
+ description CSSW01KPR - OOB -PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/23
+ description CSSW02KPR - OOB -PRE
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/24
+ description Disk Array Nimble Controller A eth2 OOB
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet12/0/25
+ shutdown
+#
+interface GigabitEthernet12/0/26
+ shutdown
+#
+interface GigabitEthernet12/0/27
+ description Commvault Hyperscale Management Secondary Node3
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 201
+#
+interface GigabitEthernet12/0/28
+ description LI-IMS E/// Primary iLO -PRE
+ port link-type access
+ port default vlan 2248
+#
+interface GigabitEthernet12/0/29
+ shutdown
+#
+interface GigabitEthernet12/0/30
+ shutdown
+#
+interface GigabitEthernet12/0/31
+ shutdown
+#
+interface GigabitEthernet12/0/32
+ shutdown
+#
+interface GigabitEthernet12/0/33
+ shutdown
+#
+interface GigabitEthernet12/0/34
+ description PLS01KPR OOB
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet12/0/35
+ description SLS01KPR OOB
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/36
+ description CLS01KPR OOB
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/37
+ description SANSW01KPR OOB
+ shutdown
+#
+interface GigabitEthernet12/0/38
+ description PBE01KPR OOB
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet12/0/39
+ description OST03KPR OOB
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/40
+ description PBE02KPR OOB
+ port link-type access
+ port default vlan 231
+#
+interface GigabitEthernet12/0/41
+ description OST04KPR Cont A OOB
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/42
+ description CBE02KPR OOB
+ port link-type access
+ port default vlan 230
+#
+interface GigabitEthernet12/0/43
+ shutdown
+#
+interface GigabitEthernet12/0/44
+ shutdown
+#
+interface GigabitEthernet12/0/45
+ shutdown
+#
+interface GigabitEthernet12/0/46
+ description OOB MSW03KPR - Eth0/0/0
+ port link-type access
+ port default vlan 223
+#
+interface GigabitEthernet12/0/47
+ description Trunk port to MSW04KPR Gi12/0/47
+ eth-trunk 1
+#
+interface XGigabitEthernet5/0/0
+ shutdown
+#
+interface XGigabitEthernet5/0/1
+ shutdown
+#
+interface XGigabitEthernet5/0/2
+ description vEPC MANEAS01KPR Control-Fabric1 xe-0/2/1 NFVI_CTRL_OAM -PRE
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+#
+interface XGigabitEthernet5/0/2.4090
+ description vEPC NFVI_CTRL_OAM hds_equip_mgmt_nw
+ dot1q termination vid 4090
+ dot1q vrrp vid 4090
+ ip binding vpn-instance NFVI_CTRL_OAM
+ ip address 172.21.247.2 255.255.255.0
+ vrrp vrid 247 virtual-ip 172.21.247.1
+ arp broadcast enable
+#
+interface XGigabitEthernet5/0/2.4091
+ description vEPC NFVI_CTRL_OAM hds_ccm_access_nw
+ dot1q termination vid 4091
+ dot1q vrrp vid 4091
+ ip binding vpn-instance NFVI_CTRL_OAM
+ ip address 172.21.248.2 255.255.255.224
+ vrrp vrid 248 virtual-ip 172.21.248.1
+ arp broadcast enable
+#
+interface XGigabitEthernet5/0/3
+ description vEPC 2DEG-AKL-KPR-RTR01 xe-100/0/8 NFVI_DATA_OAM -PRE
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+#
+interface XGigabitEthernet5/0/3.1601
+ description vEPC NFVI_DATA_OAM EBGP
+ dot1q termination vid 1601
+ ip binding vpn-instance NFVI_DATA_OAM
+ ip address 192.168.0.22 255.255.255.252
+ arp broadcast enable
+#
+interface XGigabitEthernet5/0/3.2000
+ description Peering To AKL-KPR-RTR01
+ dot1q termination vid 2000
+ ip binding vpn-instance 2DEG_SiteEnvironmentals
+ ip address 192.168.0.157 255.255.255.254
+ arp broadcast enable
+#
+interface XGigabitEthernet5/0/3.2030
+ description vEPC vSGSN-MME OAM NTP
+ dot1q termination vid 2030
+ ip binding vpn-instance vEPC-MGMT
+ ip address 192.168.80.98 255.255.255.252
+ arp broadcast enable
+#
+interface XGigabitEthernet5/0/3.2032
+ description vEPC vSGSN-MME FSB-Admin SFTP_BKP
+ dot1q termination vid 2032
+ ip binding vpn-instance SFTP_BKP
+ ip address 192.168.80.242 255.255.255.252
+ arp broadcast enable
+#
+interface XGigabitEthernet5/0/3.2130
+ description PP-vEPC vSGSN-MME OAM NTP
+ dot1q termination vid 2130
+ ip binding vpn-instance PP-vEPC-MGMT
+ ip address 192.168.95.98 255.255.255.252
+ arp broadcast enable
+#
+interface XGigabitEthernet11/0/0
+ description BigData CE6851 Data BDSWDATA01KPR
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 212
+ smart-link flush receive control-vlan 212 password simple 
+#
+interface XGigabitEthernet11/0/1
+ description Netezza Mako - Host1 Port 1/0, Active
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 212
+#
+interface XGigabitEthernet11/0/2
+ description Netezza Mako - Host2 Port 4/0, Standby
+ undo enable snmp trap updown
+ port link-type access
+ port default vlan 212
+#
+interface XGigabitEthernet11/0/3
+ description FW04aKPR - Eth2-02 DECOMMISSIONED
+ shutdown
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 to 201 203 205 to 206 209 214 to 215 217 226 to 231 235 903
+ port trunk allow-pass vlan 905 907 to 909 2076 to 2077 2079 3054 4000 to 4019 4024 to 4027 4041 to 4045 4050 to 4058 4064
+ port trunk allow-pass vlan 4067 to 4068 4071 to 4079
+ port-mirroring to observe-port 1 inbound
+ port-mirroring to observe-port 1 outbound
+#
+interface XGigabitEthernet11/0/4
+ description MPS02KPR - Netscout Mirrored Port
+ port link-type access
+ port default vlan 4060
+#
+interface XGigabitEthernet11/0/5
+ description IMS SLS01KPR 10GE 1/0/2
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 201 206 221 223 225 to 227 229 250 to 251 273 300 to 303 370
+ port trunk allow-pass vlan 391 421 507 615 620 625 to 627 763 990 1249 1300 to 1302
+ port trunk allow-pass vlan 1304 1330 to 1333 1400 2526 3226 3246 3251 3532
+ smart-link flush receive control-vlan 201 password simple 
+#
+interface XGigabitEthernet11/0/6
+ shutdown
+ undo enable snmp trap updown
+#
+interface XGigabitEthernet11/0/7
+ description Splunk MSPK01KPR
+ undo enable snmp trap updown
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 218 225
+#
+interface XGigabitEthernet11/0/8
+ description Reserved MDSW01KPR XGigabitEth5
+ shutdown
+ eth-trunk 10
+#
+interface XGigabitEthernet11/0/9
+ description Reserved MDSW01KPR XGigabitEth4
+ shutdown
+ undo enable snmp trap updown
+ eth-trunk 10
+#
+interface XGigabitEthernet11/0/10
+ description AWS SNAP-AKL-KPR-ACX01 xe-0/0/2
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 189 to 190 2526
+#
+interface XGigabitEthernet11/0/11
+ description IMS MLSW01KPR 10GE 1/0/2
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 201
+ smart-link flush receive control-vlan 201
+#
+interface XGigabitEthernet11/0/12
+ description IMS MLSW01KPR 10GE 1/0/3
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 202 206 208 212 to 214 216 to 221 223 225 to 226 230
+ port trunk allow-pass vlan 236 to 238 241 to 242 255 260 to 261
+ smart-link flush receive control-vlan 214
+#
+interface XGigabitEthernet11/0/13
+ description SLS03KPR 10GE 1/0/2
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 201 216 223 to 226 229 250 to 251 273 300 to 303 370 391
+ port trunk allow-pass vlan 421 507 615 620 625 to 626 763 990 1249 1300 to 1302 1304
+ port trunk allow-pass vlan 1330 to 1333 1400 3251 3532
+ smart-link flush receive control-vlan 201
+#
+interface XGigabitEthernet11/0/14
+ description FWSLS01AKPR (Smart-Uplink)
+ shutdown
+#
+interface XGigabitEthernet11/0/15
+ description FWMLS01AKPR (Smart-Uplink)
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 192 200 202 to 203 205 to 206 209 212 215 219 253 to 254 260 to 261
+ port trunk allow-pass vlan 278 903 905 907 to 910 2192 3043 3054 3214 3225 to 3227 3229
+ port trunk allow-pass vlan 3247 3531 4000 to 4019 4024 to 4027 4041 to 4045 4050 to 4058 4061 4064 4067 to 4068 4071 to 4079
+#
+interface NULL0
+#
+interface LoopBack0
+ ip address 172.21.222.9 255.255.255.255
+#
+bfd nels_oam-vip-1 bind peer-ip 172.21.244.36 vpn-instance NeLS-Mgmt interface Vlanif1332 source-ip 172.21.244.34 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd nels_oam-vip-2 bind peer-ip 172.21.244.37 vpn-instance NeLS-Mgmt interface Vlanif1332 source-ip 172.21.244.34 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd nels_thriftvip1 bind peer-ip 172.21.244.20 vpn-instance NeLS-Mgmt interface Vlanif1331 source-ip 172.21.244.18 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd nels_thriftvip2 bind peer-ip 172.21.244.21 vpn-instance NeLS-Mgmt interface Vlanif1331 source-ip 172.21.244.18 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd pp-vsapcebmvip1 bind peer-ip 172.31.239.228 vpn-instance PP-EBM interface Vlanif626 source-ip 172.31.239.226 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd pp-vsapcebmvip2 bind peer-ip 172.31.239.229 vpn-instance PP-EBM interface Vlanif626 source-ip 172.31.239.226 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd pp-vsapcoamvip1 bind peer-ip 172.31.239.4 vpn-instance PP-PCRF-Mgmt interface Vlanif763 source-ip 172.31.239.2 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd pp-vsapcoamvip2 bind peer-ip 172.31.239.5 vpn-instance PP-PCRF-Mgmt interface Vlanif763 source-ip 172.31.239.2 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd vsapc-ebm-vip-1 bind peer-ip 172.21.239.228 vpn-instance EBM interface Vlanif370 source-ip 172.21.239.226 auto
+ commit
+#
+bfd vsapc-ebm-vip-2 bind peer-ip 172.21.239.229 vpn-instance EBM interface Vlanif370 source-ip 172.21.239.226 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd vsapc-ebm-vip-3 bind peer-ip 172.21.239.230 vpn-instance EBM interface Vlanif370 source-ip 172.21.239.226 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd vsapc-ebm-vip-4 bind peer-ip 172.21.239.231 vpn-instance EBM interface Vlanif370 source-ip 172.21.239.226 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd vsapc-ebm-vip-5 bind peer-ip 172.21.239.232 vpn-instance EBM interface Vlanif370 source-ip 172.21.239.226 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd vsapc-ebm-vip-6 bind peer-ip 172.21.239.233 vpn-instance EBM interface Vlanif370 source-ip 172.21.239.226 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd vsapc-oam-vip-1 bind peer-ip 172.21.239.4 vpn-instance PCRF-Mgmt interface Vlanif507 source-ip 172.21.239.2 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bfd vsapc-oam-vip-2 bind peer-ip 172.21.239.5 vpn-instance PCRF-Mgmt interface Vlanif507 source-ip 172.21.239.2 auto
+ detect-multiplier 5
+ min-tx-interval 200
+ min-rx-interval 200
+ commit
+#
+bgp 65231
+ router-id 172.21.222.9
+ graceful-restart
+ peer 172.21.222.10 as-number 65231
+ peer 172.21.222.10 connect-interface LoopBack0
+ peer 172.22.222.9 as-number 65231
+ peer 172.23.222.9 as-number 65231
+ peer 172.23.222.9 connect-interface LoopBack0
+ peer 172.23.222.10 as-number 65231
+ peer 172.23.222.10 connect-interface LoopBack0
+ group RR-Client internal
+ peer RR-Client connect-interface LoopBack0
+ #
+ ipv4-family unicast
+  undo synchronization
+  import-route direct
+  import-route static
+  undo peer RR-Client enable
+  undo peer 172.21.222.10 enable
+  undo peer 172.22.222.9 enable
+  undo peer 172.23.222.9 enable
+  undo peer 172.23.222.10 enable
+ #
+ ipv4-family vpnv4
+  reflector cluster-id 100
+  undo policy vpn-target
+  peer 172.23.222.9 enable
+  peer 172.23.222.9 advertise-community
+  peer 172.23.222.10 enable
+  peer 172.23.222.10 advertise-community
+  peer RR-Client enable
+  peer RR-Client reflect-client
+  peer RR-Client advertise-community
+  peer 172.21.222.10 enable
+  peer 172.21.222.10 group RR-Client
+  peer 172.22.222.9 enable
+  peer 172.22.222.9 group RR-Client
+ #
+ ipv4-family vpn-instance 2DEG_SiteEnvironmentals
+  import-route direct
+  import-route static
+  group 2DEG_SiteEnvironmentals external
+  peer 2DEG_SiteEnvironmentals as-number 23655
+  peer 2DEG_SiteEnvironmentals bfd min-tx-interval 100 min-rx-interval 100
+  peer 2DEG_SiteEnvironmentals bfd enable
+  peer 192.168.0.156 as-number 23655
+  peer 192.168.0.156 group 2DEG_SiteEnvironmentals
+  peer 192.168.0.156 connect-interface XGigabitEthernet5/0/3.2000
+  peer 192.168.0.156 route-policy 2DEG_SiteEnvironmentals_IN import
+  peer 192.168.0.156 route-policy 2DEG_SiteEnvironmentals_OUT export
+ #
+ ipv4-family vpn-instance AAT-OM-CN
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance Appliance_mgmt_hub
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance Appliance_mgmt_spoke-T-PKI
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance BACKUP_MGMT
+  import-route direct
+ #
+ ipv4-family vpn-instance CSS-OOB-MGMT
+  import-route static
+ #
+ ipv4-family vpn-instance Cloud-Mgmt
+  network 10.0.0.0
+  network 172.21.0.0
+  import-route direct
+  import-route static
+  group Cloud-Mgmt external
+  peer Cloud-Mgmt as-number 23655
+  peer Cloud-Mgmt bfd min-tx-interval 100 min-rx-interval 100
+  peer Cloud-Mgmt bfd enable
+  peer Cloud-Mgmt password cipher 
+  peer 198.19.4.5 as-number 23655
+  peer 198.19.4.5 group Cloud-Mgmt
+  peer 198.19.4.5 connect-interface Vlanif189
+  peer 198.19.4.5 route-policy Cloud-Mgmt-IN-RP import
+  peer 198.19.4.5 route-policy Cloud-Mgmt-OUT-RP export
+  peer 198.19.4.5 route-limit 100 alert-only
+ #
+ ipv4-family vpn-instance DISCOVERY
+  import-route direct
+ #
+ ipv4-family vpn-instance DRA-MGMT
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance Data-Warehouse
+  import-route direct
+ #
+ ipv4-family vpn-instance EBM
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance ENM-Mgmt
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance ENM-VIO
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance Ericsson_CAS
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance FMS-Mgmt
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance IMN-MGMT
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance IMS-MGMT
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance IPRAN-MGMT
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance LI-IMS-MGMT
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance LI-IMS-OOB
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance LI-Mgmt
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance MGMT-BUILD
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance MSX-Mgmt
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance Mgmt-Backup
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance NFVI_CTRL_OAM
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance NFVI_CTRL_OAM_TEST
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance NFVI_DATA_OAM
+  network 0.0.0.0
+  import-route direct
+  import-route static
+  group NFVI_DATA_KPR_RTR external
+  peer NFVI_DATA_KPR_RTR as-number 23655
+  peer NFVI_DATA_KPR_RTR bfd min-tx-interval 100 min-rx-interval 100
+  peer NFVI_DATA_KPR_RTR bfd enable
+  peer NFVI_DATA_KPR_RTR password cipher 
+  peer 192.168.0.21 as-number 23655
+  peer 192.168.0.21 group NFVI_DATA_KPR_RTR
+  peer 192.168.0.21 connect-interface XGigabitEthernet5/0/3.1601
+  peer 192.168.0.21 route-policy NFVI-DATA-IN-RP import
+  peer 192.168.0.21 route-policy NFVI-DATA-OUT-RP export
+  peer 192.168.0.21 route-limit 100 alert-only
+ #
+ ipv4-family vpn-instance NFVI_DATA_OAM_TEST
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance NeLS-Ext
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance NeLS-Mgmt
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance Netscout
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance OOB-CORE
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance OOB-EDGE
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance OOB_FAZ
+  network 0.0.0.0
+  import-route direct
+  import-route static
+  group FAZ-Mgmt external
+  peer FAZ-Mgmt as-number 23655
+  peer FAZ-Mgmt bfd min-tx-interval 100 min-rx-interval 100
+  peer FAZ-Mgmt bfd enable
+  peer FAZ-Mgmt password cipher
+  peer 198.18.4.29 as-number 23655
+  peer 198.18.4.29 group FAZ-Mgmt
+  peer 198.18.4.29 connect-interface Vlanif190
+  peer 198.18.4.29 route-policy FAZ-Mgmt-IN-RP import
+  peer 198.18.4.29 route-policy FAZ-Mgmt-OUT-RP export
+  peer 198.18.4.29 route-limit 100 alert-only
+ #
+ ipv4-family vpn-instance OOB_MGMT
+  network 0.0.0.0
+  import-route direct
+  import-route static route-policy LP-200
+ #
+ ipv4-family vpn-instance OSS
+  import-route direct
+ #
+ ipv4-family vpn-instance PCRF-Mgmt
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PKI
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PP-EBM
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PP-LI-IMS-MGMT
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PP-LI-IMS-OOB
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PP-PCRF-Mgmt
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PP-V-OOB-CORE
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PP-V-OOB-SECURE
+  network 172.21.0.0 255.255.255.0
+  network 172.21.0.0 255.255.255.248
+  network 172.23.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance PP-vEPC-MGMT
+  network 0.0.0.0
+  import-route direct
+  import-route static
+  group PP-vEPC-MGMT-KPR-RTR external
+  peer PP-vEPC-MGMT-KPR-RTR as-number 23655
+  peer PP-vEPC-MGMT-KPR-RTR bfd min-tx-interval 100 min-rx-interval 100
+  peer PP-vEPC-MGMT-KPR-RTR bfd enable
+  peer PP-vEPC-MGMT-KPR-RTR password cipher 
+  peer 192.168.95.97 as-number 23655
+  peer 192.168.95.97 group PP-vEPC-MGMT-KPR-RTR
+  peer 192.168.95.97 connect-interface XGigabitEthernet5/0/3.2130
+  peer 192.168.95.97 route-policy PP-vEPC-MGMT-IN-RP import
+  peer 192.168.95.97 route-policy PP-vEPC-MGMT-OUT-RP export
+  peer 192.168.95.97 route-limit 100 alert-only
+ #
+ ipv4-family vpn-instance SEC-MGMT
+  import-route direct
+ #
+ ipv4-family vpn-instance SEC-OOB
+  import-route direct
+ #
+ ipv4-family vpn-instance SEC-OOB-2
+  import-route direct
+ #
+ ipv4-family vpn-instance SEC-VMware-Mgmt
+  import-route direct
+ #
+ ipv4-family vpn-instance SFTP_BKP
+  import-route direct
+  import-route static
+  group vEPC-FSB-Admin-KPR-RTR external
+  peer vEPC-FSB-Admin-KPR-RTR as-number 23655
+  peer vEPC-FSB-Admin-KPR-RTR ignore
+  peer vEPC-FSB-Admin-KPR-RTR bfd enable
+  peer vEPC-FSB-Admin-KPR-RTR password cipher
+  peer 192.168.80.241 as-number 23655
+  peer 192.168.80.241 group vEPC-FSB-Admin-KPR-RTR
+  peer 192.168.80.241 connect-interface XGigabitEthernet5/0/3.2032
+  peer 192.168.80.241 route-policy vEPC-FSB-Admin-IN-RP import
+  peer 192.168.80.241 route-policy vEPC-FSB-Admin-OUT-RP export
+  peer 192.168.80.241 route-limit 100 alert-only
+ #
+ ipv4-family vpn-instance SPLUNK
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance Sandvine
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance TS-AAT-OM-CN
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance TS-ENM-Mgmt
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance TS-ENM-VIO
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance TS-NeLS-Ext
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance TS-NeLS-Mgmt
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance TSR_MGMT
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance V-OOB-CORE
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance V-OOB-CORP
+  import-route direct
+ #
+ ipv4-family vpn-instance V-OOB-EDGE
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance V-OOB-MGMT
+  import-route direct
+ #
+ ipv4-family vpn-instance V-OOB-PUBLIC
+  import-route direct
+ #
+ ipv4-family vpn-instance V-OOB-PUBLIC-2
+  import-route direct
+ #
+ ipv4-family vpn-instance V-OOB-SECURE
+  import-route direct
+ #
+ ipv4-family vpn-instance VMware-Mgmt
+  network 0.0.0.0
+  import-route direct
+  import-route static
+ #
+ ipv4-family vpn-instance vEPC-MGMT
+  network 0.0.0.0
+  import-route direct
+  import-route static
+  group vEPC-MGMT-KPR-RTR external
+  peer vEPC-MGMT-KPR-RTR as-number 23655
+  peer vEPC-MGMT-KPR-RTR bfd min-tx-interval 100 min-rx-interval 100
+  peer vEPC-MGMT-KPR-RTR bfd enable
+  peer vEPC-MGMT-KPR-RTR password cipher
+  peer 192.168.80.97 as-number 23655
+  peer 192.168.80.97 group vEPC-MGMT-KPR-RTR
+  peer 192.168.80.97 connect-interface XGigabitEthernet5/0/3.2030
+  peer 192.168.80.97 route-policy vEPC-MGMT-IN-RP import
+  peer 192.168.80.97 route-policy vEPC-MGMT-OUT-RP export
+  peer 192.168.80.97 route-limit 100 alert-only
+ #
+ ipv4-family vpn-instance vSphere-Rep
+  import-route direct
+#
+ospf 1 router-id 172.21.222.9
+ bfd all-interfaces enable
+ bfd all-interfaces min-tx-interval 300 min-rx-interval 300
+ area 0.0.0.0
+  network 172.19.10.0 0.0.0.255
+  network 172.21.111.8 0.0.0.3
+  network 172.21.222.9 0.0.0.0
+#
+route-policy LP-200 permit node 10
+ apply local-preference 200
+#
+route-policy Cloud-Mgmt-IN-RP permit node 10
+ apply local-preference 200
+#
+route-policy Cloud-Mgmt-OUT-RP permit node 10
+ if-match ip-prefix Cloud-Mgmt-OUT
+ apply cost 50
+#
+route-policy OOB_MGMT_OUT_RP permit node 10
+ if-match ip-prefix OOB_MGMT_OUT_PL
+#
+route-policy FAZ-Mgmt-IN-RP permit node 10
+ if-match ip-prefix FAZ-Mgmt-IN
+ apply local-preference 200
+#
+route-policy FAZ-Mgmt-OUT-RP permit node 10
+ if-match ip-prefix FAZ-Mgmt-OUT
+ apply cost 50
+#
+route-policy TSR_MGMT_OUT_RP permit node 10
+ if-match ip-prefix TSR_MGMT_OUT_PL
+#
+route-policy NFVI-DATA-IN-RP permit node 10
+#
+route-policy NFVI-DATA-OUT-RP permit node 10
+#
+route-policy vEPC-MGMT-IN-RP permit node 10
+#
+route-policy vEPC-MGMT-OUT-RP permit node 10
+#
+route-policy vEPC-FSB-Admin-IN-RP permit node 10
+#
+route-policy vEPC-FSB-Admin-OUT-RP permit node 10
+#
+route-policy 2DEG_SiteEnvironmentals_IN permit node 10
+#
+route-policy 2DEG_SiteEnvironmentals_OUT permit node 10
+#
+route-policy PP-vEPC-MGMT-IN-RP permit node 10
+#
+route-policy PP-vEPC-MGMT-OUT-RP permit node 10
+#
+ip ip-prefix Cloud-Mgmt-OUT index 10 permit 10.0.0.0 8
+ip ip-prefix Cloud-Mgmt-OUT index 11 permit 172.21.0.0 16
+ip ip-prefix OOB_MGMT_OUT_PL index 10 permit 0.0.0.0 0
+ip ip-prefix FAZ-Mgmt-IN index 10 permit 123.255.4.0 24
+ip ip-prefix FAZ-Mgmt-IN index 11 permit 123.255.5.0 24
+ip ip-prefix FAZ-Mgmt-OUT index 10 permit 172.21.214.0 24
+ip ip-prefix FAZ-Mgmt-OUT index 20 permit 172.21.255.0 24
+ip ip-prefix FAZ-Mgmt-OUT index 30 permit 172.21.200.128 32
+ip ip-prefix TSR_MGMT_OUT_PL index 10 permit 0.0.0.0 0
+#
+ip route-static 0.0.0.0 0.0.0.0 172.21.220.1
+ip route-static 0.0.0.0 0.0.0.0 172.21.223.1 preference 255
+ip route-static vpn-instance CSS-OOB-MGMT 172.21.0.0 255.255.0.0 172.21.194.163 description CSS-OOB-MGMT
+ip route-static vpn-instance CSS-OOB-MGMT 172.23.77.0 255.255.255.0 172.21.194.163 description to mFW
+ip route-static vpn-instance CSS-OOB-MGMT 202.37.101.0 255.255.255.0 172.21.194.163 description to mFW
+ip route-static vpn-instance Cloud-Mgmt 0.0.0.0 0.0.0.0 172.21.194.91
+ip route-static vpn-instance Cloud-Mgmt 10.0.0.0 255.0.0.0 172.21.194.91
+ip route-static vpn-instance Cloud-Mgmt 172.21.0.0 255.255.0.0 172.21.194.91
+ip route-static vpn-instance DISCOVERY 0.0.0.0 0.0.0.0 172.21.194.123 description DISCOVERY Default route
+ip route-static vpn-instance DRA-MGMT 0.0.0.0 0.0.0.0 172.21.194.139 description MFW01KPR
+ip route-static vpn-instance Data-Warehouse 0.0.0.0 0.0.0.0 172.21.194.1 description Data-Warehouse
+ip route-static vpn-instance FMS-Mgmt 0.0.0.0 0.0.0.0 172.21.194.101
+ip route-static vpn-instance IMN-MGMT 0.0.0.0 0.0.0.0 172.21.194.147 description MFW01KPR
+ip route-static vpn-instance IMS-MGMT 0.0.0.0 0.0.0.0 172.21.194.9
+ip route-static vpn-instance IPRAN-MGMT 10.0.0.0 255.128.0.0 172.21.215.4
+ip route-static vpn-instance IPRAN-MGMT 10.192.0.0 255.192.0.0 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.21.192.51 255.255.255.255 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.21.196.64 255.255.255.224 172.21.215.2 description To U2020 Server via Management FW
+ip route-static vpn-instance IPRAN-MGMT 172.21.200.0 255.255.255.0 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.21.201.0 255.255.255.0 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.21.207.137 255.255.255.255 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.21.208.0 255.255.255.0 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.21.239.128 255.255.255.192 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.21.255.0 255.255.255.0 172.21.215.2
+ip route-static vpn-instance IPRAN-MGMT 172.22.200.0 255.255.255.0 172.21.215.2
+ip route-static vpn-instance LI-Mgmt 0.0.0.0 0.0.0.0 172.21.194.81
+ip route-static vpn-instance MSX-Mgmt 0.0.0.0 0.0.0.0 172.21.194.155
+ip route-static vpn-instance Mgmt-Backup 0.0.0.0 0.0.0.0 172.21.194.75
+ip route-static vpn-instance Netscout 0.0.0.0 0.0.0.0 172.21.193.1
+ip route-static vpn-instance OOB-CORE 0.0.0.0 0.0.0.0 172.21.194.49
+ip route-static vpn-instance OOB-EDGE 0.0.0.0 0.0.0.0 172.21.194.57
+ip route-static vpn-instance OOB_FAZ 0.0.0.0 0.0.0.0 172.21.199.1
+ip route-static vpn-instance OOB_FAZ 172.21.200.128 255.255.255.255 172.21.199.1
+ip route-static vpn-instance OOB_FAZ 172.21.214.0 255.255.255.0 172.21.199.1
+ip route-static vpn-instance OOB_FAZ 172.21.255.0 255.255.255.0 172.21.199.1
+ip route-static vpn-instance OOB_MGMT 0.0.0.0 0.0.0.0 172.21.197.1
+ip route-static vpn-instance OOB_MGMT 10.21.224.0 255.255.240.0 172.21.220.202
+ip route-static vpn-instance OOB_MGMT 172.21.194.240 255.255.255.252 172.21.220.160 description for EVU Service Logical
+ip route-static vpn-instance OOB_MGMT 172.21.249.32 255.255.255.252 172.21.221.189 description Fortigate IPsecGW inter-vdom P2P
+ip route-static vpn-instance OOB_MGMT 172.21.249.36 255.255.255.252 172.21.221.190 description Fortigate IPsecGW inter-vdom P2P
+ip route-static vpn-instance OSS 0.0.0.0 0.0.0.0 172.21.194.115
+ip route-static vpn-instance PKI 0.0.0.0 0.0.0.0 172.21.198.1
+ip route-static vpn-instance SPLUNK 0.0.0.0 0.0.0.0 172.21.194.107 description Default route to mFW
+ip route-static vpn-instance TSR_MGMT 0.0.0.0 0.0.0.0 172.21.195.1
+ip route-static vpn-instance V-OOB-CORE 0.0.0.0 0.0.0.0 172.21.194.17
+ip route-static vpn-instance V-OOB-EDGE 0.0.0.0 0.0.0.0 172.21.194.25
+ip route-static vpn-instance V-OOB-MGMT 0.0.0.0 0.0.0.0 172.21.194.131
+ip route-static vpn-instance V-OOB-PUBLIC 0.0.0.0 0.0.0.0 172.21.194.33 description DF to FW
+ip route-static vpn-instance V-OOB-PUBLIC-2 0.0.0.0 0.0.0.0 172.21.194.171 description DF FW
+ip route-static vpn-instance V-OOB-SECURE 0.0.0.0 0.0.0.0 172.21.194.179 description DF FW
+ip route-static vpn-instance VMware-Mgmt 0.0.0.0 0.0.0.0 172.21.194.65
+ip route-static vpn-instance V-OOB-CORP 0.0.0.0 0.0.0.0 172.21.194.187 description DF FW
+ip route-static vpn-instance SEC-VMware-Mgmt 0.0.0.0 0.0.0.0 172.21.194.41 description DF FW
+ip route-static vpn-instance SEC-MGMT 0.0.0.0 0.0.0.0 172.21.194.193 description DF FW
+ip route-static vpn-instance SEC-OOB 0.0.0.0 0.0.0.0 172.21.194.193 description DF FW
+ip route-static vpn-instance Sandvine 0.0.0.0 0.0.0.0 172.21.194.209 description MFW01KPR
+ip route-static vpn-instance MGMT-BUILD 0.0.0.0 0.0.0.0 172.21.194.217
+ip route-static vpn-instance SEC-OOB-2 0.0.0.0 0.0.0.0 172.21.194.201 description DF FW
+ip route-static vpn-instance PCRF-Mgmt 0.0.0.0 0.0.0.0 172.21.246.4 description DF FW
+ip route-static vpn-instance PCRF-Mgmt 172.21.238.0 255.255.255.0 172.21.246.4 description Mgmt Build Network
+ip route-static vpn-instance PCRF-Mgmt 172.21.239.96 255.255.255.255 172.21.239.4 track bfd-session vsapc-oam-vip-1 description vSAPC-OAM-VIP-static-1
+ip route-static vpn-instance PCRF-Mgmt 172.21.239.96 255.255.255.255 172.21.239.5 track bfd-session vsapc-oam-vip-2 description vSAPC-OAM-VIP-static-2
+ip route-static vpn-instance ENM-Mgmt 0.0.0.0 0.0.0.0 172.21.246.12 description DF FW
+ip route-static vpn-instance ENM-VIO 0.0.0.0 0.0.0.0 172.21.246.20 description DF FW
+ip route-static vpn-instance ENM-VIO 172.21.0.0 255.255.0.0 172.21.246.20 description ENM-VIO/16 block via KPR Mgmt FW
+ip route-static vpn-instance NeLS-Mgmt 0.0.0.0 0.0.0.0 172.21.246.28 description DF FW
+ip route-static vpn-instance NeLS-Mgmt 172.21.200.0 255.255.255.0 172.21.246.28 description Jumphost NELS SSH FW-2
+ip route-static vpn-instance NeLS-Mgmt 172.21.218.0 255.255.255.0 172.21.246.28 description Splunk via KPR Mgmt FW
+ip route-static vpn-instance NeLS-Mgmt 172.21.244.64 255.255.255.255 172.21.244.20 track bfd-session nels_thriftvip1 description nels_thrift-VIP-static-1
+ip route-static vpn-instance NeLS-Mgmt 172.21.244.64 255.255.255.255 172.21.244.21 track bfd-session nels_thriftvip2 description nels_thrift-VIP-static-2
+ip route-static vpn-instance NeLS-Mgmt 172.21.244.66 255.255.255.255 172.21.244.36 track bfd-session nels_oam-vip-1 description nels_oam-VIP-static-1
+ip route-static vpn-instance NeLS-Mgmt 172.21.244.66 255.255.255.255 172.21.244.37 track bfd-session nels_oam-vip-2 description nels_oam-VIP-static-2
+ip route-static vpn-instance NeLS-Ext 0.0.0.0 0.0.0.0 172.21.246.36 description DF FW
+ip route-static vpn-instance EBM 172.21.239.208 255.255.255.255 172.21.239.229 track bfd-session vsapc-ebm-vip-2 description vSAPC-EBM-VIP-static-2
+ip route-static vpn-instance EBM 172.21.239.208 255.255.255.255 172.21.239.230 track bfd-session vsapc-ebm-vip-3 description vSAPC-EBM-VIP-static-3
+ip route-static vpn-instance EBM 172.21.239.208 255.255.255.255 172.21.239.231 track bfd-session vsapc-ebm-vip-4 description vSAPC-EBM-VIP-static-4
+ip route-static vpn-instance EBM 172.21.239.208 255.255.255.255 172.21.239.232 track bfd-session vsapc-ebm-vip-5 description vSAPC-EBM-VIP-static-5
+ip route-static vpn-instance EBM 172.21.239.208 255.255.255.255 172.21.239.233 track bfd-session vsapc-ebm-vip-6 description vSAPC-EBM-VIP-static-6
+ip route-static vpn-instance EBM 172.21.239.208 255.255.255.255 172.21.239.228 track bfd-session vsapc-ebm-vip-1 description vSAPC-EBM-VIP-static-1
+ip route-static vpn-instance PP-PCRF-Mgmt 0.0.0.0 0.0.0.0 172.31.241.44 description DF FW
+ip route-static vpn-instance PP-PCRF-Mgmt 172.31.239.192 255.255.255.255 172.31.239.4 track bfd-session pp-vsapcoamvip1 description PP-vSAPC-OAM-VIP-static-1
+ip route-static vpn-instance PP-PCRF-Mgmt 172.31.239.192 255.255.255.255 172.31.239.5 track bfd-session pp-vsapcoamvip2 description PP-vSAPC-OAM-VIP-static-2
+ip route-static vpn-instance PP-EBM 172.31.239.208 255.255.255.255 172.31.239.228 track bfd-session pp-vsapcebmvip1 description PP-vSAPC-EBM-VIP-static-1
+ip route-static vpn-instance PP-EBM 172.31.239.208 255.255.255.255 172.31.239.229 track bfd-session pp-vsapcebmvip2 description PP-vSAPC-EBM-VIP-static-2
+ip route-static vpn-instance TS-ENM-Mgmt 0.0.0.0 0.0.0.0 172.31.241.12 description DF FW
+ip route-static vpn-instance TS-ENM-Mgmt 172.21.200.0 255.255.255.0 172.31.241.12 description Jumphost Test ENM Mgmt SSH FW-2
+ip route-static vpn-instance TS-ENM-Mgmt 172.21.218.0 255.255.255.0 172.31.241.12 description Splunk Syslog via Test ENM Mgmt FW
+ip route-static vpn-instance TS-ENM-Mgmt 172.21.255.0 255.255.255.0 172.31.241.12 description Jumphost Test ENM Mgmt SSH FW-1
+ip route-static vpn-instance TS-ENM-VIO 0.0.0.0 0.0.0.0 172.31.241.20 description DF FW
+ip route-static vpn-instance TS-ENM-VIO 172.21.200.0 255.255.255.0 172.31.241.20 description Jumphost Test ENM VIO SSH FW-2
+ip route-static vpn-instance TS-ENM-VIO 172.21.255.0 255.255.255.0 172.31.241.20 description Jumphost Test ENM VIO SSH FW-1
+ip route-static vpn-instance TS-NeLS-Mgmt 0.0.0.0 0.0.0.0 172.31.241.28 description DF FW
+ip route-static vpn-instance TS-NeLS-Mgmt 172.21.200.0 255.255.255.0 172.31.241.28 description Jumphost Test NeLS Mgmt SSH FW-2
+ip route-static vpn-instance TS-NeLS-Mgmt 172.21.218.0 255.255.255.0 172.31.241.28 description Splunk via KPR Mgmt FW
+ip route-static vpn-instance TS-NeLS-Mgmt 172.21.249.0 255.255.255.248 172.31.241.28 description TS-NeLS-Mgmt SFTP via KPR Mgmt FW
+ip route-static vpn-instance TS-NeLS-Mgmt 172.21.255.0 255.255.255.0 172.31.241.28 description Jumphost Test NeLS Mgmt SSH FW-1
+ip route-static vpn-instance TS-NeLS-Ext 0.0.0.0 0.0.0.0 172.31.241.36 description DF FW
+ip route-static vpn-instance TS-NeLS-Ext 172.21.200.0 255.255.255.0 172.31.241.36 description Jumphost Test NeLS Ext SSH FW-2
+ip route-static vpn-instance TS-NeLS-Ext 172.21.255.0 255.255.255.0 172.31.241.36 description Jumphost Test NeLS Ext SSH FW-1
+ip route-static vpn-instance NFVI_CTRL_OAM 0.0.0.0 0.0.0.0 172.21.246.52 description FW
+ip route-static vpn-instance NFVI_DATA_OAM 0.0.0.0 0.0.0.0 172.21.246.60 description FW
+ip route-static vpn-instance NFVI_CTRL_OAM_TEST 0.0.0.0 0.0.0.0 172.31.241.60 description FW
+ip route-static vpn-instance NFVI_DATA_OAM_TEST 0.0.0.0 0.0.0.0 172.31.241.68 description FW
+ip route-static vpn-instance PP-V-OOB-SECURE 0.0.0.0 0.0.0.0 172.31.241.76 description DF FW
+ip route-static vpn-instance PP-V-OOB-SECURE 172.21.0.0 255.255.0.0 172.31.241.76 description Jumphost Test AAT OOB SECURE SSH FW
+ip route-static vpn-instance TS-AAT-OM-CN 0.0.0.0 0.0.0.0 172.31.241.52 description DF FW
+ip route-static vpn-instance TS-AAT-OM-CN 172.21.0.0 255.255.0.0 172.31.241.52 description Jumphost Test AAT OM CN SSH FW
+ip route-static vpn-instance SFTP_BKP 0.0.0.0 0.0.0.0 172.21.246.68 description DF FW
+ip route-static vpn-instance LI-IMS-OOB 0.0.0.0 0.0.0.0 172.21.246.76 description DF FW
+ip route-static vpn-instance PP-LI-IMS-OOB 0.0.0.0 0.0.0.0 172.31.241.84 description DF FW
+ip route-static vpn-instance PP-LI-IMS-OOB 172.21.255.0 255.255.255.0 172.31.241.84 description Jumphost
+ip route-static vpn-instance vEPC-MGMT 0.0.0.0 0.0.0.0 172.21.246.92 description DF FW
+ip route-static vpn-instance vEPC-MGMT 172.21.248.144 255.255.255.240 192.168.80.97 description IPWorks eDNS OAM
+ip route-static vpn-instance vEPC-MGMT 172.21.248.160 255.255.255.240 192.168.80.97 description IPWorks eDNS Provisioning
+ip route-static vpn-instance vEPC-MGMT 172.21.248.176 255.255.255.240 192.168.80.97 description IPWorks iDNS OAM
+ip route-static vpn-instance vEPC-MGMT 172.21.248.192 255.255.255.240 192.168.80.97 description IPWorks iDNS Provisioning
+ip route-static vpn-instance Ericsson_CAS 10.199.0.0 255.255.255.0 172.21.249.12 description HUMAN_POOL_01 to Ericsson SRX
+ip route-static vpn-instance Ericsson_CAS 10.199.1.0 255.255.255.0 172.21.249.12 description HUMAN_POOL_02 to Ericsson SRX
+ip route-static vpn-instance Ericsson_CAS 172.21.218.220 255.255.255.255 172.21.246.108 description CAS Syslog to Splunk via MGMT FW
+ip route-static vpn-instance Ericsson_CAS 172.21.249.16 255.255.255.240 172.21.249.12 description CAS_CN to Ericsson SRX
+ip route-static vpn-instance Ericsson_CAS 172.21.255.20 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 1
+ip route-static vpn-instance Ericsson_CAS 172.21.255.21 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 2
+ip route-static vpn-instance Ericsson_CAS 172.21.255.22 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 3
+ip route-static vpn-instance Ericsson_CAS 172.21.255.30 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 8
+ip route-static vpn-instance Ericsson_CAS 172.21.255.31 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 9
+ip route-static vpn-instance Ericsson_CAS 172.21.255.50 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 6
+ip route-static vpn-instance Ericsson_CAS 172.21.255.51 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 7
+ip route-static vpn-instance Ericsson_CAS 172.21.255.60 255.255.255.255 172.21.246.108 description CAS to SFTP via MGMT FW
+ip route-static vpn-instance Ericsson_CAS 172.23.255.20 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 4
+ip route-static vpn-instance Ericsson_CAS 172.23.255.21 255.255.255.255 172.21.246.108 description CAS Jumphosts to MGMT FW - 5
+ip route-static vpn-instance LI-IMS-MGMT 0.0.0.0 0.0.0.0 172.21.246.100 description DF FW
+ip route-static vpn-instance PP-LI-IMS-MGMT 0.0.0.0 0.0.0.0 172.31.241.92 description DF FW
+ip route-static vpn-instance 2DEG_SiteEnvironmentals 0.0.0.0 0.0.0.0 172.21.246.124 description KPR-DC-FW
+ip route-static vpn-instance 2DEG_SiteEnvironmentals 172.21.0.0 255.255.0.0 172.21.246.124 description KPR-DC-FW
+ip route-static vpn-instance PP-vEPC-MGMT 0.0.0.0 0.0.0.0 172.31.241.108 description DF FW
+ip route-static vpn-instance ACS_AKL_Ansible 0.0.0.0 0.0.0.0 172.21.246.134 description ACS_AKL_Ansible_Firewall
+ip route-static vpn-instance Mobile_FMGR_MGMT_KPR 172.16.0.0 255.240.0.0 172.21.246.148 description Mobile_FMGR_MGMT_KPR_Firewall
+ip route-static vpn-instance PP-V-OOB-CORE 0.0.0.0 0.0.0.0 172.31.226.2 description DF FW
+ip route-static vpn-instance Appliance_mgmt_hub 172.21.255.0 255.255.255.0 172.21.232.1 description to mFW
+ip route-static vpn-instance Appliance_mgmt_hub 172.23.255.0 255.255.255.0 172.21.232.1 description to mFW
+#
+snmp-agent
+snmp-agent local-engineid 800007DB03105172F43A40
+snmp-agent community read cipher  acl 2000
+snmp-agent sys-info contact noc@2degreesmobile.co.nz 0508 022 NOC
+snmp-agent sys-info location NZ Communications Ltd, 131 Khyber Pass Rd, Rack C04
+snmp-agent sys-info version all
+snmp-agent group v3 dmf noauthentication read-view dmf write-view dmf notify-view dmf
+snmp-agent group v3 algosec_snmp authentication read-view algosec_snmp
+snmp-agent group v3 autodiscover-sa authentication read-view autodiscover-sa write-view autodiscover-sa notify-view autodiscover-sa
+snmp-agent target-host trap address udp-domain 172.21.200.201 params securityname cipher v2c
+snmp-agent target-host trap address udp-domain 172.21.219.90 params securityname algosec_mgmt v3
+snmp-agent target-host trap address udp-domain 172.21.200.100 params securityname dmf v3 privacy
+snmp-agent mib-view included dmf iso
+snmp-agent mib-view included algosec_snmp iso
+snmp-agent mib-view included autodiscover-sa iso
+snmp-agent usm-user v3 algosec_mgmt
+snmp-agent usm-user v3 algosec_mgmt group algosec_snmp
+snmp-agent usm-user v3 algosec_mgmt authentication-mode sha cipher 
+snmp-agent usm-user v3 algosec_mgmt privacy-mode aes128 cipher 
+snmp-agent usm-user v3 autodiscover-sa
+snmp-agent usm-user v3 autodiscover-sa group autodiscover-sa
+snmp-agent usm-user v3 autodiscover-sa authentication-mode sha cipher 
+snmp-agent usm-user v3 autodiscover-sa privacy-mode aes128 cipher 
+snmp-agent trap enable feature-name OSPF
+snmp-agent trap enable feature-name bgp
+snmp-agent trap enable feature-name MPLS-OAM
+snmp-agent trap enable feature-name IFNET trap-name linkDown
+snmp-agent trap enable feature-name IFNET trap-name linkUp
+undo snmp-agent trap enable feature-name CONFIGURATION
+snmp-agent trap enable feature-name SYSTEM
+snmp-agent trap enable feature-name IFPDT
+undo snmp-agent trap enable feature-name L2IFPPI trap-name hwMflpVlanAlarm
+undo snmp-agent trap enable feature-name L2IFPPI trap-name hwMacFlappingAlarm
+#
+ssh server compatible-ssh1x enable
+stelnet server enable
+ssh authentication-type default password
+ssh client first-time enable
+ssh client 172.21.210.21 assign rsa-key 172.21.210.21
+ssh client 172.21.210.22 assign rsa-key 172.21.210.22
+ssh client 172.21.220.12 assign rsa-key 172.21.220.12
+ssh client 172.21.220.214 assign dsa-key 172.21.220.214
+ssh client 172.21.220.253 assign rsa-key 172.21.220.253
+ssh client 172.21.221.168 assign ecc-key 172.21.221.168
+ssh client 172.21.221.22 assign rsa-key 172.21.221.22
+ssh client 172.21.221.40 assign dsa-key 172.21.221.40
+ssh client 172.21.222.9 assign rsa-key 172.21.222.9
+ssh client 172.21.253.122 assign ecc-key 172.21.253.122
+ssh client 172.21.253.124 assign ecc-key 172.21.253.124
+ssh client 172.23.210.21 assign rsa-key 172.23.210.21
+ssh client 172.23.210.22 assign rsa-key 172.23.210.22
+ssh client 172.23.221.40 assign dsa-key 172.23.221.40
+ssh client 172.23.253.122 assign ecc-key 172.23.253.122
+ssh client 172.23.255.11 assign dsa-key 172.23.255.11
+ssh server acl 2000
+#
+header login information "UNAUTHORISED ACCESS TO THIS SYSTEM IS PROHIBITEDhis system is classified as a RESTRICTED system for authorised users only.nauthorised access is strictly prohibited. By using this system, you agreeo comply with all 2degrees security policies.ll activities performed on this system are logged and monitored. Violationsf policies may result in disciplinary action and may be reported to lawnforcement agencies.
+
+ommand-privilege level 1 view shell display logbuffer
+command-privilege level 1 view shell display current-configuration
+command-privilege level 1 view shell display current-configuration interface
+#
+easy-operation dtls disable
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher
+ idle-timeout 15 0
+user-interface vty 0 4
+ acl 2000 inbound
+ authentication-mode aaa
+ idle-timeout 15 0
+user-interface vty 16 20
+ undo shell
+ protocol inbound telnet
+#
+return
+<MSW03KPR>
+
+<MSW03KPR>

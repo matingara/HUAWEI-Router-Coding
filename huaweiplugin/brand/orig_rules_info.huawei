@@ -1,0 +1,251 @@
+%orig_tables = (
+                 'expended2orig_headers' => '0,1,0,0,4,0,3,0,0',
+                 'tables' => [
+                               {
+                                 'orig_rules' => 1,
+                                 'seperator' => '',
+                                 'row_index' => {
+                                                  'use_as_id' => 1,
+                                                  'name' => 'rule_id',
+                                                  'prefix' => 'rule'
+                                                },
+                                 'ref' => \%policies,
+                                 'order_by' => 'rule_num',
+                                 'description' => 'This page provides references to the configuration data extracted from your device.
+Select a link from the table below to see the data desired.',
+                                 'columns' => [
+                                                {
+                                                 'name' => 'line_number',
+                                                 'title' => 'Index'
+                                               	},
+                                                {
+                                                 'name' => 'rule_display_name',
+                                                 'title' => 'Name'
+                                                },
+                                                {
+                                                  'name' => 'description',
+                                                  'title' => 'Description'
+                                                },
+                                                {
+                                                  'name' => 'src_zone',
+                                                  'title' => 'Source Zone'
+                                                },
+                                                {
+                                                 'name' => 'dst_zone',
+                                                 'title' => 'Destination Zone'
+                                                },
+                                                {
+                                                 'name' => 'src',
+                                                 'class' => 'src_dst_width',
+                                                 'title' => 'Source Address',
+                                                 'script' => 'Add_Hostgroups_Links'
+                                                },
+                                                {
+                                                 'name' => 'dst',
+                                                 'class' => 'src_dst_width',
+                                                 'title' => 'Destination Address',
+                                                 'script' => 'Add_Hostgroups_Links'
+                                                },
+                                                {
+                                                 'name' => 'service',
+                                                 'title' => 'Service',
+                                                 'script' => 'Add_Services_Links'
+                                                },
+                                                {
+                                                 'name' => 'schedule',
+                                                 'title' => 'Schedule'
+                                                },
+                                                {
+                                                 'script' => 'Default_Text_Converter',
+                                                 'name' => 'action',
+                                                 'default_class' => {
+                                                      'allow' => 'rule_action_permit',
+                                                      'deny' => 'rule_action_deny'
+                                                  },
+                                                 'title' => 'Action'
+                                                },
+                                                {
+                                                 'name' => 'enable', 
+                                                 'default_class' => {
+                                                      'enabled' => 'rule_enable',
+                                                      'disabled' => 'rule_disabled'
+                                                  },
+                                                 'title' => 'Enable'                                      
+                                                },
+                                                {
+                                                 'name' => 'log',
+                                                 'title' => 'Log'
+                                                }
+                                                ],
+                                                  'title' => 'Rules',
+                                                  'group_by' => {
+                                                  'name' => 'rule_grp',
+                                                  'class' => 'sw_group_by'
+                                               }
+                               },
+                               {
+                                 'seperator' => '',
+                                 'row_index' => {
+                                                  'name' => 'name',
+                                                  'prefix' => 'zone'
+                                                },
+                                 'ref' => \%zones,
+                                 'columns' => [
+                                                {
+                                                  'name' => 'name',
+                                                  'title' => 'Name',
+                                                  'no_text' => '0'
+                                                },
+                                                {
+                                                  'name' => 'interfaces',
+                                                  'title' => 'Interfaces'
+                                                },
+                                                {
+                                                  'name' => 'description',
+                                                  'title' => 'Description'
+                                                }
+                                              ],
+                                 'title' => 'Zones',
+                                 'description' => ''
+                               },
+                               {
+                                 'seperator' => '',
+                                 'row_index' => {
+                                                  'name' => 'name',
+                                                  'prefix' => 'if'
+                                                },
+                                 'ref' => \%interfaces,
+                                 'columns' => [
+                                                {
+                                                  'name' => 'name',
+                                                  'title' => 'Name'
+                                                },
+                                                {
+                                                  'name' => 'enable',
+                                                  'class' => 'sw_center',
+                                                  'title' => 'Enable',
+                                                },
+                                                {
+                                                  'name' => 'zone',
+                                                  'title' => 'Zone'
+                                                },
+                                                {
+                                                  'name' => 'ips',
+                                                  'title' => 'IP Addresses'
+                                                },
+                                                {
+                                                  'name' => 'description',
+                                                  'title' => 'Description'
+                                                }
+                                              ],
+                                 'title' => 'Interfaces',
+                                 'description' => ''
+                               },
+							   {
+								'seperator' => '',
+								'row_index' => {
+												 'name' => '__KEY__',
+												 'prefix' => 'time_obj'
+                               				   },
+								'ref' => \%schedules,
+								'columns' => [
+											   {
+												 'name' => '__KEY__',
+												 'title' => 'Name'
+											   },
+											   {
+												 'name' => 'start_date',
+												 'title' => 'Start On'
+											   },
+											   {
+												 'name' => 'end_date',
+												 'title' => 'Expire On'
+											   }
+											 ],
+								'title' => 'Schedules',
+								'description' => ''
+							   }],
+                 'reposit' => {
+                                'ref' => \%policies,
+                                'columns' => [
+                                                {
+                                                    'name' => 'line_number',
+                                                    'title' => 'RULENUM'
+                                               	},
+                                                {
+                                                    'name' => 'rule_id',
+                                                    'title' => 'RULE_ID'
+                                                },
+                                                {
+                                                    'script' => 'Add_Hostgroups_Links',
+                                                    'name' => 'src',
+                                                    'class' => 'src_dst_width',
+                                                    'title' => 'SOURCE'
+                                                },
+                                                {
+                                                    'script' => 'Add_Hostgroups_Links',                                                 
+                                                    'name' => 'dst',
+                                                    'class' => 'src_dst_width',
+                                                    'title' => 'DESTINATION'
+                                                },
+                                                {
+                                                    'name' => 'service',
+                                                    'title' => 'SERVICE'
+                                                },
+                                                {
+                                                    'name' => 'action',
+                                                    'title' => 'ACTION'
+                                                },
+                                                {
+                                                    'name' => 'enable', 
+                                                    'title' => 'ENABLE',
+                                                    'no_text' => 1                                        
+                                                },
+                                                {
+                                                    'name' => 'rule_display_name',
+                                                    'title' => 'NAME',
+                                                    'optional'=>'true'
+                                                },
+                                                {
+                                                    'name' => 'src_zone',
+                                                    'title' => 'FROM',
+                                                    'optional'=>'true'
+                                                },
+                                                {
+                                                    'name' => 'dst_zone',
+                                                    'title' => 'TO',
+                                                    'optional'=>'true'
+                                                },
+                                                {
+                                                    'no_full_data' => 1,
+                                                    'name' => 'appdefense',
+                                                    'title' => 'APPLICATION',
+                                                    'optional'=>'true'
+                                                },
+                                                {
+                                                    'name' => 'user',
+                                                    'title' => 'USER',
+                                                    'optional'=>'true'
+                                                },
+                                                {
+                                                    'name' => 'log',
+                                                    'title' => 'LOG'
+                                                },
+                                                {
+                                                    'name' => 'description',
+                                                    'title' => 'COMMENT'
+                                                },
+                                             ]
+                              },
+				'dictionary' => {
+					"action" => {
+						"allow" => "Permit",
+						"deny" => "Deny",
+						"drop" => "Drop"
+					},
+					"__ALL__" => {
+						"any" => "Any"
+					},
+				 }
+               );
+
