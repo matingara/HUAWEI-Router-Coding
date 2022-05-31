@@ -40,34 +40,34 @@ def initializeRouterInventory(location):
 
     if location == "poc":
         routerInventory = \
-        {"DRT01KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.38", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "DRT02KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.39", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"},
-        "MSW03KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.130", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "MSW04KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.131", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "EDSW01KPR" : { "brand" : "huawei", "ipAddress" : "edsw01kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "EDSW02KPR" : { "brand" : "huawei", "ipAddress" : "edsw02kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "DRT01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.38", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"},
-        "DRT02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.39", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"},
-        "MSW01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.254", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "MSW02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.253", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "EDSW01HAM" : { "brand" : "huawei", "ipAddress" : "edsw01ham.nzc.co.nz", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP" }}
+        {"DRT01KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.38", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "DRT02KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.39", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"},
+        "MSW03KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.130", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "MSW04KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.131", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "EDSW01KPR" : { "brand" : "huawei", "ipAddress" : "edsw01kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "EDSW02KPR" : { "brand" : "huawei", "ipAddress" : "edsw02kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "DRT01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.38", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"},
+        "DRT02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.39", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"},
+        "MSW01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.254", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "MSW02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.253", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "EDSW01HAM" : { "brand" : "huawei", "ipAddress" : "edsw01ham.nzc.co.nz", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv" }}
 
     if location == "pockpr":
         routerInventory = \
-        {"DRT01KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.38", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "DRT02KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.39", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"},
-        "MSW03KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.130", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "MSW04KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.131", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "EDSW01KPR" : { "brand" : "huawei", "ipAddress" : "edsw01kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "EDSW02KPR" : { "brand" : "huawei", "ipAddress" : "edsw02kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP" }}
+        {"DRT01KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.38", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "DRT02KPR" : { "brand" : "huawei", "ipAddress" : "172.21.220.39", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"},
+        "MSW03KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.130", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "MSW04KPR" : { "brand" : "huawei", "ipAddress" : "172.21.223.131", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "EDSW01KPR" : { "brand" : "huawei", "ipAddress" : "edsw01kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "EDSW02KPR" : { "brand" : "huawei", "ipAddress" : "edsw02kpr.nzc", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv" }}
 
     if location == "pocham":
         routerInventory = \
-        {"DRT01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.38", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"},
-        "DRT02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.39", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"},
-        "MSW01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.254", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "MSW02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.253", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP"}, 
-        "EDSW01HAM" : { "brand" : "huawei", "ipAddress" : "edsw01ham.nzc.co.nz", "userId" : "Transport-AlgoSec", "password" : "Vx80BOgrOGki&c4IUn0#$JfqaxP" }}
+        {"DRT01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.38", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"},
+        "DRT02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.39", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"},
+        "MSW01HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.254", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "MSW02HAM" : { "brand" : "huawei", "ipAddress" : "172.23.220.253", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv"}, 
+        "EDSW01HAM" : { "brand" : "huawei", "ipAddress" : "edsw01ham.nzc.co.nz", "userId" : "Transport-AlgoSec", "password" : "e5BOXu0kUv" }}
 
     if location == "2degrees" or location == "2d":
         routerInventory = \
@@ -199,9 +199,11 @@ def getVRFs(deviceType, ipAddress, userId, pwd):
     )
     
     try:
-        print("E N T E R E D     V R F     C O D E")
-        result = ssh_connection.send_command("display ip vpn-instance", delay_factor=2)
-        print("result", result)
+#        print("E N T E R E D     V R F     C O D E")
+        print("TS BEFORE:", datetime.datetime.now())
+        result = ssh_connection.send_command("display ip vpn-instance", delay_factor=10)
+        print("TS AFTER", datetime.datetime.now())
+#        print("result", result)
     except Exception as err:
         exception_type = type(err).__name__
         print(exception_type)
@@ -220,8 +222,8 @@ def getRoutes(deviceType, ipAddress, userId, pwd):
     )
     
     try:
-        result = ssh_connection.send_command("display ip routing-table", delay_factor=2)
-        print("result", result, "\n")
+        result = ssh_connection.send_command("display ip routing-table", delay_factor=10)
+#        print("result", result, "\n")
     except Exception as err:
         exception_type = type(err).__name__
         print(exception_type, err)
@@ -243,7 +245,7 @@ def getRoutesInVRF(deviceType, ipAddress, userId, pwd, vrf):
         if vrf != 'default':
             perVRFCommand = "display ip routing-table vpn-instance " + vrf
             print("VRF Command is =", perVRFCommand)
-            result = ssh_connection.send_command(perVRFCommand, delay_factor=2)
+            result = ssh_connection.send_command(perVRFCommand, delay_factor=10)
             print("result", result, "\n")
         else:
             print("D E F A U L T     S K I P P E D")
@@ -265,7 +267,7 @@ def connectDevice(deviceType, ipAddress, userId, pwd):
 
     try:
 
-        result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+        result_cnx = ssh_connection.send_command("screen-length 0 temporary", delay_factor=10)
         print("Connection Successful", result_cnx)
     except Exception as err:
         exception_type = type(err).__name__
@@ -309,7 +311,7 @@ def main():
             print("Querying", deviceType, "at IP address", ipAddress, "userid", userId, "password", pwd)
 
             try:
-                print("TRYING -> result_cnx = ssh_connection.send_command(\"screen-length 0 temporary\", delay_factor=2)")
+                print("TRYING -> result_cnx = ssh_connection.send_command(\"screen-length 0 temporary\", delay_factor=10)")
                 connectToDevice = connectDevice(deviceType, ipAddress, userId, pwd)
 #                print("Route List", routeList)
             except Exception as err:
@@ -333,7 +335,7 @@ def main():
                     vrf = vrf.lstrip()
                     vrf = vrf.rstrip()
                     vrfFields = vrf.split(" ")
-                    print("V R F     F I E L D S    ---====++++++>", vrfFields)
+#                    print("V R F     F I E L D S    ---====++++++>", vrfFields)
                     print("V R F   ---------------------------------------------------->", vrfFields[0])
                     vrfOfInterest = vrfFields[0]
                     if vrfOfInterest != 'default':
@@ -382,7 +384,7 @@ def main():
                 targetURTFile.write("#Routing Instances")
                 targetURTFile.write("\n")
                 for vrf in vrfList:
-                    print("VRF ------->", vrf)
+#                    print("VRF ------->", vrf)
                     targetURTFile.write(vrf)
                     targetURTFile.write("\n")
             except:
@@ -408,21 +410,21 @@ def residualCode(deviceType, ipAddress, userId, pwd):
         username=userId,
         password=pwd,
     )
-    result_sl0 = ssh_connection.send_command("screen-length 0 temporary", delay_factor=2)
+    result_sl0 = ssh_connection.send_command("screen-length 0 temporary", delay_factor=10)
     print("result_sl0 =", result_sl0)
-    #result_dsv = ssh_connection.send_command("display version", delay_factor=2)
+    #result_dsv = ssh_connection.send_command("display version", delay_factor=10)
     #print("result_dsv =", result_dsv)
-    #result_dcc = ssh_connection.send_command("display current-configuration", delay_factor=2)
+    #result_dcc = ssh_connection.send_command("display current-configuration", delay_factor=10)
     #print("result_dcc =", result_dcc)
-    result_irv = ssh_connection.send_command("display ip vpn-instance", delay_factor=2)
+    result_irv = ssh_connection.send_command("display ip vpn-instance", delay_factor=10)
     #ctr = 0
     parsed_result = split_and_parse_result(result_irv)
     #print("LIST OF ROUTING INSTANCES =", result_irv, parsed_result)
-    #result_irt = ssh_connection.send_command("display ip routing-table", delay_factor=2)
+    #result_irt = ssh_connection.send_command("display ip routing-table", delay_factor=10)
     #print("ROUTING INFORMATION =", result_irt)
-    #result_iib = ssh_connection.send_command("display ip interface brief", delay_factor=2)
+    #result_iib = ssh_connection.send_command("display ip interface brief", delay_factor=10)
     #print("LIST OF INTERFACES =", result_iib)
-    #result_usl = ssh_connection.send_command("undo screen-length temporary", delay_factor=2)
+    #result_usl = ssh_connection.send_command("undo screen-length temporary", delay_factor=10)
     #print("result_usl =", result_usl)
     #print(ssh_connection.find_prompt())
     ssh_connection.disconnect()
